@@ -1,0 +1,59 @@
+<div class="collection-banner {% if section.settings.show_collection_image and collection.image %}collection-banner--has-image{% endif %}">
+  {%- if section.settings.show_collection_image and collection.image -%}
+    <div class="collection-banner__image-wrapper">
+      {{ collection.image | image_url: width: 2000 | image_tag:
+        loading: 'lazy',
+        class: 'collection-banner__image'
+      }}
+    </div>
+  {%- endif -%}
+
+  <div class="collection-banner__content page-width text-{{ section.settings.text_alignment }}">
+    <h1 class="collection-banner__title">{{ collection.title }}</h1>
+    {%- if section.settings.show_collection_description and collection.description != blank -%}
+      <div class="collection-banner__description rte">
+        {{ collection.description }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "label": "Show collection description",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ]
+}
+{% endschema %} 

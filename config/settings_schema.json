@@ -1,0 +1,61 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Your Theme Name",
+    "theme_version": "1.0.0",
+    "theme_author": "Your Name"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_primary",
+        "label": "Primary color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "colors_secondary",
+        "label": "Secondary color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "colors_background",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "label": "Text color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "colors_text_light",
+        "label": "Light text color",
+        "default": "#666666"
+      },
+      {
+        "type": "color",
+        "id": "colors_border",
+        "label": "Border color",
+        "default": "#DDDDDD"
+      },
+      {
+        "type": "color",
+        "id": "colors_error",
+        "label": "Error color",
+        "default": "#DC3545"
+      },
+      {
+        "type": "color",
+        "id": "colors_success",
+        "label": "Success color",
+        "default": "#28A745"
+      }
+    ]
+  }
+] 

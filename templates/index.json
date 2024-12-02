@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "show_overlay": true,
+        "text_alignment": "center"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 8,
+        "columns_desktop": 4
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "text_alignment": "left",
+        "image_ratio": "square"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "show_background": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection",
+    "image_with_text",
+    "newsletter"
+  ]
+} 
