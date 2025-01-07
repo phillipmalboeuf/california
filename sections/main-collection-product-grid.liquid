@@ -1,74 +1,112 @@
 {%- paginate collection.products by section.settings.products_per_page -%}
-  <div class="collection page-width" id="CollectionProductGrid">
-    {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  <div class="collection page-width" id="MainCollectionGrid">
+    {%- if collection.description != blank and section.settings.show_description -%}
+      <div class="collection__description rte">
+        {{ collection.description }}
+      </div>
+    {%- endif -%}
+
+    <div class="collection__toolbar">
+      <div class="collection__product-count">
+        <p>{{ 'sections.collection.product_count' | t: count: collection.products_count }}</p>
+      </div>
+
+      {%- if section.settings.enable_sorting and collection.products_count > 0 -%}
+        <div class="collection__sort">
+          <label for="SortBy" class="visually-hidden">{{ 'collections.sorting.title' | t }}</label>
+          <select name="sort_by" id="SortBy" class="collection__sort-select">
+            {%- for option in collection.sort_options -%}
+              <option 
+                value="{{ option.value }}" 
+                {% if option.value == collection.sort_by %}selected="selected"{% endif %}
+              >
+                {{ option.label | escape }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.enable_filtering -%}
       <div class="collection__filters" data-filter-type="{{ section.settings.filter_type }}">
-        {%- if section.settings.enable_filtering -%}
-          <facet-filters-form class="facets">
-            <form id="FacetFiltersForm" class="facets__form">
-              {%- for filter in collection.filters -%}
-                <details class="facets__details" open>
-                  <summary class="facets__summary">
-                    <h3 class="facets__heading">{{ filter.label }}</h3>
-                  </summary>
+        <facet-filters-form class="facets">
+          <form id="FacetFiltersForm" class="facets__form">
+            {%- for filter in collection.filters -%}
+              <details class="facets__details" {% if section.settings.filter_type == 'horizontal' %}open{% endif %}>
+                <summary class="facets__summary">
+                  <h3 class="facets__heading">{{ filter.label | escape }}</h3>
+                  <span class="facets__selected"></span>
+                </summary>
+
+                <div class="facets__display">
                   <ul class="facets__list">
                     {%- for value in filter.values -%}
                       <li class="facets__item">
                         <label class="facet-checkbox">
-                          <input type="checkbox"
+                          <input 
+                            type="checkbox"
                             name="{{ value.param_name }}"
                             value="{{ value.value }}"
                             {% if value.active %}checked{% endif %}
-                            {% if value.count == 0 %}disabled{% endif %}
+                            {% if value.count == 0 and value.active == false %}disabled{% endif %}
                           >
-                          {{ value.label }} ({{ value.count }})
+                          <span class="facet-checkbox__label">
+                            {{ value.label | escape }} ({{ value.count }})
+                          </span>
                         </label>
                       </li>
                     {%- endfor -%}
                   </ul>
-                </details>
-              {%- endfor -%}
-              <button type="submit" class="button button--primary">{{ 'collections.filters.apply' | t }}</button>
-            </form>
-          </facet-filters-form>
-        {%- endif -%}
+                </div>
+              </details>
+            {%- endfor -%}
 
-        {%- if section.settings.enable_sorting -%}
-          <div class="collection__sort">
-            <label for="SortBy" class="collection__sort-label">{{ 'collections.sorting.title' | t }}</label>
-            <select name="sort_by" id="SortBy" class="collection__sort-select">
-              {%- for option in collection.sort_options -%}
-                <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>
-                  {{ option.label }}
-                </option>
-              {%- endfor -%}
-            </select>
-          </div>
+            <div class="facets__actions">
+              <button type="submit" class="button button--primary">
+                {{ 'collections.filters.apply' | t }}
+              </button>
+              <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="button button--secondary">
+                {{ 'collections.filters.clear' | t }}
+              </a>
+            </div>
+          </form>
+        </facet-filters-form>
+
+        {%- if collection.filters.size > 0 -%}
+          {%- for filter in collection.filters -%}
+            {%- for value in filter.active_values -%}
+              <a href="{{ value.url_to_remove }}" class="active-filters__remove-button">
+                {{ filter.label }}: {{ value.label | escape }}
+                {% render 'icon-close' %}
+              </a>
+            {%- endfor -%}
+          {%- endfor -%}
         {%- endif -%}
       </div>
     {%- endif -%}
 
-    <div class="collection__products">
-      {%- if collection.products.size == 0 -%}
-        <div class="collection__empty">
-          <p>{{ 'collections.general.no_matches' | t }}</p>
-        </div>
-      {%- else -%}
-        <ul class="product-grid grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
-          {%- for product in collection.products -%}
-            <li class="product-grid__item grid__item">
-              {% render 'product-card',
-                product: product,
-                show_secondary_image: section.settings.show_secondary_image,
-                show_vendor: section.settings.show_vendor
-              %}
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
-    </div>
+    {%- if collection.products.size == 0 -%}
+      <div class="collection__empty">
+        <p>{{ 'collections.general.no_matches' | t }}</p>
+      </div>
+    {%- else -%}
+      <ul class="product-grid grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
+        {%- for product in collection.products -%}
+          <li class="product-grid__item">
+            {% render 'product-card',
+              product: product,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_quick_add: section.settings.enable_quick_add
+            %}
+          </li>
+        {%- endfor -%}
+      </ul>
 
-    {%- if paginate.pages > 1 -%}
-      {% render 'pagination', paginate: paginate %}
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
     {%- endif -%}
   </div>
 {%- endpaginate -%}
@@ -77,6 +115,12 @@
 {
   "name": "Product grid",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show collection description",
+      "default": true
+    },
     {
       "type": "range",
       "id": "products_per_page",
@@ -98,33 +142,19 @@
       "type": "range",
       "id": "columns_mobile",
       "min": 1,
-      "max": 2,
+      "max": 3,
       "default": 2,
       "label": "Number of columns on mobile"
     },
     {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": true,
-      "label": "Show second image on hover"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "Show product vendor"
+      "type": "header",
+      "content": "Filtering and sorting"
     },
     {
       "type": "checkbox",
       "id": "enable_filtering",
       "default": true,
       "label": "Enable filtering"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sorting",
-      "default": true,
-      "label": "Enable sorting"
     },
     {
       "type": "select",
@@ -144,7 +174,36 @@
         }
       ],
       "default": "horizontal",
-      "label": "Filter layout"
+      "label": "Filter layout",
+      "info": "Layout for desktop view"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "Enable sorting"
+    },
+    {
+      "type": "header",
+      "content": "Product cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show product vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "Enable quick add"
     }
   ]
 }

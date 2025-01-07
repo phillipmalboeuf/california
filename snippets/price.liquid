@@ -1,0 +1,32 @@
+{%- liquid
+  if product.price_varies
+    assign compare_at_price = product.compare_at_price_max
+    assign price = product.price_min
+    assign price_varies = true
+  else
+    assign compare_at_price = product.compare_at_price
+    assign price = product.price
+    assign price_varies = false
+  endif
+-%}
+
+<div class="price
+  {%- if compare_at_price > price %} price--on-sale{% endif -%}
+  {%- if product.price_varies %} price--varies{% endif -%}
+  {%- if product.compare_at_price_varies %} price--compare-varies{% endif -%}">
+  
+  <div class="price__regular">
+    {%- if price_varies -%}
+      <span class="price__from">{{ 'products.product.from_lowest_price_html' | t: lowest_price: price | money }}</span>
+    {%- else -%}
+      <span class="price__amount">{{ price | money }}</span>
+    {%- endif -%}
+  </div>
+
+  {%- if compare_at_price > price -%}
+    <div class="price__sale">
+      <span class="price__current">{{ price | money }}</span>
+      <span class="price__compare">{{ compare_at_price | money }}</span>
+    </div>
+  {%- endif -%}
+</div> 

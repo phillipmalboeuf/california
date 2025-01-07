@@ -3,46 +3,48 @@
     "name": "theme_info",
     "theme_name": "Your Theme Name",
     "theme_version": "1.0.0",
-    "theme_author": "Your Name"
+    "theme_author": "Your Name",
+    "theme_support_email": "phil@phils.computer",
+    "theme_documentation_url": "https://phils.computer"
   },
   {
     "name": "Colors",
     "settings": [
       {
         "type": "color",
-        "id": "colors_primary",
-        "label": "Primary color",
+        "id": "colors_body",
+        "label": "Body color",
         "default": "#000000"
       },
       {
         "type": "color",
+        "id": "colors_accent",
+        "label": "Accent color",
+        "default": "#00A74D"
+      },
+      {
+        "type": "color",
+        "id": "colors_light",
+        "label": "Light color",
+        "default": "#F9F9F9"
+      },
+      {
+        "type": "color",
         "id": "colors_secondary",
-        "label": "Secondary color",
-        "default": "#333333"
+        "label": "Secondary accent color",
+        "default": "#FFC512"
       },
       {
         "type": "color",
-        "id": "colors_background",
-        "label": "Background color",
+        "id": "colors_bold",
+        "label": "Bold accent color",
+        "default": "#F94604"
+      },
+      {
+        "type": "color",
+        "id": "colors_text_inverse",
+        "label": "Inverse text color",
         "default": "#FFFFFF"
-      },
-      {
-        "type": "color",
-        "id": "colors_text",
-        "label": "Text color",
-        "default": "#333333"
-      },
-      {
-        "type": "color",
-        "id": "colors_text_light",
-        "label": "Light text color",
-        "default": "#666666"
-      },
-      {
-        "type": "color",
-        "id": "colors_border",
-        "label": "Border color",
-        "default": "#DDDDDD"
       },
       {
         "type": "color",

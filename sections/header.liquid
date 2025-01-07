@@ -1,0 +1,121 @@
+<header class="header padded" data-sticky="{{- section.settings.enable_sticky -}}">
+  <div class="header__wrapper flex flex--gapped flex--middle page-width">
+    <div class="header__left">
+      {%- if section.settings.menu != blank -%}
+        <button type="button" class="header__menu-toggle" aria-expanded="false">
+          <span class="visually-hidden">{{- 'sections.header.menu' | t -}}</span>
+        </button>
+
+        <nav class="header__nav">
+          <ul class="header__menu list--nostyle flex flex--gapped">
+            {%- for link in section.settings.menu.links -%}
+              <li class="header__menu-item{% if link.links.size > 0 %} header__menu-item--has-dropdown{% endif %}">
+                <a href="{{- link.url -}}" class="header__menu-link{% if link.current %} header__menu-link--active{% endif %}">{{- link.title -}}
+                  {%- if link.links.size > 0 -%}
+                    {%- render 'icon-chevron-down' -%}
+                  {%- endif -%}
+                </a>
+
+                {%- if link.links.size > 0 -%}
+                  <ul class="header__submenu list-unstyled">
+                    {%- for childlink in link.links -%}
+                      <li class="header__submenu-item">
+                        <a href="{{- childlink.url -}}" class="header__submenu-link{% if childlink.current %} header__submenu-link--active{% endif %}">{{- childlink.title -}}</a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    </div>
+
+    <div class="header__middle flex flex--center">
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__logo">
+      {%- else -%}
+        <div class="header__logo">
+      {%- endif -%}
+        {%- if section.settings.logo != blank -%}
+          {{- section.settings.logo | image_url: width: section.settings.logo_width | image_tag:
+            class: 'header__logo-image',
+            widths: '50, 100, 150, 200, 250, 300, 400, 500',
+            height: section.settings.logo.height,
+            width: section.settings.logo.width,
+            alt: section.settings.logo.alt | default: shop.name
+          -}}
+        {%- else -%}
+          <span class="header__logo-text">{{- shop.name -}}</span>
+        {%- endif -%}
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- else -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="header__right flex flex--gapped flex--end">
+      {%- if section.settings.show_search -%}
+        <button type="button" class="header__icon-button" aria-expanded="false" data-search-toggle>
+          <span>{{- 'sections.header.search' | t -}}</span>
+        </button>
+      {%- endif -%}
+
+      <a href="{{- routes.account_url -}}" class="button header__icon-button">
+        <span>{{- 'sections.header.account' | t -}}</span>
+      </a>
+
+      <a href="{{- routes.cart_url -}}" class="button header__icon-button header__cart" data-cart-toggle>
+        <span>{{- 'sections.header.cart' | t -}}</span>
+        {%- if cart.item_count > 0 -%}
+        <div class="header__cart-count" data-cart-count>
+          {{- cart.item_count -}}
+        </div>
+        {%- endif -%}
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Sticky header",
+      "default": true
+    }
+  ]
+}
+{% endschema %} 

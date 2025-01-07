@@ -1,0 +1,27 @@
+.footer {
+  background-color: var(--colors-accent);
+  color: var(--colors-text-inverse);
+}
+
+  .footer__bottom .page-width {
+    border-top: 1px solid;
+  }
+
+  /* .header__logo {
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+
+  .header__menu-toggle {
+    display: none;
+  }
+
+  .header__wrapper .flex {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .header__wrapper .header__left,
+  .header__wrapper .header__right {
+    flex: 1;
+  } */

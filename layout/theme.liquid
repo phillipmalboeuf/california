@@ -5,20 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ content_for_header }}
     
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
+    
     <style>
       :root {
-        --color-primary: {{ settings.colors_primary }};
-        --color-secondary: {{ settings.colors_secondary }};
-        --color-background: {{ settings.colors_background }};
-        --color-text: {{ settings.colors_text }};
-        --color-text-light: {{ settings.colors_text_light }};
-        --color-border: {{ settings.colors_border }};
-        --color-error: {{ settings.colors_error }};
-        --color-success: {{ settings.colors_success }};
+        /* Colors */
+        --colors-body: {{ settings.colors_body }};
+        --colors-accent: {{ settings.colors_accent }};
+        --colors-light: {{ settings.colors_light }};
+        --colors-secondary: {{ settings.colors_secondary }};
+        --colors-bold: {{ settings.colors_bold }};
+        --colors-text-inverse: {{ settings.colors_text_inverse }};
+        --colors-error: {{ settings.colors_error }};
+        --colors-success: {{ settings.colors_success }};
+
+        /* Fonts */
+        --font-heading: 'Elephant', sans-serif;
+        --font-body: 'ITC Clearface', serif;
       }
     </style>
     
-    {{ 'application.css' | asset_url | stylesheet_tag }}
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'naturals-index.css' | asset_url | stylesheet_tag }}
+    {{ 'header.css' | asset_url | stylesheet_tag }}
+    {{ 'footer.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
     {% section 'announcement-bar' %}
@@ -29,6 +39,7 @@
     </main>
 
     {% section 'footer' %}
-    {{ 'application.js' | asset_url | script_tag }}
+    <script src="{{ 'application.js' | asset_url }}" async></script>
+    <script src="{{ 'naturals-index.js' | asset_url }}" async></script>
   </body>
 </html> 

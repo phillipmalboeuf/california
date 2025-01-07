@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--colors-accent);
+  color: var(--colors-text-inverse);
+}
+
+  .header__logo {
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+
+  .header__menu-toggle {
+    display: none;
+  }
+
+  .header__wrapper .flex {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .header__wrapper .header__left,
+  .header__wrapper .header__right {
+    flex: 1;
+  }

@@ -1,0 +1,95 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close",
+      "next": "Next",
+      "previous": "Previous",
+      "new_window": "Opens in a new window"
+    }
+  },
+  "sections": {
+    "header": {
+      "menu": "Menu",
+      "cart": "Cart",
+      "search": "Search",
+      "account": "Account"
+    },
+    "featured_collection": {
+      "view_all": "View all",
+      "empty": "No products found in this collection"
+    },
+    "collection": {
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "no_matches": "No products found"
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "social_platform": "{{ name }} on {{ platform }}"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "from_price_html": "from {{ price }}",
+      "sale_price": "Sale price",
+      "regular_price": "Regular price",
+      "in_stock": "In stock",
+      "out_of_stock": "Out of stock"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Cart",
+      "empty": "Your cart is empty",
+      "subtotal": "Subtotal",
+      "shipping_at_checkout": "Shipping & taxes calculated at checkout",
+      "update": "Update Cart",
+      "checkout": "Check Out",
+      "note": "Order special instructions"
+    }
+  },
+  "newsletter": {
+    "label": "Email",
+    "button_label": "Subscribe",
+    "success": "Thanks for subscribing",
+    "error": "Please enter a valid email address"
+  },
+  "collections": {
+    "sorting": {
+      "title": "Sort by",
+      "featured": "Featured",
+      "best_selling": "Best selling",
+      "az": "Alphabetically, A-Z",
+      "za": "Alphabetically, Z-A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "date_descending": "Date, new to old",
+      "date_ascending": "Date, old to new"
+    },
+    "filters": {
+      "title": "Filter",
+      "all": "All",
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear all"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "details": "Account Details",
+      "view_addresses": "View Addresses",
+      "return": "Return to Account Details"
+    },
+    "log_in": "Log in",
+    "log_out": "Log out",
+    "register": "Create account"
+  }
+} 

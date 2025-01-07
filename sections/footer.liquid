@@ -1,0 +1,214 @@
+<footer class="footer">
+  <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded page-width">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'logo' -%}
+          <div class="footer__block flex flex--center footer__block--logo" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: block.settings.image_width | image_tag:
+                width: block.settings.image_width,
+                height: block.settings.image_height,
+                loading: 'lazy'
+              }}
+            {%- else -%}
+              <h1 class="footer__logo">{{ shop.name }}</h1>
+            {%- endif -%}
+          </div>
+
+        {%- when 'link_list' -%}
+          <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
+            {%- if block.settings.menu != blank -%}
+              <h4 class="footer__title text-center">{{ block.settings.title | escape }}</h4>
+              <ul class="footer__menu flex flex--gapped flex--center list--nostyle">
+                {%- for link in block.settings.menu.links -%}
+                  <li class="footer__menu-item">
+                    <a href="{{ link.url }}" class="footer__link">
+                      {%- if link.links != blank -%}
+                        <strong>{{ link.title }}</strong>
+                      {%- else -%}
+                        {{ link.title }}
+                      {%- endif -%}
+                    </a>
+                    {%- if link.links != blank -%}
+                      <ul class="footer__submenu list--nostyle">
+                        {%- for sublink in link.links -%}
+                          <li class="footer__submenu-item">
+                            <a href="{{ sublink.url }}" class="footer__link">{{ sublink.title }}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+
+        {%- when 'text' -%}
+          <div class="footer__block footer__block--text" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="footer__text rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+          </div>
+
+        {%- when 'newsletter' -%}
+          <div class="footer__block footer__block--newsletter" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="footer__newsletter-text rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+            {%- form 'customer', class: 'footer__newsletter-form' -%}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="footer__newsletter-field">
+                <input
+                  type="email"
+                  name="contact[email]"
+                  id="NewsletterEmail-{{ block.id }}"
+                  class="footer__newsletter-input"
+                  value="{{ form.email }}"
+                  placeholder="{{ 'newsletter.label' | t }}"
+                  required
+                >
+                <button type="submit" class="footer__newsletter-button button button--primary">
+                  {{ 'newsletter.button_label' | t }}
+                </button>
+              </div>
+            {%- endform -%}
+          </div>
+
+        {%- when 'social' -%}
+          <div class="footer__block footer__block--social" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+            {%- endif -%}
+            <ul class="footer__social list-unstyled">
+              {%- if settings.social_facebook_link != blank -%}
+                <li><a href="{{ settings.social_facebook_link }}" target="_blank">{% render 'icon-facebook' %}</a></li>
+              {%- endif -%}
+              {%- if settings.social_instagram_link != blank -%}
+                <li><a href="{{ settings.social_instagram_link }}" target="_blank">{% render 'icon-instagram' %}</a></li>
+              {%- endif -%}
+              {%- if settings.social_twitter_link != blank -%}
+                <li><a href="{{ settings.social_twitter_link }}" target="_blank">{% render 'icon-twitter' %}</a></li>
+              {%- endif -%}
+              {%- if settings.social_tiktok_link != blank -%}
+                <li><a href="{{ settings.social_tiktok_link }}" target="_blank">{% render 'icon-tiktok' %}</a></li>
+              {%- endif -%}
+            </ul>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="footer__bottom">
+    <div class="padded flex flex--column flex--middle page-width">
+      <div class="footer__copyright">
+        <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'sections.footer.copyright' | t }}</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 5,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 50,
+          "max": 800,
+          "step": 10,
+          "unit": "px",
+          "label": "Logo width",
+          "default": 100
+        }
+      ]
+    },
+    {
+      "type": "link_list", 
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "About us"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Subscribe to our newsletter"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social media",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Follow us"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

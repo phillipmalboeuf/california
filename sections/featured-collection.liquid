@@ -1,0 +1,182 @@
+<div class="featured-collection padded page-width">
+  {%- if section.settings.title != blank -%}
+    <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
+  {%- endif -%}
+
+  {%- if section.settings.description != blank -%}
+    <div class="featured-collection__description rte">
+      {{ section.settings.description }}
+    </div>
+  {%- endif -%}
+
+  {%- assign collection = collections[section.settings.collection] -%}
+  
+  {%- if collection != blank -%}
+    <ul class="product-grid list--nostyle grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
+      {%- for product in collection.products limit: section.settings.products_to_show -%}
+        <li class="product-grid__item">
+          <div class="product-card">
+            <div class="product-card__image">
+              <a href="{{ product.url }}">
+                {%- if product.featured_media -%}
+                  {{ product.featured_media | image_url: width: 533 | image_tag:
+                    loading: 'lazy',
+                    width: 533,
+                    height: 533,
+                    class: "product-card__primary-image"
+                  }}
+                  
+                  {%- if product.media[1] != blank and section.settings.show_secondary_image -%}
+                    {{ product.media[1] | image_url: width: 533 | image_tag:
+                      loading: 'lazy',
+                      width: 533,
+                      height: 533,
+                      class: "product-card__secondary-image"
+                    }}
+                  {%- endif -%}
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
+                {%- endif -%}
+              </a>
+
+              {%- if section.settings.show_quick_add -%}
+                <div class="product-card__quick-add">
+                  {%- assign product_form_id = 'quick-add-' | append: product.id -%}
+                  {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate' -%}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="button button--primary"
+                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                      {%- if product.selected_or_first_available_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </button>
+                  {%- endform -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="product-card__info">
+              {%- if section.settings.show_vendor and product.vendor -%}
+                <span class="product-card__vendor">{{ product.vendor }}</span>
+              {%- endif -%}
+
+              <a href="{{ product.url }}" class="product-card__title">
+                {{ product.title | escape }}
+              </a>
+
+              <div class="product-card__price">
+                {%- render 'price', product: product -%}
+              </div>
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.show_view_all and section.settings.products_to_show < collection.products_count -%}
+      <div class="featured-collection__view-all center">
+        <a href="{{ collection.url }}" class="button button--secondary">
+          {{ 'sections.featured_collection.view_all' | t }}
+        </a>
+      </div>
+    {%- endif -%}
+  {%- else -%}
+    <div class="featured-collection__empty">
+      {{ 'sections.featured_collection.empty' | t }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 2,
+      "default": 4,
+      "label": "Products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2,
+      "label": "Number of columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show product vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "default": false,
+      "label": "Show quick add button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "Show 'View all' button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection",
+      "settings": {
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "show_view_all": true
+      }
+    }
+  ]
+}
+{% endschema %} 
