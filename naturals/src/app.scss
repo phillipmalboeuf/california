@@ -61,9 +61,9 @@ h1, h2, h3, h4, h5, h6,
 	line-height: 0.9;
 	white-space: pre-line;
 
-	&:not(.col) {
-		max-width: 30ch;
-	}
+	// &:not(.col) {
+	// 	max-width: 30ch;
+	// }
 
 	small {
 		// font-family: $body_font;

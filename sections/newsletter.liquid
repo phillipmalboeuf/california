@@ -1,5 +1,5 @@
 <div class="newsletter{% if section.settings.show_background %} newsletter--background{% endif %}">
-  <div class="newsletter__wrapper page-width">
+  <div class="newsletter__wrapper padded page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'heading' -%}

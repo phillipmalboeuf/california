@@ -1,8 +1,8 @@
 
 @font-face {
   font-family: 'Elephant';
-  src: url('fonts/Elephant Font/ElephantBlackOblique/font.woff2') format('woff2'),
-       url('fonts/Elephant Font/ElephantBlackOblique/font.woff') format('woff');
+  src: url('font-ElephantBlackOblique.woff2') format('woff2'),
+       url('font-ElephantBlackOblique.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: 'Elephant';
-  src: url('fonts/Elephant Font/ElephantLight/font.woff2') format('woff2'),
-       url('fonts/Elephant Font/ElephantLight/font.woff') format('woff');
+  src: url('font-ElephantLight.woff2') format('woff2'),
+       url('font-ElephantLight.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -19,8 +19,8 @@
 
 @font-face {
   font-family: 'Elephant';
-  src: url('fonts/Elephant Font/ElephantLightOblique/font.woff2') format('woff2'),
-       url('fonts/Elephant Font/ElephantLightOblique/font.woff') format('woff');
+  src: url('font-ElephantLightOblique.woff2') format('woff2'),
+       url('font-ElephantLightOblique.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: 'Elephant';
-  src: url('fonts/Elephant Font/ElephantMedium/font.woff2') format('woff2'),
-       url('fonts/Elephant Font/ElephantMedium/font.woff') format('woff');
+  src: url('font-ElephantMedium.woff2') format('woff2'),
+       url('font-ElephantMedium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: 'Incision';
-  src: url('fonts/Incision-Bold.otf') format('opentype');
+  src: url('font-Incision-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,7 @@
 /* Body Font */
 @font-face {
   font-family: 'California Naturals';
-  src: url('fonts/CaliforniaNaturals-Regular.woff2') format('woff2');
+  src: url('font-CaliforniaNaturals-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@
 
 @font-face {
   font-family: 'ITC Clearface';
-  src: url('fonts/ITC-Clearface-Std_24577.ttf') format('truetype');
+  src: url('font-ITC-Clearface-Std_24577.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -62,7 +62,7 @@
 
 @font-face {
   font-family: 'Kimmie';
-  src: url('fonts/kimmie-font.ttf') format('truetype');
+  src: url('font-kimmie-font.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
