@@ -1,7 +1,9 @@
+{{ 'product.css' | asset_url | stylesheet_tag }}
+
 <section class="product-section">
-  <div class="page-width">
-    <div class="product-grid">
-      <div class="product-media">
+  <div class="page-width padded">
+    <div class="product-grid flex flex--around flex--gapped">
+      <div class="product-media col col--5of12">
         {%- if product.media.size > 0 -%}
           <div class="product-gallery">
             {%- for media in product.media -%}
@@ -27,24 +29,18 @@
         {%- endif -%}
       </div>
 
-      <div class="product-info">
+      <div class="product-info col col--5of12">
         {%- if section.settings.show_vendor and product.vendor -%}
           <div class="product-vendor">{{ product.vendor }}</div>
         {%- endif -%}
 
-        <h1 class="product-title">{{ product.title }}</h1>
+        <h1 class="h3 product-title">{{ product.title }}</h1>
 
-        <div class="product-price">
-          {%- if product.price_varies -%}
-            <span class="price-from">{{ 'products.product.from_price_html' | t }}</span>
-          {%- endif -%}
-          <span class="price" data-product-price>
-            {{ product.selected_or_first_available_variant.price | money }}
-          </span>
-          {%- if product.compare_at_price > product.price -%}
-            <span class="compare-price">{{ product.compare_at_price | money }}</span>
-          {%- endif -%}
-        </div>
+        {%- if section.settings.show_description -%}
+          <div class="product-description rte">
+            {{ product.description }}
+          </div>
+        {%- endif -%}
 
         {%- form 'product', product, class: 'product-form', id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -77,19 +73,20 @@
           {%- endif -%}
 
           <div class="product-quantity">
-            <label class="form__label" for="Quantity">{{ 'products.product.quantity' | t }}</label>
+            <label class="form__label visually-hidden" for="Quantity">{{ 'products.product.quantity' | t }}</label>
             <div class="quantity-input">
-              <button type="button" class="quantity-button" data-action="decrease">-</button>
+              <button type="button" class="button--none quantity-button" data-action="decrease">-</button>
               <input
                 type="number"
                 id="Quantity"
                 name="quantity"
                 value="1"
                 min="1"
-                class="form__input"
+                class="input--none input form__input"
+                readonly
                 data-quantity-input
               >
-              <button type="button" class="quantity-button" data-action="increase">+</button>
+              <button type="button" class="button--none quantity-button" data-action="increase">+</button>
             </div>
           </div>
 
@@ -107,6 +104,18 @@
                 {%- else -%}
                   {{ 'products.product.sold_out' | t }}
                 {%- endif -%}
+
+                <span class="product-price">
+                  {%- if product.price_varies -%}
+                    <span class="price-from">{{ 'products.product.from_price_html' | t }}</span>
+                  {%- endif -%}
+                  <span class="price" data-product-price>
+                    {{ product.selected_or_first_available_variant.price | money }}
+                  </span>
+                  {%- if product.compare_at_price > product.price -%}
+                    <span class="compare-price">{{ product.compare_at_price | money }}</span>
+                  {%- endif -%}
+                </span>
               </span>
               <span class="loading-spinner hidden"></span>
             </button>
@@ -116,12 +125,6 @@
             {%- endif -%}
           </div>
         {%- endform -%}
-
-        {%- if section.settings.show_description -%}
-          <div class="product-description rte">
-            {{ product.description }}
-          </div>
-        {%- endif -%}
       </div>
     </div>
   </div>

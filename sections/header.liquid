@@ -1,4 +1,4 @@
-<header class="header padded" data-sticky="{{- section.settings.enable_sticky -}}">
+<header class="header color-{{ section.settings.color_scheme }} padded" data-sticky="{{- section.settings.enable_sticky -}}">
   <div class="header__wrapper flex flex--gapped flex--middle page-width">
     <div class="header__left">
       {%- if section.settings.menu != blank -%}
@@ -33,27 +33,29 @@
     </div>
 
     <div class="header__middle flex flex--center">
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__logo">
-      {%- else -%}
-        <div class="header__logo">
-      {%- endif -%}
-        {%- if section.settings.logo != blank -%}
-          {{- section.settings.logo | image_url: width: section.settings.logo_width | image_tag:
-            class: 'header__logo-image',
-            widths: '50, 100, 150, 200, 250, 300, 400, 500',
-            height: section.settings.logo.height,
-            width: section.settings.logo.width,
-            alt: section.settings.logo.alt | default: shop.name
-          -}}
+      <a href="/" class="header__logo-link">
+        {%- if request.page_type == 'index' -%}
+          <h1 class="header__logo">
         {%- else -%}
-          <span class="header__logo-text">{{- shop.name -}}</span>
+          <div class="header__logo">
         {%- endif -%}
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- else -%}
-        </div>
-      {%- endif -%}
+          {%- if section.settings.logo != blank -%}
+            {{- section.settings.logo | image_url: width: section.settings.logo_width | image_tag:
+              class: 'header__logo-image',
+              widths: '50, 100, 150, 200, 250, 300, 400, 500',
+              height: section.settings.logo.height,
+              width: section.settings.logo.width,
+              alt: section.settings.logo.alt | default: shop.name
+            -}}
+          {%- else -%}
+            <span class="header__logo-text">{{- shop.name -}}</span>
+          {%- endif -%}
+        {%- if request.page_type == 'index' -%}
+          </h1>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+      </a>
     </div>
 
     <div class="header__right flex flex--gapped flex--end">
@@ -83,6 +85,12 @@
 {
   "name": "Header",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "inverse-1"
+    },
     {
       "type": "image_picker",
       "id": "logo",

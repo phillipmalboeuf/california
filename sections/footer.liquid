@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer color-{{ section.settings.color_scheme }}">
   <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -118,7 +118,14 @@
 {
   "name": "Footer",
   "max_blocks": 5,
-  "settings": [],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "inverse-1"
+    }
+  ],
   "blocks": [
     {
       "type": "logo",

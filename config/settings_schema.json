@@ -7,56 +7,123 @@
     "theme_support_email": "phil@phils.computer",
     "theme_documentation_url": "https://phils.computer"
   },
+  // {
+  //   "name": "Colors",
+  //   "settings": [
+  //     {
+  //       "type": "color",
+  //       "id": "colors_body",
+  //       "label": "Body color",
+  //       "default": "#000000"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_accent",
+  //       "label": "Accent color",
+  //       "default": "#00A74D"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_light",
+  //       "label": "Light color",
+  //       "default": "#F9F9F9"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_secondary",
+  //       "label": "Secondary accent color",
+  //       "default": "#FFC512"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_bold",
+  //       "label": "Bold accent color",
+  //       "default": "#F94604"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_text_inverse",
+  //       "label": "Inverse text color",
+  //       "default": "#FFFFFF"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_error",
+  //       "label": "Error color",
+  //       "default": "#DC3545"
+  //     },
+  //     {
+  //       "type": "color",
+  //       "id": "colors_success",
+  //       "label": "Success color",
+  //       "default": "#28A745"
+  //     }
+  //   ]
+  // },
   {
-    "name": "Colors",
+    "name": "Color schemes",
     "settings": [
       {
-        "type": "color",
-        "id": "colors_body",
-        "label": "Body color",
-        "default": "#000000"
-      },
-      {
-        "type": "color",
-        "id": "colors_accent",
-        "label": "Accent color",
-        "default": "#00A74D"
-      },
-      {
-        "type": "color",
-        "id": "colors_light",
-        "label": "Light color",
-        "default": "#F9F9F9"
-      },
-      {
-        "type": "color",
-        "id": "colors_secondary",
-        "label": "Secondary accent color",
-        "default": "#FFC512"
-      },
-      {
-        "type": "color",
-        "id": "colors_bold",
-        "label": "Bold accent color",
-        "default": "#F94604"
-      },
-      {
-        "type": "color",
-        "id": "colors_text_inverse",
-        "label": "Inverse text color",
-        "default": "#FFFFFF"
-      },
-      {
-        "type": "color",
-        "id": "colors_error",
-        "label": "Error color",
-        "default": "#DC3545"
-      },
-      {
-        "type": "color",
-        "id": "colors_success",
-        "label": "Success color",
-        "default": "#28A745"
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "colors_body",
+            "label": "Body color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "colors_light",
+            "label": "Light color",
+            "default": "#F9F9F9"
+          },
+          {
+            "type": "color",
+            "id": "colors_accent",
+            "label": "Accent color",
+            "default": "#00A74D"
+          },
+          {
+            "type": "color",
+            "id": "colors_secondary",
+            "label": "Secondary accent color",
+            "default": "#FFC512"
+          },
+          {
+            "type": "color",
+            "id": "colors_bold",
+            "label": "Bold accent color",
+            "default": "#00A74D"
+          },
+          {
+            "type": "color",
+            "id": "colors_background",
+            "label": "Background color",
+            "default": "#FFF"
+          },
+          {
+            "type": "color_background",
+            "id": "colors_background_gradient",
+            "label": "Gradient background",
+          },
+        ],
+        "role": {
+          "text": "colors_body",
+          "background": {
+            "solid": "colors_background",
+            "gradient": "colors_background_gradient"
+          },
+          "links": "colors_secondary",
+          "icons": "colors_secondary",
+          "primary_button": "colors_accent",
+          "on_primary_button": "colors_accent",
+          "primary_button_border": "colors_accent",
+          "secondary_button": "colors_secondary",
+          "on_secondary_button": "colors_secondary",
+          "secondary_button_border": "colors_secondary"
+        }
       }
     ]
   }

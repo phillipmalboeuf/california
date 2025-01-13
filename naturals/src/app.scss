@@ -199,6 +199,7 @@ fieldset {
 }
 
 input,
+.input,
 select,
 textarea,
 button,
@@ -235,36 +236,6 @@ button,
 
 	&.button--full {
 		width: 100%;
-	}
-
-	&.button--dark {
-		// color: $blanc;
-		// background: $noir;
-		border-color: transparent;
-	}
-
-	&.button--accent {
-		// color: $blanc;
-		// background: $accent;
-		border-color: transparent;
-	}
-
-	&.button--grey {
-		// color: $sarcelle;
-		// background: $grey;
-		border-color: transparent;
-	}
-
-	&.button--muted {
-		color: currentColor;
-		// background: rgba($blanc, 0.1);
-		border-color: transparent;
-	}
-
-	&.button--blanc {
-		color: currentColor;
-		background: white;
-		border-color: transparent;
 	}
 
 	&:hover,
@@ -334,6 +305,7 @@ label {
 }
 
 input,
+.input,
 select,
 textarea {
 	width: 100%;
@@ -370,6 +342,14 @@ textarea {
 		&:focus {
 			border-bottom-color: currentColor;
 		}
+	}
+
+	&.input--none {
+		color: currentColor;
+		background: transparent;
+		padding: 0;
+		border: none;
+		border-radius: 0;
 	}
 }
 
@@ -606,6 +586,10 @@ dialog {
 
 	&.flex--spaced {
 		justify-content: space-between;
+	}
+
+	&.flex--around {
+		justify-content: space-around;
 	}
 
 	&.flex--center {

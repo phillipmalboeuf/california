@@ -1,38 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-banner",
+      "blocks": {
+        "heading_MMVXQp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Finally, Clean & Natural Hair and Body Products that Serve Unreal Results"
+          }
+        },
+        "button_64rP3j": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MMVXQp",
+        "button_64rP3j"
+      ],
       "settings": {
+        "image": "shopify://shop_images/low-tide-at-the-beach-house.jpg",
         "show_overlay": true,
+        "text_alignment": "center"
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_Awyc9X": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "who are we/ why are we here"
+          }
+        },
+        "heading_kWNNJY": {
+          "type": "heading",
+          "settings": {
+            "heading": "California Naturals is a personal care brand on a mission to provide clean, safe + natural products to everyone at an unbelievable price, replacing toxic (and simply bad) products in bathrooms and homes across the globe."
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Awyc9X",
+        "heading_kWNNJY"
+      ],
+      "settings": {
+        "color_scheme": "inverse-1",
+        "image_ratio": "square",
         "text_alignment": "center"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "title": "Featured collection",
+        "description": "",
         "collection": "frontpage",
         "products_to_show": 8,
-        "columns_desktop": 4
-      }
-    },
-    "image_with_text": {
-      "type": "image-with-text",
-      "settings": {
-        "text_alignment": "left",
-        "image_ratio": "square"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "show_background": true
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_quick_add": false,
+        "show_view_all": true
       }
     }
   },
   "order": [
     "hero",
-    "featured_collection",
     "image_with_text",
-    "newsletter"
+    "featured_collection"
   ]
-} 
+}

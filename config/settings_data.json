@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "color_schemes": {
+      "default": {
+        "settings": {
+        }
+      },
+      "inverse-1": {
+        "settings": {
+          "colors_body": "#FFFFFF",
+          "colors_accent": "#FFFFFF",
+          "colors_secondary": "#FFC512",
+          "colors_background": "#00A74D"
+        }
+      },
+      "inverse-2": {
+        "settings": {
+          "colors_body": "#000000",
+          "colors_accent": "#000000",
+          "colors_secondary": "#00A74D",
+          "colors_background": "#FFC512"
+        }
+      },
+      "inverse-3": {
+        "settings": {
+          "colors_body": "#000000",
+          "colors_accent": "#FFFFFF",
+          "colors_secondary": "#000",
+          "colors_background": "#F94604"
+        }
+      },
+    },
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "auto_rotate": true,
+          "slide_speed": 5
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/CaliLogo.svg",
+          "logo_width": 100,
+          "menu": "main-menu",
+          "show_search": true,
+          "enable_sticky": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "newsletter_dxUJKh": {
+            "type": "newsletter",
+            "settings": {
+              "title": "",
+              "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+            }
+          },
+          "logo_AH73QQ": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/SVG.svg",
+              "image_width": 600
+            }
+          },
+          "link_list_nCcgJh": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "newsletter_dxUJKh",
+          "logo_AH73QQ",
+          "link_list_nCcgJh"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

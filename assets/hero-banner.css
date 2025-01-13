@@ -6,6 +6,10 @@
   /* padding: 4rem 0; */
 }
 
+main > section:first-child > .hero-banner {
+  margin-top: -70px;
+}
+
 .hero-banner__image {
   position: absolute;
   top: 0;

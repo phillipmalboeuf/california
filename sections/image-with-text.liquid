@@ -1,4 +1,4 @@
-<div class="image-with-text flex flex--{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment }}">
+<div class="image-with-text color-{{ section.settings.color_scheme }} flex flex--{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment }}">
   <div class="image-with-text__grid padded page-width">
     <div class="image-with-text__media-item">
       {%- if section.settings.image != blank -%}
@@ -39,6 +39,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
     {
       "type": "image_picker",
       "id": "image",

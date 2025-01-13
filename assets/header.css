@@ -1,6 +1,22 @@
 .header {
   background-color: var(--colors-accent);
   color: var(--colors-text-inverse);
+  transition: background-color 0.666s;
+}
+
+.header[data-sticky="true"],
+#shopify-section-header:has(> [data-sticky="true"]) {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* body > main > section:first-child:has(> .hero-banner) {
+  display: none;
+} */
+
+body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"]:not(.scrolled) {
+  background-color: transparent;
 }
 
   .header__logo {

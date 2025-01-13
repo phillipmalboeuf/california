@@ -1,4 +1,4 @@
-<div class="newsletter{% if section.settings.show_background %} newsletter--background{% endif %}">
+<div class="newsletter color-{{ section.settings.color_scheme }}">
   <div class="newsletter__wrapper padded page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -45,10 +45,10 @@
   "class": "section",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "show_background",
-      "label": "Show background",
-      "default": true
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "inverse-1"
     }
   ],
   "blocks": [

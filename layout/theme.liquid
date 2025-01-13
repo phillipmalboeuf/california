@@ -10,14 +10,47 @@
     <style>
       :root {
         /* Colors */
-        --colors-body: {{ settings.colors_body }};
+        {% comment %} --colors-body: {{ settings.colors_body }};
         --colors-accent: {{ settings.colors_accent }};
         --colors-light: {{ settings.colors_light }};
         --colors-secondary: {{ settings.colors_secondary }};
         --colors-bold: {{ settings.colors_bold }};
         --colors-text-inverse: {{ settings.colors_text_inverse }};
         --colors-error: {{ settings.colors_error }};
-        --colors-success: {{ settings.colors_success }};
+        --colors-success: {{ settings.colors_success }}; {% endcomment %}
+
+        {% for scheme in settings.color_schemes -%}
+          {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
+          {% if forloop.index == 1 -%}
+            :root,
+          {%- endif %}
+          .color-{{ scheme.id }} {
+            --colors-body: {{ scheme.settings.colors_body }};
+            --colors-light: {{ scheme.settings.colors_light }};
+            --colors-accent: {{ scheme.settings.colors_accent }};
+            --colors-secondary: {{ scheme.settings.colors_secondary }};
+            --colors-bold: {{ scheme.settings.colors_bold }};
+            --colors-background: {{ scheme.settings.colors_background }};
+          {% if scheme.settings.colors_background_gradient != empty %}
+            --colors-gradient-background: {{ scheme.settings.colors_background_gradient }};
+          {% endif %}
+
+            {% liquid
+              assign body_color = scheme.settings.colors_body
+              assign body_color_brightness = body_color | color_brightness
+              if body_color_brightness <= 50
+                assign body_color_inverse = body_color | color_lighten: 100
+              else
+                assign body_color_inverse = body_color | color_darken: 100
+              endif
+            %}
+
+            --colors-body-inverse: {{ body_color_inverse }};
+
+            color: var(--colors-body);
+            background-color: var(--colors-background);
+          }
+        {% endfor %}
 
         /* Fonts */
         --font-heading: 'ITC Clearface', serif;
@@ -26,8 +59,8 @@
       }
     </style>
     
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
     {{ 'naturals-index.css' | asset_url | stylesheet_tag }}
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
     {{ 'header.css' | asset_url | stylesheet_tag }}
     {{ 'footer.css' | asset_url | stylesheet_tag }}
   </head>
@@ -40,6 +73,8 @@
     </main>
 
     {% section 'footer' %}
+
+    <div id="app"></div>
     <script src="{{ 'application.js' | asset_url }}" async></script>
     <script src="{{ 'naturals-index.js' | asset_url }}" async></script>
   </body>

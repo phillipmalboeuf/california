@@ -2,11 +2,12 @@
 :root {
   /* Colors - these are fallbacks if theme settings fail to load */
   --colors-body: #000000;
+  --colors-background: #FFFFFF;
   --colors-accent: #00A74D;
   --colors-light: #F9F9F9;
   --colors-secondary: #FFC512;
   --colors-bold: #F94604;
-  --colors-text-inverse: #FFFFFF;
+  --colors-body-inverse: #FFFFFF;
   --colors-error: #DC3545;
   --colors-success: #28A745;
   
@@ -52,7 +53,7 @@ main {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   margin-bottom: var(--space-3);
@@ -61,13 +62,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2.25rem; }
 h2 { font-size: 1.75rem; }
 h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
+h4 { font-size: 1.25rem; } */
 
 /* Layout Helpers */
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 var(--space-3);
+  /* padding: 0 var(--space-3); */
 }
 
 .visually-hidden {
@@ -95,6 +96,7 @@ h4 { font-size: 1.25rem; }
 }
 
 /* Buttons */
+button,
 .button {
   /* display: inline-flex;
   align-items: center;
@@ -108,9 +110,16 @@ h4 { font-size: 1.25rem; }
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease; */
+  color: var(--colors-body-inverse);
+  border-color: transparent;
+  background-color: var(--colors-accent);
 }
 
-.button--primary {
+.button--secondary {
+  background-color: var(--colors-secondary);
+}
+
+/* .button--primary {
   background-color: var(--color-primary);
   color: var(--color-background);
 }
@@ -119,7 +128,7 @@ h4 { font-size: 1.25rem; }
   background-color: transparent;
   border-color: var(--color-primary);
   color: var(--color-primary);
-}
+} */
 
 .button:disabled {
   opacity: 0.5;
@@ -147,9 +156,9 @@ h4 { font-size: 1.25rem; }
 
 /* Product Grid */
 .product-grid {
-  display: grid;
+  /* display: grid;
   gap: var(--grid-gap);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); */
 }
 
 /* @media screen and (min-width: 750px) {
