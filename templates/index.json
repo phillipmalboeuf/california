@@ -77,11 +77,45 @@
         "show_quick_add": false,
         "show_view_all": true
       }
+    },
+    "text-columns": {
+      "type": "text-columns",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "subtitle": "Amazing Service",
+            "text": "<p>Your text here</p>",
+            "author": "John Doe",
+            "showStars": true
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "subtitle": "Great Quality",
+            "text": "<p>Your text here</p>",
+            "author": "Jane Smith",
+            "showStars": true
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "subtitle": "Fast Delivery",
+            "text": "<p>Your text here</p>",
+            "author": "Mike Johnson",
+            "showStars": true
+          }
+        }
+      },
+      "block_order": ["column-1", "column-2", "column-3"]
     }
   },
   "order": [
     "hero",
     "image_with_text",
-    "featured_collection"
+    "featured_collection",
+    "text-columns"
   ]
 }
