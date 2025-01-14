@@ -78,7 +78,7 @@
             {%- for value in filter.active_values -%}
               <a href="{{ value.url_to_remove }}" class="active-filters__remove-button">
                 {{ filter.label }}: {{ value.label | escape }}
-                {% render 'icon-close' %}
+                {% render 'icon', type: 'close' %}
               </a>
             {%- endfor -%}
           {%- endfor -%}

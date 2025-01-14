@@ -37,3 +37,18 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
   .header__wrapper .header__right {
     flex: 1;
   }
+
+#cart-dialog .cart-dialog__overlay {
+  position: fixed;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+#cart-dialog .cart-dialog__content {
+  position: relative;
+  z-index: 2;
+}
+
+#cart-dialog::backdrop {
+  background: transparent;
+}

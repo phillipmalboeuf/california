@@ -1,0 +1,66 @@
+{% render 'cart' %}
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "light-1"
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Free Shipping Threshold",
+      "default": 7500,
+      "info": "Amount in cents. Set to 7500 for $75.00"
+    },
+    {
+      "type": "text",
+      "id": "cart_message",
+      "label": "Cart Message",
+      "default": "Free shipping on orders over $75!"
+    },
+    {
+      "type": "header",
+      "content": "Upsell Products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_upsell_products",
+      "label": "Show Upsell Products",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "upsell_collection",
+      "label": "Upsell Collection",
+      "info": "Products to show in the 'You May Also Like' section"
+    },
+    {
+      "type": "range",
+      "id": "upsell_products_limit",
+      "label": "Number of Upsell Products",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_calculator",
+      "label": "Show Shipping Calculator",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "Show Order Note",
+      "default": true,
+      "info": "Allow customers to add a note to their order"
+    }
+  ]
+}
+{% endschema %}

@@ -11,7 +11,7 @@
   "sections": {
     "header": {
       "menu": "Menu",
-      "cart": "Cart",
+      "cart": "Bag",
       "search": "Search",
       "account": "Account"
     },
@@ -33,7 +33,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Add to bag",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "quantity": "Quantity",
@@ -41,18 +41,20 @@
       "sale_price": "Sale price",
       "regular_price": "Regular price",
       "in_stock": "In stock",
-      "out_of_stock": "Out of stock"
+      "out_of_stock": "Out of stock",
+      "from_lowest_price_html": "From {{ lowest_price }}"
     }
   },
   "cart": {
     "general": {
-      "title": "Cart",
-      "empty": "Your cart is empty",
+      "title": "Your Bag",
+      "free_shipping_remaining_html": "Add %{remaining_amount} more to get FREE shipping!",
+      "free_shipping_qualified": "🎉 You've got FREE shipping!",
+      "you_may_also_like": "You May Also Like",
+      "add_to_cart": "Add to Bag",
       "subtotal": "Subtotal",
-      "shipping_at_checkout": "Shipping & taxes calculated at checkout",
-      "update": "Update Cart",
-      "checkout": "Check Out",
-      "note": "Order special instructions"
+      "proceed_to_checkout": "Proceed to Checkout",
+      "remove": "Remove"
     }
   },
   "newsletter": {

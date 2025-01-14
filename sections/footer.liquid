@@ -88,16 +88,16 @@
             {%- endif -%}
             <ul class="footer__social list-unstyled">
               {%- if settings.social_facebook_link != blank -%}
-                <li><a href="{{ settings.social_facebook_link }}" target="_blank">{% render 'icon-facebook' %}</a></li>
+                <li><a href="{{ settings.social_facebook_link }}" target="_blank">{% render 'icon', type: 'facebook' %}</a></li>
               {%- endif -%}
               {%- if settings.social_instagram_link != blank -%}
-                <li><a href="{{ settings.social_instagram_link }}" target="_blank">{% render 'icon-instagram' %}</a></li>
+                <li><a href="{{ settings.social_instagram_link }}" target="_blank">{% render 'icon', type: 'instagram' %}</a></li>
               {%- endif -%}
               {%- if settings.social_twitter_link != blank -%}
-                <li><a href="{{ settings.social_twitter_link }}" target="_blank">{% render 'icon-twitter' %}</a></li>
+                <li><a href="{{ settings.social_twitter_link }}" target="_blank">{% render 'icon', type: 'twitter' %}</a></li>
               {%- endif -%}
               {%- if settings.social_tiktok_link != blank -%}
-                <li><a href="{{ settings.social_tiktok_link }}" target="_blank">{% render 'icon-tiktok' %}</a></li>
+                <li><a href="{{ settings.social_tiktok_link }}" target="_blank">{% render 'icon', type: 'tiktok' %}</a></li>
               {%- endif -%}
             </ul>
           </div>

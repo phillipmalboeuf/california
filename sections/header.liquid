@@ -12,7 +12,7 @@
               <li class="header__menu-item{% if link.links.size > 0 %} header__menu-item--has-dropdown{% endif %}">
                 <a href="{{- link.url -}}" class="header__menu-link{% if link.current %} header__menu-link--active{% endif %}">{{- link.title -}}
                   {%- if link.links.size > 0 -%}
-                    {%- render 'icon-chevron-down' -%}
+                    {%- render 'icon', type: 'chevron-down' -%}
                   {%- endif -%}
                 </a>
 
@@ -80,6 +80,16 @@
     </div>
   </div>
 </header>
+
+<dialog id="cart-dialog">
+  <div class="cart-dialog__overlay" data-cart-toggle></div>
+  <div class="cart-dialog__content">
+    <button type="button" class="cart-dialog-close" data-cart-toggle>
+      {% render 'icon', type: 'close' %}
+    </button>
+    {% render 'cart' %}
+  </div>
+</dialog>
 
 {% schema %}
 {

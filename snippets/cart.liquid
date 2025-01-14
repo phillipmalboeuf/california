@@ -1,0 +1,92 @@
+{% assign free_shipping_threshold = section.settings.free_shipping_threshold | default: 7500 %}
+{% assign current_cart_total = cart.total_price %}
+{% assign show_upsell_products = section.settings.show_upsell_products | default: true %}
+{% assign upsell_collection_handle = section.settings.upsell_collection | default: 'upsell-products' %}
+{% assign upsell_products_limit = section.settings.upsell_products_limit | default: 4 %}
+{% assign color_scheme = section.settings.color_scheme | default: 'light-1' %}
+
+<form action="{{ routes.cart_url }}" class="cart-container color-{{ color_scheme }} gradient" method="post" id="cart">
+  <h1 class="cart-title">{{ 'cart.general.title' | t }}</h1>
+  
+  <!-- Shipping Progress Bar -->
+  {% if section.settings.cart_message != blank %}
+    <p class="cart-message">{{ section.settings.cart_message }}</p>
+  {% endif %}
+  
+  <div class="shipping-progress">
+    {% if cart.total_price < free_shipping_threshold %}
+      {% assign remaining_amount = free_shipping_threshold | minus: current_cart_total %}
+      {% assign progress_percentage = current_cart_total | times: 100.0 | divided_by: free_shipping_threshold %}
+      
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: {{ progress_percentage }}%"></div>
+      </div>
+      <p class="progress-text">
+        {{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount | money }}
+      </p>
+    {% else %}
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%"></div>
+      </div>
+      <p class="progress-text">{{ 'cart.general.free_shipping_qualified' | t }}</p>
+    {% endif %}
+  </div>
+
+  <!-- Cart Items -->
+  <div class="cart-items">
+    {% for item in cart.items %}
+      <div class="cart-item" data-product-id="{{ item.product.id }}">
+        <img 
+          src="{{ item.image | img_url: '120x' }}" 
+          alt="{{ item.title }}"
+          width="120"
+          height="120"
+        >
+        <div class="item-details">
+          <h3>{{ item.product.title }}</h3>
+          <p class="item-price">{{ item.price | money }}</p>
+          
+          <div class="quantity-selector">
+            <button class="quantity-btn" data-action="decrease">-</button>
+            <input type="number" value="{{ item.quantity }}" min="1" data-quantity-input>
+            <button class="quantity-btn" data-action="increase">+</button>
+          </div>
+          
+          <button class="remove-item" data-remove="{{ item.key }}">Remove</button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Upsell Products -->
+  {% if show_upsell_products %}
+    <div class="upsell-products">
+      <h2>{{ 'cart.general.you_may_also_like' | t }}</h2>
+      <div class="upsell-grid">
+        {% assign upsell_collection = collections[upsell_collection_handle] %}
+        {% for product in upsell_collection.products limit: upsell_products_limit %}
+          <div class="upsell-item">
+            <img 
+              src="{{ product.featured_image | img_url: '200x' }}" 
+              alt="{{ product.title }}"
+              width="200"
+              height="200"
+            >
+            <h3>{{ product.title }}</h3>
+            <p class="upsell-price">{{ product.price | money }}</p>
+            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Cart Footer -->
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>{{ 'cart.general.subtotal' | t }}:</span>
+      <span>{{ cart.total_price | money }}</span>
+    </div>
+    <button type="submit" class="checkout-btn">{{ 'cart.general.proceed_to_checkout' | t }}</button>
+  </div>
+</form> 

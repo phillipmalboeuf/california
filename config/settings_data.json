@@ -38,6 +38,12 @@
           "colors_background": "#F94604"
         }
       },
+      "light-1": {
+        "settings": {
+          "colors_secondary": "#000",
+          "colors_background": "#BFE9D2"
+        }
+      },
     },
     "sections": {
       "announcement-bar": {

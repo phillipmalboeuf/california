@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "settings": {
+        "free_shipping_threshold": 7500,
+        "show_upsell_products": true,
+        "upsell_collection": "upsell-products",
+        "upsell_products_limit": 4,
+        "show_shipping_calculator": true,
+        "show_note": true,
+        "cart_message": "Free shipping on orders over $75!"
+      }
+    }
+  },
+  "order": [
+    "cart"
+  ]
+} 
