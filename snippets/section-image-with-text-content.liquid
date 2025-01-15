@@ -1,0 +1,25 @@
+<div class="image-with-text {% if block.settings.image_first %}image-with-text--reverse{% endif %}" {{ block_shopify_attributes }}>
+  <div class="image-with-text__media">
+    {%- if block.settings.image != blank -%}
+      {{ block.settings.image | image_url: width: 1500 | image_tag:
+        loading: 'lazy',
+        width: block.settings.image.width,
+        height: block.settings.image.height,
+        class: "image-with-text__image"
+      }}
+    {%- endif -%}
+  </div>
+  <div class="image-with-text__content">
+    {%- if block.settings.heading != blank -%}
+      <h2 class="image-with-text__heading h2">{{ block.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if block.settings.text != blank -%}
+      <div class="image-with-text__text">{{ block.settings.text }}</div>
+    {%- endif -%}
+    {%- if block.settings.button_label != blank -%}
+      <a href="{{ block.settings.button_link }}" class="button{% if block.settings.button_style == 'secondary' %} button--secondary{% endif %}">
+        {{ block.settings.button_label | escape }}
+      </a>
+    {%- endif -%}
+  </div>
+</div> 

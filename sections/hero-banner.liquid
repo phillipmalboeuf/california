@@ -10,7 +10,7 @@
     }}
   {%- endif -%}
   
-  <div class="hero-banner__content page-width">
+  <div class="hero-banner__content flex flex--middle flex--column page-width">
     {%- for block in section.blocks -%}
       {% case block.type %}
         {% when 'heading' %}

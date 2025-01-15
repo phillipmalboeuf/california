@@ -1,0 +1,135 @@
+{{ 'section-article.css' | asset_url | stylesheet_tag }}
+
+<article class="article-template page-width">
+  <header class="article-template__header">
+    <h1 class="article-template__title">{{ article.title | escape }}</h1>
+
+    {%- if section.settings.show_date or section.settings.show_author -%}
+      <div class="article-template__meta">
+        {%- if section.settings.show_date -%}
+          <span class="article-template__date">
+            {{ article.published_at | time_tag: format: 'date' }}
+          </span>
+        {%- endif -%}
+
+        <span class="article-template__blog">
+          <a href="{{ blog.url }}" class="article-template__blog-link">{{ blog.title }}</a>
+        </span>
+
+        {%- if section.settings.show_author -%}
+          <span class="article-template__author">{{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </header>
+
+  {%- if article.image and section.settings.show_featured_image -%}
+    <div class="article-template__hero-container">
+      {{ article.image | image_url: width: 1100 | image_tag:
+        loading: 'lazy',
+        class: 'article-template__hero'
+      }}
+    </div>
+  {%- endif -%}
+
+  <div class="article-template__content rte">
+    {{ article.content }}
+  </div>
+
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comments">
+      <h2>{{ 'blogs.article.comments' | t }} ({{ article.comments_count }})</h2>
+
+      {%- for comment in article.comments -%}
+        <div class="article-template__comment">
+          <div class="article-template__comment-meta">
+            {{ comment.author }} on {{ comment.created_at | time_tag: format: 'date' }}
+          </div>
+          <div class="article-template__comment-content rte">
+            {{ comment.content }}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      {%- form 'new_comment', article -%}
+        <h3>{{ 'blogs.article.comment_form_title' | t }}</h3>
+
+        {%- if form.errors -%}
+          <div class="form-status form-status-error">
+            <h4>{{ 'blogs.article.comment_form_error' | t }}</h4>
+          </div>
+        {%- endif -%}
+
+        <div class="field">
+          <input
+            type="text"
+            name="comment[author]"
+            id="CommentAuthor"
+            class="field__input"
+            autocomplete="name"
+            value="{{ form.author }}"
+            aria-required="true"
+            required
+            placeholder="{{ 'blogs.article.name' | t }}"
+          >
+          <label class="field__label" for="CommentAuthor">{{ 'blogs.article.name' | t }} *</label>
+        </div>
+
+        <div class="field">
+          <input
+            type="email"
+            name="comment[email]"
+            id="CommentEmail"
+            class="field__input"
+            autocomplete="email"
+            value="{{ form.email }}"
+            aria-required="true"
+            required
+            placeholder="{{ 'blogs.article.email' | t }}"
+          >
+          <label class="field__label" for="CommentEmail">{{ 'blogs.article.email' | t }} *</label>
+        </div>
+
+        <div class="field">
+          <textarea
+            name="comment[body]"
+            id="CommentBody"
+            class="field__input"
+            aria-required="true"
+            required
+            placeholder="{{ 'blogs.article.message' | t }}"
+          >{{ form.body }}</textarea>
+          <label class="field__label" for="CommentBody">{{ 'blogs.article.message' | t }} *</label>
+        </div>
+
+        <button type="submit" class="button">{{ 'blogs.article.post' | t }}</button>
+      {%- endform -%}
+    </div>
+  {%- endif -%}
+</article>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "default": true,
+      "label": "Show featured image"
+    }
+  ]
+}
+{% endschema %} 

@@ -1,0 +1,278 @@
+{{ 'section-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="padded page-width">
+  {%- for block in section.blocks -%}
+    {% case block.type %}
+      {% when 'hero_banner' %}
+        {% render 'section-hero-banner-content',
+          block: block,
+          block_shopify_attributes: block.shopify_attributes
+        %}
+
+      {% when 'image_with_text' %}
+        {% render 'section-image-with-text-content',
+          block: block,
+          block_shopify_attributes: block.shopify_attributes
+        %}
+    {% endcase %}
+  {%- endfor -%}
+
+  <header class="blog-header padded">
+    <h1 class="blog-title h3">{{ blog.title | escape }}</h1>
+    
+    {%- if blog.tags.size > 0 -%}
+      <div class="blog-filters">
+        <details class="blog-filters__dropdown">
+          <summary>{{ 'blogs.article.filter_by' | t }}</summary>
+          <ul class="blog-filters__list">
+            {%- for tag in blog.all_tags -%}
+              <li>
+                <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="blog-filters__link{% if current_tags contains tag %} blog-filters__link--active{% endif %}">
+                  {{ tag }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </details>
+      </div>
+    {%- endif -%}
+  </header>
+
+  {%- paginate blog.articles by section.settings.posts_per_page -%}
+    <div class="blog-articles">
+      {%- for article in blog.articles -%}
+        <article class="blog-articles__article">
+          <div class="article-card">
+            {%- if article.image and section.settings.show_image -%}
+              <div class="article-card__image-wrapper">
+                <a href="{{ article.url }}" class="article-card__link">
+                  {{ article.image | image_url: width: 533 | image_tag:
+                    loading: 'lazy',
+                    class: 'article-card__image'
+                  }}
+                </a>
+              </div>
+            {%- endif -%}
+
+            <div class="article-card__content">
+              <header class="article-card__header">
+                <h2 class="article-card__title">
+                  <a href="{{ article.url }}">{{ article.title | escape }}</a>
+                </h2>
+
+                {%- if section.settings.show_date or section.settings.show_author -%}
+                  <div class="article-card__meta">
+                    {%- if section.settings.show_date -%}
+                      <span class="article-card__date">{{ article.published_at | time_tag: format: 'date' }}</span>
+                    {%- endif -%}
+
+                    {%- if section.settings.show_author -%}
+                      <span class="article-card__author">{{ article.author }}</span>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </header>
+
+              {%- if article.excerpt.size > 0 -%}
+                <div class="article-card__excerpt rte">
+                  {{ article.excerpt | strip_html | truncatewords: 30 }}
+                </div>
+              {%- endif -%}
+
+              <div class="article-card__footer">
+                <a href="{{ article.url }}" class="button button--secondary">{{ 'blogs.article.read_more' | t }}</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <nav class="pagination" role="navigation">
+        {%- if paginate.previous -%}
+          <a href="{{ paginate.previous.url }}" class="pagination__nav pagination__nav--prev">
+            {% render 'icon' with 'chevron-left' %}
+            {{ 'general.pagination.previous' | t }}
+          </a>
+        {%- endif -%}
+
+        <span class="pagination__current">
+          {{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}
+        </span>
+
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}" class="pagination__nav pagination__nav--next">
+            {{ 'general.pagination.next' | t }}
+            {% render 'icon' with 'chevron-right' %}
+          </a>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "settings": [
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 9,
+      "label": "Posts per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "Show featured image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "Show author"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero_banner",
+      "name": "Hero banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_overlay",
+          "label": "Show overlay",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Blog"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    },
+    {
+      "type": "image_with_text",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_first",
+          "label": "Show image first",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 

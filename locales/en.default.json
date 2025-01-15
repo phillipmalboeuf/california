@@ -6,6 +6,11 @@
       "next": "Next",
       "previous": "Previous",
       "new_window": "Opens in a new window"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "current_page": "Page {{ current }} of {{ total }}"
     }
   },
   "sections": {
@@ -93,5 +98,18 @@
     "log_in": "Log in",
     "log_out": "Log out",
     "register": "Create account"
+  },
+  "blogs": {
+    "article": {
+      "filter_by": "Filter by tag",
+      "read_more": "Read more",
+      "comments": "Comments",
+      "comment_form_title": "Leave a comment",
+      "comment_form_error": "There was a problem with your comment. Please correct the errors and try again.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment"
+    }
   }
 } 

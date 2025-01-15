@@ -1,0 +1,137 @@
+.article-template {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.article-template__header {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.article-template__title {
+  margin: 0 0 1rem;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.article-template__meta {
+  font-size: 0.9rem;
+  color: var(--color-text-subtle);
+}
+
+.article-template__date {
+  margin-right: 1rem;
+}
+
+.article-template__blog {
+  margin-right: 1rem;
+}
+
+.article-template__blog-link {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.article-template__blog-link:hover {
+  opacity: 0.8;
+}
+
+.article-template__hero-container {
+  margin: 0 -1.5rem 2.5rem;
+}
+
+.article-template__hero {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article-template__content {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.article-template__content p {
+  margin-bottom: 1.5rem;
+}
+
+.article-template__content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+.article-template__comments {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+.article-template__comment {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-template__comment:last-child {
+  border-bottom: none;
+}
+
+.article-template__comment-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-subtle);
+  margin-bottom: 0.5rem;
+}
+
+.article-template__comment-content {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.field__input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+textarea.field__input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-status-error {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--color-error-background);
+  color: var(--color-error);
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 750px) {
+  .article-template {
+    padding: 0 2rem;
+  }
+
+  .article-template__hero-container {
+    margin: 0 -2rem 3rem;
+  }
+
+  .article-template__title {
+    font-size: 3rem;
+  }
+} 
