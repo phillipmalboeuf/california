@@ -22,8 +22,9 @@ class CartManager {
         const newQty = action === 'increase' ? 
           parseInt(input.value) + 1 : 
           Math.max(1, parseInt(input.value) - 1);
+        input.value = newQty
         
-        this.updateItemQuantity(e.target.closest('.cart-item').dataset.productId, newQty);
+        this.updateItemQuantity(e.target.closest('.cart-item').dataset.itemId, newQty);
       });
     });
 
@@ -42,7 +43,7 @@ class CartManager {
     });
   }
 
-  async updateItemQuantity(productId, quantity) {
+  async updateItemQuantity(itemId, quantity) {
     try {
       const response = await fetch('/cart/change.js', {
         method: 'POST',
@@ -50,7 +51,7 @@ class CartManager {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          id: productId,
+          id: itemId,
           quantity: quantity
         })
       });
@@ -108,24 +109,28 @@ class CartManager {
     try {
       const response = await fetch('/cart.js');
       const cart = await response.json();
-      
+
       // Update progress bar
       const threshold = 7500; // $75.00
       const progress = Math.min((cart.total_price / threshold) * 100, 100);
-      document.querySelector('.progress-fill').style.width = `${progress}%`;
+      document.querySelectorAll('.progress-fill').forEach(el => {
+        el.style.width = `${progress}%`;
+      });
       
       // Update progress text
       const remaining = threshold - cart.total_price;
-      const progressText = document.querySelector('.progress-text');
-      if (remaining > 0) {
-        progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
-      } else {
-        progressText.textContent = '🎉 You\'ve got FREE shipping!';
-      }
+      document.querySelectorAll('.progress-text').forEach(progressText => {
+        if (remaining > 0) {
+          progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
+        } else {
+          progressText.textContent = '🎉 You\'ve got FREE shipping!';
+        }
+      });
       
       // Update subtotal
-      document.querySelector('.cart-subtotal span:last-child').textContent = 
-        formatMoney(cart.total_price);
+      document.querySelectorAll('.cart-subtotal span:last-child').forEach(el => {
+        el.textContent = formatMoney(cart.total_price);
+      });
     } catch (error) {
       console.error('Error updating cart UI:', error);
     }

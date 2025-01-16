@@ -35,7 +35,7 @@
   <!-- Cart Items -->
   <div class="cart-items">
     {% for item in cart.items %}
-      <div class="cart-item" data-product-id="{{ item.product.id }}">
+      <div class="cart-item" data-item-id="{{ item.id }}">
         <img 
           src="{{ item.image | img_url: '120x' }}" 
           alt="{{ item.title }}"
@@ -47,12 +47,12 @@
           <p class="item-price">{{ item.price | money }}</p>
           
           <div class="quantity-selector">
-            <button class="quantity-btn" data-action="decrease">-</button>
+            <button class="quantity-btn" type="button" data-action="decrease">-</button>
             <input type="number" value="{{ item.quantity }}" min="1" data-quantity-input>
-            <button class="quantity-btn" data-action="increase">+</button>
+            <button class="quantity-btn" type="button" data-action="increase">+</button>
           </div>
           
-          <button class="remove-item" data-remove="{{ item.key }}">Remove</button>
+          <button class="remove-item" type="button" data-remove="{{ item.key }}">Remove</button>
         </div>
       </div>
     {% endfor %}
@@ -74,7 +74,7 @@
             >
             <h3>{{ product.title }}</h3>
             <p class="upsell-price">{{ product.price | money }}</p>
-            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
+            <button class="add-to-cart-btn" type="button" data-product-id="{{ product.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
           </div>
         {% endfor %}
       </div>
