@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main-page": {
+      "name": "Page content"
+    },
+    "contact-form": {
+      "name": "Contact form",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "show_phone": {
+          "label": "Show phone number field"
+        }
+      },
+      "presets": {
+        "name": "Contact form"
+      }
+    },
+    "all": {
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
+    }
+  }
+} 

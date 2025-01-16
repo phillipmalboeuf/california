@@ -34,6 +34,30 @@
     "footer": {
       "copyright": "All rights reserved.",
       "social_platform": "{{ name }} on {{ platform }}"
+    },
+    "main-page": {
+      "name": "Page content"
+    },
+    "contact-form": {
+      "name": "Contact form",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "show_phone": {
+          "label": "Show phone number field"
+        }
+      },
+      "presets": {
+        "name": "Contact form"
+      }
+    },
+    "all": {
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
     }
   },
   "products": {
@@ -110,6 +134,22 @@
       "email": "Email",
       "message": "Message",
       "post": "Post comment"
+    }
+  },
+  "accessibility": {
+    "error": "Error"
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "post_success": "Thanks for contacting us! We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Message",
+        "send": "Send message"
+      }
     }
   }
 } 
