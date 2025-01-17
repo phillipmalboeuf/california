@@ -110,6 +110,9 @@
       "apply": "Apply",
       "clear": "Clear",
       "clear_all": "Clear all"
+    },
+    "general": {
+      "no_matches": "No products found"
     }
   },
   "customer": {

@@ -16,14 +16,14 @@
       {%- for product in collection.products limit: section.settings.products_to_show -%}
         <li class="product-grid__item">
           <div class="product-card">
-            <div class="product-card__image">
+            <div class="product-card__media">
               <a href="{{ product.url }}">
                 {%- if product.featured_media -%}
                   {{ product.featured_media | image_url: width: 533 | image_tag:
                     loading: 'lazy',
                     width: 533,
                     height: 533,
-                    class: "product-card__primary-image"
+                    class: "product-card__image"
                   }}
                   
                   {%- if product.media[1] != blank and section.settings.show_secondary_image -%}
@@ -31,7 +31,7 @@
                       loading: 'lazy',
                       width: 533,
                       height: 533,
-                      class: "product-card__secondary-image"
+                      class: "product-card__image--secondary"
                     }}
                   {%- endif -%}
                 {%- else -%}

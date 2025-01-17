@@ -1,0 +1,37 @@
+{% comment %}
+  Renders a pagination component
+  Accepts:
+  - paginate: {Object} Paginate Liquid object
+{% endcomment %}
+
+<div class="pagination">
+  <nav role="navigation" class="pagination__nav">
+    {%- if paginate.previous -%}
+      <a href="{{ paginate.previous.url }}" class="pagination__button pagination__button--prev">
+        {% render 'icon', type: 'chevron-left' %}
+        <span class="visually-hidden">{{ 'general.pagination.previous' | t }}</span>
+      </a>
+    {%- endif -%}
+
+    <ul class="pagination__list">
+      {%- for part in paginate.parts -%}
+        <li class="pagination__item">
+          {%- if part.is_link -%}
+            <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+          {%- elsif part.title == paginate.current_page -%}
+            <span class="pagination__link pagination__link--current">{{ part.title }}</span>
+          {%- else -%}
+            <span class="pagination__link">{{ part.title }}</span>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.next -%}
+      <a href="{{ paginate.next.url }}" class="pagination__button pagination__button--next">
+        {% render 'icon', type: 'chevron-right' %}
+        <span class="visually-hidden">{{ 'general.pagination.next' | t }}</span>
+      </a>
+    {%- endif -%}
+  </nav>
+</div> 

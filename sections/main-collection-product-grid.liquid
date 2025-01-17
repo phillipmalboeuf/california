@@ -7,9 +7,23 @@
     {%- endif -%}
 
     <div class="collection__toolbar">
-      <div class="collection__product-count">
+      {%- if section.settings.menu != blank -%}
+        <nav class="collection__nav">
+          <ul class="list--nostyle">
+            {%- for link in linklists[section.settings.menu].links -%}
+              <li>
+                <a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+
+      {% comment %} <div class="collection__product-count">
         <p>{{ 'sections.collection.product_count' | t: count: collection.products_count }}</p>
-      </div>
+      </div> {% endcomment %}
 
       {%- if section.settings.enable_sorting and collection.products_count > 0 -%}
         <div class="collection__sort">
@@ -40,7 +54,7 @@
                 </summary>
 
                 <div class="facets__display">
-                  <ul class="facets__list">
+                  <ul class="facets__list list--nostyle">
                     {%- for value in filter.values -%}
                       <li class="facets__item">
                         <label class="facet-checkbox">
@@ -91,7 +105,7 @@
         <p>{{ 'collections.general.no_matches' | t }}</p>
       </div>
     {%- else -%}
-      <ul class="product-grid grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
+      <ul class="product-grid list--nostyle grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
         {%- for product in collection.products -%}
           <li class="product-grid__item">
             {% render 'product-card',
@@ -115,6 +129,12 @@
 {
   "name": "Product Grid",
   "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Collections menu",
+      "default": "collections"
+    },
     {
       "type": "checkbox",
       "id": "show_description",

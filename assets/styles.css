@@ -14,22 +14,14 @@
   /* Typography */
   /* --font-heading: var(--font-heading-family);
   --font-body: var(--font-body-family); */
-  --font-size-base: 16px;
+  /* --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;
-  --font-size-xl: 24px;
-  
-  /* Spacing */
-  --space-unit: 4px;
-  --space-1: calc(var(--space-unit) * 1);  /* 4px */
-  --space-2: calc(var(--space-unit) * 2);  /* 8px */
-  --space-3: calc(var(--space-unit) * 4);  /* 16px */
-  --space-4: calc(var(--space-unit) * 6);  /* 24px */
-  --space-5: calc(var(--space-unit) * 8);  /* 32px */
+  --font-size-xl: 24px; */
   
   /* Layout */
   --page-width: 1200px;
-  --grid-gap: var(--space-3);
+  --grid-gap: var(--step-1);
   --border-radius: 4px;
 }
 
@@ -42,8 +34,8 @@
 
 body {
   font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
+  font-size: var(--step-0);
+  line-height: 1.2;
   color: var(--color-text);
   background-color: var(--color-background);
 }
@@ -52,23 +44,10 @@ main {
   min-height: 100lvh;
 }
 
-/* Typography */
-/* h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
-  margin-bottom: var(--space-3);
-}
-
-h1 { font-size: 2.25rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; } */
-
 /* Layout Helpers */
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  /* padding: 0 var(--space-3); */
 }
 
 .visually-hidden {
@@ -98,18 +77,6 @@ h4 { font-size: 1.25rem; } */
 /* Buttons */
 button,
 .button {
-  /* display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid transparent;
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-base);
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease; */
   color: var(--colors-body-inverse);
   border-color: transparent;
   background-color: var(--colors-accent);
@@ -137,18 +104,17 @@ button,
 
 /* Forms */
 .field {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--step-2);
 }
 
 .field__label {
   display: block;
-  margin-bottom: var(--space-1);
-  font-size: var(--font-size-sm);
+  margin-bottom: var(--step-1);
 }
 
 .field__input {
   width: 100%;
-  padding: var(--space-2);
+  padding: var(--step-1);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   font-size: var(--font-size-base);
@@ -175,59 +141,31 @@ button,
 
 /* Collection Filters */
 .collection__filters {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--step-1);
 }
 
 .facets {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: var(--step-1);
 }
 
 .facets__details {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  padding: var(--space-2);
-}
-
-/* Product Cards */
-.product-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card__image {
-  position: relative;
-  padding-bottom: 100%;
-  margin-bottom: var(--space-2);
-}
-
-.product-card__image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+  padding: var(--step-2);
 }
 
 /* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
+  gap: var(--step-2);
+  margin-top: var(--step-4);
 }
 
 .pagination__item {
-  padding: var(--space-2);
+  padding: var(--step-2);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   text-decoration: none;
