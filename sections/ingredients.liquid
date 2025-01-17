@@ -1,0 +1,215 @@
+{%- assign letters = '' -%}
+{%- assign sorted_blocks = section.blocks | sort: 'settings.title' -%}
+{%- for block in sorted_blocks -%}
+  {%- assign first_letter = block.settings.title | slice: 0 | upcase -%}
+  {%- unless letters contains first_letter -%}
+    {%- assign letters = letters | append: first_letter -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- assign sorted_letters = letters | split: '' | sort -%}
+
+<div class="page-width">
+  <nav class="ingredients-nav" role="navigation" aria-label="Ingredients navigation">
+    <ul class="ingredients-nav__list">
+      {%- for letter in sorted_letters -%}
+        <li class="ingredients-nav__item">
+          <a href="#letter-{{ letter }}" class="ingredients-nav__link">{{ letter }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+
+  {%- assign current_letter = '' -%}
+  <div class="ingredients-grid" style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};">
+    {% for block in sorted_blocks %}
+      {% if block.type == 'ingredient' %}
+        {%- assign first_letter = block.settings.title | slice: 0 | upcase -%}
+        {%- if current_letter != first_letter -%}
+          {%- assign current_letter = first_letter -%}
+        {%- endif -%}
+        <div id="letter-{{ current_letter }}" class="ingredient-block" {{ block.shopify_attributes }}>
+          {% if block.settings.background_image %}
+            <div class="ingredient-background" style="background-image: url({{ block.settings.background_image | image_url: width: 1500 }});">
+          {% endif %}
+            <div class="ingredient-content">
+              <h3>{{ block.settings.title }}</h3>
+              <div class="rte">{{ block.settings.description }}</div>
+            </div>
+          {% if block.settings.background_image %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .ingredients-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .ingredients-nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .ingredients-nav__item {
+    margin: 0;
+  }
+
+  .ingredients-nav__link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .ingredients-nav__link:hover {
+    background-color: #f5f5f5;
+  }
+
+  .ingredients-letter-heading {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid currentColor;
+    scroll-margin-top: 5rem;
+  }
+
+  .ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns-desktop), 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .ingredient-block {
+    position: relative;
+    min-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .ingredient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .ingredient-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .ingredient-content h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .ingredient-content .rte {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ingredients-grid {
+      grid-template-columns: repeat(var(--columns-mobile), 1fr);
+    }
+
+    .ingredients-nav__list {
+      gap: 0.25rem;
+    }
+
+    .ingredients-nav__link {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Share information about this ingredient.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

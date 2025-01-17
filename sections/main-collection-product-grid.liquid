@@ -1,7 +1,7 @@
 {%- paginate collection.products by section.settings.products_per_page -%}
   <div class="collection page-width" id="MainCollectionGrid">
     {%- if collection.description != blank and section.settings.show_description -%}
-      <div class="collection__description rte">
+      <div class="collection__description padded rte">
         {{ collection.description }}
       </div>
     {%- endif -%}
@@ -34,7 +34,7 @@
                 value="{{ option.value }}" 
                 {% if option.value == collection.sort_by %}selected="selected"{% endif %}
               >
-                {{ option.label | escape }}
+                {{ option.name | escape }}
               </option>
             {%- endfor -%}
           </select>

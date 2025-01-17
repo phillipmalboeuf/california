@@ -59,7 +59,7 @@
     </div>
 
     <div class="header__right flex flex--gapped flex--end">
-      {%- if section.settings.show_search -%}
+      {% comment %} {%- if section.settings.show_search -%}
         <button type="button" class="header__icon-button" aria-expanded="false" data-search-toggle>
           <span>{{- 'sections.header.search' | t -}}</span>
         </button>
@@ -67,7 +67,7 @@
 
       <a href="{{- routes.account_url -}}" class="button header__icon-button">
         <span>{{- 'sections.header.account' | t -}}</span>
-      </a>
+      </a> {% endcomment %}
 
       <a href="{{- routes.cart_url -}}" class="button header__icon-button header__cart" data-cart-toggle>
         <span>{{- 'sections.header.cart' | t -}}</span>

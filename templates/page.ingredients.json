@@ -1,0 +1,181 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "ingredients": {
+      "type": "ingredients",
+      "settings": {
+        "columns_desktop": 4,
+        "columns_mobile": 2
+      },
+      "blocks": {
+        "allantoin": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Allantoin",
+            "description": "<p>A gentle, soothing compound that promotes cell regeneration and helps heal dry, irritated skin.</p>"
+          }
+        },
+        "aloe_vera": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Aloe Vera",
+            "description": "<p>A soothing succulent known for its healing and moisturizing properties. Rich in vitamins and antioxidants.</p>"
+          }
+        },
+        "argan_oil": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Argan Oil",
+            "description": "<p>Rich in vitamin E and fatty acids, this oil nourishes and protects skin while fighting aging.</p>"
+          }
+        },
+        "calendula": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Calendula Extract",
+            "description": "<p>A gentle botanical extract with anti-inflammatory properties that helps calm and heal the skin.</p>"
+          }
+        },
+        "centella": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Centella Asiatica",
+            "description": "<p>An herb known for its healing properties, helping to calm inflammation and support collagen production.</p>"
+          }
+        },
+        "ceramides": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Ceramides",
+            "description": "<p>Lipids that help form the skin's barrier and protect against moisture loss and environmental damage.</p>"
+          }
+        },
+        "chamomile": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Chamomile Extract",
+            "description": "<p>A gentle, calming ingredient that reduces redness and soothes sensitive or irritated skin.</p>"
+          }
+        },
+        "glycerin": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Glycerin",
+            "description": "<p>A natural humectant that attracts moisture to the skin, keeping it hydrated and supple.</p>"
+          }
+        },
+        "green_tea": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Green Tea Extract",
+            "description": "<p>Packed with antioxidants and anti-inflammatory properties to protect and soothe the skin.</p>"
+          }
+        },
+        "hyaluronic": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Hyaluronic Acid",
+            "description": "<p>A powerful humectant that can hold up to 1000x its weight in water, providing deep hydration to the skin.</p>"
+          }
+        },
+        "jojoba": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Jojoba Oil",
+            "description": "<p>A lightweight oil that closely mimics skin's natural oils. Perfect for balancing and nourishing all skin types.</p>"
+          }
+        },
+        "licorice": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Licorice Root Extract",
+            "description": "<p>A natural ingredient that helps brighten skin and reduce the appearance of dark spots.</p>"
+          }
+        },
+        "niacinamide": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Niacinamide",
+            "description": "<p>A form of vitamin B3 that helps minimize pores, regulate oil production, and even skin tone.</p>"
+          }
+        },
+        "panthenol": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Panthenol",
+            "description": "<p>A form of vitamin B5 that helps improve skin barrier function and promote wound healing.</p>"
+          }
+        },
+        "peptides": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Peptides",
+            "description": "<p>Small proteins that signal skin cells to produce collagen, helping improve firmness and reduce wrinkles.</p>"
+          }
+        },
+        "rosehip": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Rosehip Oil",
+            "description": "<p>Rich in vitamin A and essential fatty acids, helping to reduce scars and promote skin regeneration.</p>"
+          }
+        },
+        "shea": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Shea Butter",
+            "description": "<p>Rich in vitamins A and E, this natural butter deeply moisturizes and helps improve skin elasticity.</p>"
+          }
+        },
+        "squalane": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Squalane",
+            "description": "<p>A lightweight oil that mimics your skin's natural oils, providing moisture without clogging pores.</p>"
+          }
+        },
+        "vitamin_c": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Vitamin C",
+            "description": "<p>A potent antioxidant that brightens skin, boosts collagen production, and fights free radical damage.</p>"
+          }
+        },
+        "zinc": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Zinc Oxide",
+            "description": "<p>A mineral that provides broad-spectrum UV protection while being gentle on sensitive skin.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "allantoin",
+        "aloe_vera",
+        "argan_oil",
+        "calendula",
+        "centella",
+        "ceramides",
+        "chamomile",
+        "glycerin",
+        "green_tea",
+        "hyaluronic",
+        "jojoba",
+        "licorice",
+        "niacinamide",
+        "panthenol",
+        "peptides",
+        "rosehip",
+        "shea",
+        "squalane",
+        "vitamin_c",
+        "zinc"
+      ]
+    }
+  },
+  "order": ["main", "ingredients"]
+} 
