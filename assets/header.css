@@ -38,6 +38,11 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
     flex: 1;
   }
 
+#cart-dialog::backdrop {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 #cart-dialog .cart-dialog__overlay {
   position: fixed;
   inset: 0;
@@ -45,8 +50,33 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
 }
 
 #cart-dialog .cart-dialog__content {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow-y: auto;
+  max-width: 375px;
+  width: 100%;
+  /* background: var(--colors-background); */
   z-index: 2;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  transition-behavior: allow-discrete;
+}
+
+#cart-dialog.open .cart-dialog__content {
+  transform: translateX(0);
+}
+
+#cart-dialog .cart-dialog__content .cart-container {
+  min-height: 100lvh;
+}
+
+.cart-dialog-close {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #cart-dialog::backdrop {

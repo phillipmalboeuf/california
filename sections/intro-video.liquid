@@ -1,0 +1,66 @@
+{% style %}
+.intro-video {
+  position: fixed;
+  z-index: 30;
+  bottom: var(--step-1);
+  right: var(--step-1);
+}
+
+.intro-video__title {
+  margin-bottom: var(--step-1);
+  text-align: center;
+}
+
+.intro-video__wrapper video,
+.intro-video__wrapper iframe {
+  width: auto;
+  height: 200px;
+  margin: 0 auto;
+}
+{% endstyle %}
+
+{% if section.settings.video_url != blank %}
+<div class="intro-video">
+  {% if section.settings.title != blank %}
+    <h5 class="intro-video__title">{{ section.settings.title }}</h5>
+  {% endif %}
+
+  <div class="intro-video__wrapper">
+    {% if section.settings.video_url contains 'cdn.shopify.com' %}
+      <video autoplay muted loop controls="false">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% else %}
+      <iframe 
+        src="{{ section.settings.video_url }}" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Intro Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Paste your video URL here (YouTube, Vimeo, or direct video link)"
+    }
+  ],
+  "presets": [
+  ]
+}
+{% endschema %}

@@ -145,8 +145,10 @@ class CartManager {
 
   toggleCart() {
     if (this.cartDialog.open) {
+      this.cartDialog.classList.remove('open')
       this.cartDialog.close();
     } else {
+      setTimeout(()=> this.cartDialog.classList.add('open'), 10)
       this.cartDialog.showModal();
     }
   }
