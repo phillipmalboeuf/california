@@ -7,6 +7,23 @@
     border-top: 1px solid;
   }
 
+  .footer__menu {
+    margin-top: var(--step-2);
+    gap: var(--step-4);
+  }
+
+  .footer__menu-item {
+    width: auto;
+  }
+
+  .footer__newsletter-form {
+    min-width: 50vw;
+  }
+
+  .footer__title {
+    color: var(--colors-body-inverse);
+  }
+
   /* .header__logo {
     font-size: var(--font-size-lg);
     margin: 0;

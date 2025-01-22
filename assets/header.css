@@ -2,6 +2,8 @@
   background-color: var(--colors-accent);
   color: var(--colors-text-inverse);
   transition: background-color 0.666s;
+
+  font-size: var(--step-1);
 }
 
 .header[data-sticky="true"],
@@ -20,7 +22,6 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
 }
 
   .header__logo {
-    font-size: var(--font-size-lg);
     margin: 0;
   }
 
@@ -37,6 +38,21 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
   .header__wrapper .header__right {
     flex: 1;
   }
+
+.header__menu-link--active {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: currentColor;
+
+  text-decoration-thickness: 5%;
+  text-underline-offset: 0.1em;
+  text-underline-position: from-font;
+}
+
+.header__cart {
+  font-size: var(--step-1);
+}
 
 #cart-dialog::backdrop {
   -webkit-backdrop-filter: none;

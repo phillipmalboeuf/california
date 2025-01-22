@@ -1,0 +1,19 @@
+.image-with-text {
+  position: relative;
+  /* margin: 0 auto; */
+}
+
+.image-with-text__curves {
+  position: absolute;
+  bottom: calc(100% - 40px);
+  left: -1px;
+  right: 0;
+  width: calc(100% + 2px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-with-text__subheading {
+  color: var(--colors-body-inverse);
+}

@@ -4,26 +4,50 @@
   z-index: 30;
   bottom: var(--step-1);
   right: var(--step-1);
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-video__title {
-  margin-bottom: var(--step-1);
+  margin-bottom: var(--step-0);
   text-align: center;
+  padding: var(--step--2);
+  background: var(--colors-background);
+  border-radius: var(--step--1);
+}
+
+.intro-video__close {
+  cursor: pointer;
+  position: absolute;
+  top: var(--step-3);
+  right: var(--step--2);
+}
+
+.intro-video__wrapper {
 }
 
 .intro-video__wrapper video,
 .intro-video__wrapper iframe {
   width: auto;
+  max-width: 200px;
   height: 200px;
   margin: 0 auto;
+  background: var(--colors-background);
+  padding: var(--step--2);
+  border-radius: var(--step--1);
 }
 {% endstyle %}
 
 {% if section.settings.video_url != blank %}
-<div class="intro-video">
+<details class="intro-video color-inverse-1" id="intro-video-details">
   {% if section.settings.title != blank %}
-    <h5 class="intro-video__title">{{ section.settings.title }}</h5>
+    <h6 class="h--alt intro-video__title">{{ section.settings.title }}</h6>
   {% endif %}
+
+  <summary class="intro-video__close" onclick="closeIntroVideo()"><svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.552734" width="22" height="22" rx="11" fill="#2F3137"/><path d="M16.4606 15.6877C16.2803 15.868 15.9498 15.868 15.7695 15.6877L11.8032 11.6913L7.80679 15.6877C7.6265 15.868 7.29597 15.868 7.11569 15.6877C6.9354 15.5074 6.9354 15.1769 7.11569 14.9966L11.1121 11.0002L11.1121 11.0002L7.11569 7.03384C6.9354 6.85356 6.9354 6.52302 7.11569 6.34274C7.29597 6.16245 7.6265 6.16245 7.80679 6.34274L11.8032 10.3391L15.7695 6.34274C15.9498 6.16245 16.2803 6.16245 16.4606 6.34274C16.641 6.52302 16.641 6.85356 16.4606 7.03384L12.4642 11.0002L16.4606 14.9966C16.641 15.1769 16.641 15.5074 16.4606 15.6877Z" fill="white"/>
+</svg></summary>
 
   <div class="intro-video__wrapper">
     {% if section.settings.video_url contains 'cdn.shopify.com' %}
@@ -40,7 +64,22 @@
       </iframe>
     {% endif %}
   </div>
-</div>
+</details>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const details = document.getElementById('intro-video-details');
+    if (details && sessionStorage.getItem('introVideoSeen') !== 'true') {
+      details.open = true;
+    } else {
+      details.open = false;
+    }
+  });
+
+  function closeIntroVideo() {
+    sessionStorage.setItem('introVideoSeen', 'true');
+  }
+</script>
 {% endif %}
 
 {% schema %}

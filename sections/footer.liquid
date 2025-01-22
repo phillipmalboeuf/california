@@ -1,5 +1,5 @@
 <footer class="footer color-{{ section.settings.color_scheme }}">
-  <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded page-width">
+  <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded padded--thick page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'logo' -%}
@@ -16,21 +16,23 @@
           </div>
 
         {%- when 'link_list' -%}
-          <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
+          <div class="footer__block footer__block--menu flex flex--gapped flex--spaced" {{ block.shopify_attributes }}>
             {%- if block.settings.menu != blank -%}
-              <h4 class="footer__title text-center">{{ block.settings.title | escape }}</h4>
+              {%- if block.settings.title != blank -%}
+                <h4 class="footer__title text-center">{{ block.settings.title | escape }}</h4>
+              {%- endif -%}
               <ul class="footer__menu flex flex--gapped flex--center list--nostyle">
                 {%- for link in block.settings.menu.links -%}
-                  <li class="footer__menu-item">
+                  <li class="footer__menu-item flex flex--column flex--gapped">
                     <a href="{{ link.url }}" class="footer__link">
                       {%- if link.links != blank -%}
-                        <strong>{{ link.title }}</strong>
+                        <strong class="h6 h--alt">{{ link.title }}</strong>
                       {%- else -%}
                         {{ link.title }}
                       {%- endif -%}
                     </a>
                     {%- if link.links != blank -%}
-                      <ul class="footer__submenu list--nostyle">
+                      <ul class="footer__submenu flex flex--column flex--gapped list--nostyle">
                         {%- for sublink in link.links -%}
                           <li class="footer__submenu-item">
                             <a href="{{ sublink.url }}" class="footer__link">{{ sublink.title }}</a>
@@ -47,7 +49,7 @@
         {%- when 'text' -%}
           <div class="footer__block footer__block--text" {{ block.shopify_attributes }}>
             {%- if block.settings.title != blank -%}
-              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+              <h5 class="h--alt footer__title">{{ block.settings.title | escape }}</h5>
             {%- endif -%}
             {%- if block.settings.text != blank -%}
               <div class="footer__text rte">{{ block.settings.text }}</div>
@@ -55,21 +57,21 @@
           </div>
 
         {%- when 'newsletter' -%}
-          <div class="footer__block footer__block--newsletter" {{ block.shopify_attributes }}>
+          <div class="footer__block flex flex--column flex--middle flex--gapped footer__block--newsletter" {{ block.shopify_attributes }}>
             {%- if block.settings.title != blank -%}
-              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+              <h5 class="h--alt footer__title">{{ block.settings.title | escape }}</h5>
             {%- endif -%}
             {%- if block.settings.text != blank -%}
               <div class="footer__newsletter-text rte">{{ block.settings.text }}</div>
             {%- endif -%}
             {%- form 'customer', class: 'footer__newsletter-form' -%}
               <input type="hidden" name="contact[tags]" value="newsletter">
-              <div class="footer__newsletter-field">
+              <div class="footer__newsletter-field field field--inline">
                 <input
                   type="email"
                   name="contact[email]"
                   id="NewsletterEmail-{{ block.id }}"
-                  class="footer__newsletter-input"
+                  class="h4 footer__newsletter-input field__input"
                   value="{{ form.email }}"
                   placeholder="{{ 'newsletter.label' | t }}"
                   required
