@@ -5,8 +5,8 @@
 {% assign upsell_products_limit = section.settings.upsell_products_limit | default: 4 %}
 {% assign color_scheme = section.settings.color_scheme | default: 'light-1' %}
 
-<form action="{{ routes.cart_url }}" class="cart-container color-{{ color_scheme }} gradient" method="post" id="cart">
-  <h1 class="cart-title">{{ 'cart.general.title' | t }}</h1>
+<form action="{{ routes.cart_url }}" class="cart-container flex flex--column flex--gapped padded page-width color-{{ color_scheme }} gradient" method="post" id="cart">
+  <h4 class="cart-title">{{ 'cart.general.title' | t }} ({{ cart.item_count }})</h4>
   
   <!-- Shipping Progress Bar -->
   {% if section.settings.cart_message != blank %}
@@ -18,24 +18,25 @@
       {% assign remaining_amount = free_shipping_threshold | minus: current_cart_total %}
       {% assign progress_percentage = current_cart_total | times: 100.0 | divided_by: free_shipping_threshold %}
       
+      <h6 class="h--alt progress-text">
+        {{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount | money }}
+      </h6>
       <div class="progress-bar">
         <div class="progress-fill" style="width: {{ progress_percentage }}%"></div>
       </div>
-      <p class="progress-text">
-        {{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount | money }}
-      </p>
     {% else %}
+      <h6 class="h--alt progress-text">{{ 'cart.general.free_shipping_qualified' | t }}</h6>
       <div class="progress-bar">
         <div class="progress-fill" style="width: 100%"></div>
       </div>
-      <p class="progress-text">{{ 'cart.general.free_shipping_qualified' | t }}</p>
     {% endif %}
   </div>
+  <hr>
 
   <!-- Cart Items -->
-  <div class="cart-items">
+  <div class="cart-items flex flex--gapped">
     {% for item in cart.items %}
-      <div class="cart-item" data-item-id="{{ item.id }}">
+      <div class="cart-item flex flex--gapped" data-item-id="{{ item.id }}">
         <img 
           src="{{ item.image | img_url: '120x' }}" 
           alt="{{ item.title }}"
@@ -43,25 +44,33 @@
           height="120"
         >
         <div class="item-details">
-          <h3>{{ item.product.title }}</h3>
-          <p class="item-price">{{ item.price | money }}</p>
+          <h6 class="h--alt">{{ item.product.title }}</h6>
           
           <div class="quantity-selector">
-            <button class="quantity-btn" type="button" data-action="decrease">-</button>
-            <input type="number" value="{{ item.quantity }}" min="1" data-quantity-input>
-            <button class="quantity-btn" type="button" data-action="increase">+</button>
+            <button class="quantity-btn button--none" type="button" data-action="decrease"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.91319 8.86184C5.61448 8.86184 5.35402 8.86332 5.13243 8.86633C5.13294 8.80561 5.13319 8.74141 5.13319 8.67384C5.13319 8.61203 5.13298 8.55317 5.13255 8.49735C5.35412 8.50036 5.61454 8.50184 5.91319 8.50184H11.0012C11.2998 8.50184 11.5603 8.50036 11.7818 8.49735C11.7814 8.55317 11.7812 8.61203 11.7812 8.67384C11.7812 8.74141 11.7814 8.80561 11.7819 8.86633C11.5604 8.86332 11.2999 8.86184 11.0012 8.86184H5.91319ZM4.66931 9.32619L4.65294 8.87735L4.65294 8.87735L4.66931 9.32619Z" stroke="#00A74D"/>
+<rect x="1.11719" y="1.48584" width="15" height="15" rx="7.5" stroke="#00A74D"/>
+</svg>
+</button>
+            <input type="number" value="{{ item.quantity }}" min="1" data-quantity-input />
+            <button class="quantity-btn button--none" type="button" data-action="increase"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.2972 8.16984C12.2865 8.29784 12.2812 8.51651 12.2812 8.82584C12.2812 9.13517 12.2865 9.35917 12.2972 9.49784L12.2652 9.52984C11.9879 9.51917 11.5665 9.51384 11.0012 9.51384H9.12919V11.3698C9.12919 11.9352 9.13452 12.3565 9.14519 12.6338L9.11319 12.6658C8.98519 12.6552 8.76652 12.6498 8.45719 12.6498C8.14785 12.6498 7.92385 12.6552 7.78519 12.6658L7.75319 12.6338C7.76385 12.3565 7.76919 11.9352 7.76919 11.3698V9.51384H5.91319C5.34785 9.51384 4.92652 9.51917 4.64919 9.52984L4.61719 9.49784C4.62785 9.35917 4.63319 9.13517 4.63319 8.82584C4.63319 8.51651 4.62785 8.29784 4.61719 8.16984L4.64919 8.13784C4.92652 8.14851 5.34785 8.15384 5.91319 8.15384H7.76919V6.28184C7.76919 5.71651 7.76385 5.29517 7.75319 5.01784L7.78519 4.98584C7.92385 4.99651 8.14785 5.00184 8.45719 5.00184C8.76652 5.00184 8.98519 4.99651 9.11319 4.98584L9.14519 5.01784C9.13452 5.29517 9.12919 5.71651 9.12919 6.28184V8.15384H11.0012C11.5665 8.15384 11.9879 8.14851 12.2652 8.13784L12.2972 8.16984Z" fill="#00A74D"/>
+<rect x="1.11719" y="1.48584" width="15" height="15" rx="7.5" stroke="#00A74D"/>
+</svg></button>
           </div>
           
           <button class="remove-item" type="button" data-remove="{{ item.key }}">Remove</button>
         </div>
+        <h6 class="h--alt item-price">{{ item.price | money }}</h6>
       </div>
+      <hr>
     {% endfor %}
   </div>
 
   <!-- Upsell Products -->
-  {% if show_upsell_products %}
+  {% if show_upsell_products and collections[upsell_collection_handle].products.size > 0 %}
     <div class="upsell-products">
-      <h2>{{ 'cart.general.you_may_also_like' | t }}</h2>
+      <h4>{{ 'cart.general.you_may_also_like' | t }}</h4>
       <div class="upsell-grid">
         {% assign upsell_collection = collections[upsell_collection_handle] %}
         {% for product in upsell_collection.products limit: upsell_products_limit %}
@@ -83,10 +92,11 @@
 
   <!-- Cart Footer -->
   <div class="cart-footer">
-    <div class="cart-subtotal">
+    <div class="cart-subtotal h6 h--alt flex flex--spaced">
       <span>{{ 'cart.general.subtotal' | t }}:</span>
       <span>{{ cart.total_price | money }}</span>
     </div>
-    <button type="submit" class="checkout-btn">{{ 'cart.general.proceed_to_checkout' | t }}</button>
+    <hr>
+    <button type="submit" class="h6 h--alt button--full button--secondary checkout-btn">{{ 'cart.general.proceed_to_checkout' | t }}</button>
   </div>
 </form> 

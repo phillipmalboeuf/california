@@ -73,7 +73,7 @@
         <span>{{- 'sections.header.cart' | t -}}</span>
         {%- if cart.item_count > 0 -%}
         <div class="header__cart-count" data-cart-count>
-          {{- cart.item_count -}}
+          ({{- cart.item_count -}})
         </div>
         {%- endif -%}
       </a>
@@ -84,7 +84,7 @@
 <dialog id="cart-dialog">
   <div class="cart-dialog__overlay" data-cart-toggle></div>
   <div class="cart-dialog__content">
-    <button type="button" class="cart-dialog-close" data-cart-toggle>
+    <button type="button" class="button--none cart-dialog-close" data-cart-toggle>
       {% render 'icon', type: 'close' %}
     </button>
     <div id="cart-render"></div>

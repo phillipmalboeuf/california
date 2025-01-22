@@ -1,6 +1,14 @@
 class CartManager {
   constructor() {
     this.cartDialog = document.getElementById('cart-dialog');
+    this.fetchCart();
+  }
+
+  async fetchCart() {
+    const response = await fetch('/cart?sections=cart&sections_url=%5C/cart')
+    const render = await response.json()
+    document.getElementById('cart-render').innerHTML = render.cart
+    
     this.bindEvents();
     this.updateCartUI();
   }
@@ -17,21 +25,21 @@ class CartManager {
     // Quantity selector events
     document.querySelectorAll('.quantity-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const action = e.target.dataset.action;
-        const input = e.target.parentNode.querySelector('[data-quantity-input]');
+        const action = e.currentTarget.dataset.action;
+        const input = e.currentTarget.parentNode.querySelector('[data-quantity-input]');
         const newQty = action === 'increase' ? 
           parseInt(input.value) + 1 : 
           Math.max(1, parseInt(input.value) - 1);
         input.value = newQty
         
-        this.updateItemQuantity(e.target.closest('.cart-item').dataset.itemId, newQty);
+        this.updateItemQuantity(e.currentTarget.closest('.cart-item').dataset.itemId, newQty);
       });
     });
 
     // Remove item events
     document.querySelectorAll('.remove-item').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        this.removeItem(e.target.dataset.remove);
+        this.removeItem(e.currentTarget.dataset.remove);
       });
     });
 
