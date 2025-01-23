@@ -59,6 +59,7 @@
       ],
       "settings": {
         "color_scheme": "inverse-1",
+        "curves": true,
         "image_ratio": "square",
         "text_alignment": "center"
       }
@@ -109,7 +110,12 @@
           }
         }
       },
-      "block_order": ["column-1", "column-2", "column-3"]
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3"
+      ],
+      "settings": {}
     }
   },
   "order": [

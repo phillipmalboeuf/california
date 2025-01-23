@@ -34,8 +34,8 @@
           "newsletter_dxUJKh": {
             "type": "newsletter",
             "settings": {
-              "title": "",
-              "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+              "title": "Keep up with good news and sweet deals. No spam. No junk. Just good, clean, fun.",
+              "text": ""
             }
           },
           "logo_AH73QQ": {
@@ -48,7 +48,7 @@
           "link_list_nCcgJh": {
             "type": "link_list",
             "settings": {
-              "title": "Quick links",
+              "title": "",
               "menu": "footer"
             }
           }
@@ -75,21 +75,21 @@
       "default": {
         "settings": {
           "colors_body": "#000000",
-          "colors_light": "#F9F9F9",
-          "colors_accent": "#00A74D",
-          "colors_secondary": "#FFC512",
-          "colors_bold": "#00A74D",
-          "colors_background": "#FFF",
+          "colors_light": "#f9f9f9",
+          "colors_accent": "#00a74d",
+          "colors_secondary": "#ffc512",
+          "colors_bold": "#00a74d",
+          "colors_background": "#ffffff",
           "colors_background_gradient": ""
         }
       },
       "inverse-1": {
         "settings": {
           "colors_body": "#ffffff",
-          "colors_light": "#F9F9F9",
+          "colors_light": "#f9f9f9",
           "colors_accent": "#ffffff",
           "colors_secondary": "#ffc512",
-          "colors_bold": "#00A74D",
+          "colors_bold": "#00a74d",
           "colors_background": "#00a74d",
           "colors_background_gradient": ""
         }
@@ -97,10 +97,10 @@
       "inverse-2": {
         "settings": {
           "colors_body": "#000000",
-          "colors_light": "#F9F9F9",
+          "colors_light": "#f9f9f9",
           "colors_accent": "#000000",
           "colors_secondary": "#00a74d",
-          "colors_bold": "#00A74D",
+          "colors_bold": "#00a74d",
           "colors_background": "#ffc512",
           "colors_background_gradient": ""
         }
@@ -108,10 +108,10 @@
       "inverse-3": {
         "settings": {
           "colors_body": "#000000",
-          "colors_light": "#F9F9F9",
+          "colors_light": "#f9f9f9",
           "colors_accent": "#ffffff",
           "colors_secondary": "#000000",
-          "colors_bold": "#00A74D",
+          "colors_bold": "#00a74d",
           "colors_background": "#f94604",
           "colors_background_gradient": ""
         }
@@ -119,10 +119,10 @@
       "light-1": {
         "settings": {
           "colors_body": "#000000",
-          "colors_light": "#F9F9F9",
-          "colors_accent": "#00A74D",
+          "colors_light": "#f9f9f9",
+          "colors_accent": "#00a74d",
           "colors_secondary": "#000000",
-          "colors_bold": "#00A74D",
+          "colors_bold": "#00a74d",
           "colors_background": "#bfe9d2",
           "colors_background_gradient": ""
         }
