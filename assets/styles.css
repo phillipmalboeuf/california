@@ -232,3 +232,33 @@ button,
 .price__current {
   color: var(--color-error, #cf0000);
 }
+
+/* Embla Carousel Styles */
+.carousel {
+  overflow: hidden;
+}
+
+.carousel__container {
+  display: flex;
+  user-select: none;
+  
+  /* margin-left: -1rem;
+  width: calc(100% + 1rem); */
+  
+}
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  /* padding-left: 1rem; */
+  max-width: 100%;
+}
+
+/* Ensure images inside slides maintain aspect ratio */
+.carousel__slide img,
+.carousel__slide video {
+  display: block;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}

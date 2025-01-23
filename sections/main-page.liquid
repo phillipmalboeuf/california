@@ -1,9 +1,10 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'shogun-override.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
-  </h1>
+<div class="page-width padded padded--thick">
+  {%- unless section.settings.hide_title -%}
+    <h1 class="main-page-title page-title text-center h2">{{ page.title | escape }}</h1>
+  {%- endunless -%}
   <div class="rte">
     {{ page.content }}
   </div>
@@ -12,9 +13,15 @@
 {% schema %}
 {
   "name": "t:sections.main-page.name",
-  "tag": "section",
+  "tag": "section", 
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide title",
+      "default": false
+    }
   ]
 }
 {% endschema %}

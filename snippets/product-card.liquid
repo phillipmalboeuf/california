@@ -53,7 +53,10 @@
         <p class="product-card__vendor">{{ product.vendor }}</p>
       {%- endif -%}
 
-      <h3 class="product-card__title">{{ product.title }}</h3>
+      <h5 class="h--alt product-card__title">{{ product.title }}</h5>
+      {%- if product.metafields.descriptors.subtitle != blank -%}
+        <p class="product-card__subtitle">{{ product.metafields.descriptors.subtitle }}</p>
+      {%- endif -%}
 
       <div class="product-card__price">
         {% render 'price', product: product %}

@@ -15,66 +15,12 @@
     <ul class="product-grid list--nostyle grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
       {%- for product in collection.products limit: section.settings.products_to_show -%}
         <li class="product-grid__item">
-          <div class="product-card">
-            <div class="product-card__media">
-              <a href="{{ product.url }}">
-                {%- if product.featured_media -%}
-                  {{ product.featured_media | image_url: width: 533 | image_tag:
-                    loading: 'lazy',
-                    width: 533,
-                    height: 533,
-                    class: "product-card__image"
-                  }}
-                  
-                  {%- if product.media[1] != blank and section.settings.show_secondary_image -%}
-                    {{ product.media[1] | image_url: width: 533 | image_tag:
-                      loading: 'lazy',
-                      width: 533,
-                      height: 533,
-                      class: "product-card__image--secondary"
-                    }}
-                  {%- endif -%}
-                {%- else -%}
-                  {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
-                {%- endif -%}
-              </a>
-
-              {%- if section.settings.show_quick_add -%}
-                <div class="product-card__quick-add">
-                  {%- assign product_form_id = 'quick-add-' | append: product.id -%}
-                  {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate' -%}
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    <button
-                      type="submit"
-                      name="add"
-                      class="button button--primary"
-                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                    >
-                      {%- if product.selected_or_first_available_variant.available -%}
-                        {{ 'products.product.add_to_cart' | t }}
-                      {%- else -%}
-                        {{ 'products.product.sold_out' | t }}
-                      {%- endif -%}
-                    </button>
-                  {%- endform -%}
-                </div>
-              {%- endif -%}
-            </div>
-
-            <div class="product-card__info">
-              {%- if section.settings.show_vendor and product.vendor -%}
-                <span class="product-card__vendor">{{ product.vendor }}</span>
-              {%- endif -%}
-
-              <a href="{{ product.url }}" class="product-card__title">
-                {{ product.title | escape }}
-              </a>
-
-              <div class="product-card__price">
-                {%- render 'price', product: product -%}
-              </div>
-            </div>
-          </div>
+          {% render 'product-card',
+            product: product,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_quick_add: section.settings.enable_quick_add
+          %}
         </li>
       {%- endfor -%}
     </ul>

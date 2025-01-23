@@ -9,6 +9,12 @@
   .product-quantity {
     display: flex;
     align-items: center;
+    width: 100%;
+  }
+
+  .product-quantity button span {
+    display: flex;
+    gap: var(--step--1);
   }
 
   .quantity-input input {

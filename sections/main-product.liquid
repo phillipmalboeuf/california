@@ -5,9 +5,10 @@
     <div class="product-grid flex flex--around flex--gapped">
       <div class="product-media col col--5of12">
         {%- if product.media.size > 0 -%}
-          <div class="product-gallery">
+          <div class="product-gallery carousel" data-carousel>
+            <div class="carousel__container">
             {%- for media in product.media -%}
-              <div class="product-gallery__item" data-media-id="{{ media.id }}">
+              <div class="product-gallery__item carousel__slide" data-media-id="{{ media.id }}">
                 {%- case media.media_type -%}
                   {%- when 'image' -%}
                     {{ media | image_url: width: 1500 | image_tag:
@@ -25,11 +26,12 @@
                 {%- endcase -%}
               </div>
             {%- endfor -%}
+            </div>
           </div>
         {%- endif -%}
       </div>
 
-      <div class="product-info col col--5of12">
+      <div class="product-info col col--5of12 flex flex--column flex--gapped">
         {%- if section.settings.show_vendor and product.vendor -%}
           <div class="product-vendor">{{ product.vendor }}</div>
         {%- endif -%}
@@ -42,7 +44,7 @@
           </div>
         {%- endif -%}
 
-        {%- form 'product', product, class: 'product-form', id: 'product-form', novalidate: 'novalidate' -%}
+        {%- form 'product', product, class: 'product-form flex flex--column flex--gapped', id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
           {%- if product.variants.size > 1 -%}
@@ -73,7 +75,7 @@
           {%- endif -%}
 
           <div class="product-quantity">
-            <label class="form__label visually-hidden" for="Quantity">{{ 'products.product.quantity' | t }}</label>
+            {% comment %} <label class="form__label visually-hidden" for="Quantity">{{ 'products.product.quantity' | t }}</label> {% endcomment %}
             <div class="quantity-input">
               <button type="button" class="button--none quantity-button" data-action="decrease">-</button>
               <input
@@ -88,23 +90,19 @@
               >
               <button type="button" class="button--none quantity-button" data-action="increase">+</button>
             </div>
-          </div>
-
-          <div class="product-submit">
             <button
               type="submit"
               name="add"
-              class="button button--primary"
+              class="button button--full"
               {% unless product.available %}disabled{% endunless %}
               data-add-to-cart
             >
               <span data-add-to-cart-text>
                 {%- if product.available -%}
-                  {{ 'products.product.add_to_cart' | t }}
+                  {{- 'products.product.add_to_cart' | t -}}
                 {%- else -%}
-                  {{ 'products.product.sold_out' | t }}
+                  {{- 'products.product.sold_out' | t -}}
                 {%- endif -%}
-
                 <span class="product-price">
                   {%- if product.price_varies -%}
                     <span class="price-from">{{ 'products.product.from_price_html' | t }}</span>
@@ -119,10 +117,6 @@
               </span>
               <span class="loading-spinner hidden"></span>
             </button>
-
-            {%- if section.settings.show_dynamic_checkout -%}
-              {{ form | payment_button }}
-            {%- endif -%}
           </div>
         {%- endform -%}
       </div>
@@ -146,12 +140,6 @@
       "type": "checkbox",
       "id": "show_description",
       "label": "Show description",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_dynamic_checkout",
-      "label": "Show dynamic checkout buttons",
       "default": true
     },
     {

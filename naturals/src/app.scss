@@ -411,8 +411,8 @@ hr {
 	border: none;
 	// height: 1px;
 	// background-color: currentColor;
-	margin: 0 0 $s0;
-	border-top: 1px dotted currentColor;
+	margin: 0 0 $s1;
+	border-top: 1px solid;
 	background: transparent;
 
 	.flex--column & {

@@ -30,6 +30,7 @@
   top: 0;
   left: 0;
   opacity: 0;
+  height: 100%;
 }
 
 .product-card__link:hover .product-card__image--secondary {
