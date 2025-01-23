@@ -13,6 +13,21 @@
   
   {%- if collection != blank -%}
     <ul class="product-grid list--nostyle grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-mobile">
+      {%- if section.settings.video_url != blank -%}
+        <li class="product-grid__item product-grid__item--video">
+          <div class="video-container">
+            <video src="{{ section.settings.video_url }}" controls playsinline></video>
+            {%- if section.settings.video_text != blank -%}
+              <div class="video-text rte">{{ section.settings.video_text }}</div>
+            {%- endif -%}
+            {%- if section.settings.video_link_url != blank and section.settings.video_link_label != blank -%}
+              <a href="{{ section.settings.video_link_url }}" class="video-link button">
+                {{ section.settings.video_link_label }}
+              </a>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endif -%}
       {%- for product in collection.products limit: section.settings.products_to_show -%}
         <li class="product-grid__item">
           {% render 'product-card',
@@ -111,6 +126,30 @@
       "id": "show_view_all",
       "default": true,
       "label": "Show 'View all' button"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "richtext",
+      "id": "video_text",
+      "label": "Video text"
+    },
+    {
+      "type": "url",
+      "id": "video_link_url",
+      "label": "External link URL"
+    },
+    {
+      "type": "text",
+      "id": "video_link_label",
+      "label": "External link label"
     }
   ],
   "presets": [

@@ -1,0 +1,30 @@
+.product-grid {
+
+}
+
+  .product-grid__item {
+
+  }
+  
+  .product-grid__item.product-grid__item--video .video-container {
+    position: relative;
+  }
+
+  .product-grid__item.product-grid__item--video video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--step--1);
+  }
+
+  .product-grid__item.product-grid__item--video .video-link {
+    position: absolute;
+    top: var(--step-0);
+    right: var(--step-0);
+  }
+
+  .product-grid__item.product-grid__item--video .video-text {
+    position: absolute;
+    bottom: var(--step-0);
+    left: var(--step-0);
+    color: var(--colors-body-inverse);
+  }

@@ -140,25 +140,6 @@ button,
   /* font-size: var(--font-size-base); */
 }
 
-/* Product Grid */
-.product-grid {
-  /* display: grid;
-  gap: var(--grid-gap);
-  grid-template-columns: repeat(3, 1fr); */
-}
-
-/* @media screen and (min-width: 750px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (min-width: 990px) {
-  .product-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-} */
-
 /* Collection Filters */
 .collection__filters {
   margin-bottom: var(--step-1);

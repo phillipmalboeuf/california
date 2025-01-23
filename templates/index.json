@@ -67,7 +67,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
+        "title": "Super Moisture routine",
         "description": "",
         "collection": "frontpage",
         "products_to_show": 8,
@@ -76,7 +76,11 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_quick_add": false,
-        "show_view_all": true
+        "show_view_all": true,
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/5079afb2505945b78107d454f13c2fe6.mp4",
+        "video_text": "<h4>Super Moisture routine</h4><h6>Skin Type: sensitive, combination</h6>",
+        "video_link_url": "https://instagram.com",
+        "video_link_label": "@abigalesonline"
       }
     },
     "text-columns": {
