@@ -1,6 +1,6 @@
 {{ 'section-blog.css' | asset_url | stylesheet_tag }}
 
-<div class="padded page-width">
+<div class="padded padded--thick page-width">
   {%- for block in section.blocks -%}
     {% case block.type %}
       {% when 'hero_banner' %}
@@ -17,8 +17,19 @@
     {% endcase %}
   {%- endfor -%}
 
-  <header class="blog-header padded">
-    <h1 class="blog-title h3">{{ blog.title | escape }}</h1>
+  <header class="blog-header padded text-center flex flex--column flex--gapped flex--center flex--middle{% if blog.metafields.custom.banner %} color-inverse-1{% endif %}">
+    {% if blog.metafields.custom.banner %}
+      {{ blog.metafields.custom.banner | image_url: width: 1100 | image_tag: 
+        class: 'blog-header__banner',
+        loading: 'lazy',
+        style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;'
+      }}
+    {% endif %}
+    <h1 class="blog-title h--alt">{{ blog.title | escape }}</h1>
+    
+    {% if blog.metafields.custom.subtitle %}
+      <div class="blog-subtitle">{{ blog.metafields.custom.subtitle | metafield_tag }}</div>
+    {% endif %}
     
     {%- if blog.tags.size > 0 -%}
       <div class="blog-filters">
@@ -42,7 +53,7 @@
     <div class="blog-articles">
       {%- for article in blog.articles -%}
         <article class="blog-articles__article">
-          <div class="article-card">
+          <div class="article-card" style="background-color: {{ article.metafields.custom.color }};">
             {%- if article.image and section.settings.show_image -%}
               <div class="article-card__image-wrapper">
                 <a href="{{ article.url }}" class="article-card__link">
@@ -54,11 +65,11 @@
               </div>
             {%- endif -%}
 
-            <div class="article-card__content">
+            <div class="article-card__content flex flex--column flex--gapped flex--middle text-center">
               <header class="article-card__header">
-                <h2 class="article-card__title">
+                <h5 class="article-card__title">
                   <a href="{{ article.url }}">{{ article.title | escape }}</a>
-                </h2>
+                </h5>
 
                 {%- if section.settings.show_date or section.settings.show_author -%}
                   <div class="article-card__meta">

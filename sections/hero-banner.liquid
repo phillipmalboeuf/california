@@ -20,10 +20,8 @@
             {{ block.settings.text }}
           </div>
         {% when 'button' %}
-          <a href="{{ block.settings.button_link }}" class="button{% if block.settings.button_style == 'secondary' %} button--secondary{% endif %}"
-            {{ block.shopify_attributes }}>
-            {{ block.settings.button_label | escape }}
-          </a>
+          <a href="{{ block.settings.button_link }}" class="button h6 h--alt {% if block.settings.button_style == 'secondary' %} button--secondary{% endif %}"
+            {{ block.shopify_attributes }}>{{ block.settings.button_label | escape }}</a>
       {% endcase %}
     {%- endfor -%}
   </div>
