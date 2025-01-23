@@ -39,8 +39,39 @@
         <h1 class="h3 product-title">{{ product.title }}</h1>
 
         {%- if section.settings.show_description -%}
-          <div class="product-description rte">
+          <div class="product-description flex flex--gapped flex--column rte">
+              <div class="product-weight">
+                {% comment %} <h6 class="h--alt">Weight</h6> {% endcomment %}
+                {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'oz' }} / {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'g' }}
+              </div>
+              <hr>
+
+            {%- if product.metafields.shopify.suitable-for-hair-type != blank -%}
+              <div class="product-hair-type">
+                {% comment %} <h6 class="h--alt">Suitable For Hair Type</h6> {% endcomment %}
+                {{ product.metafields.shopify.suitable-for-hair-type | metafield_text: field: 'label' }}
+              </div>
+              <hr>
+            {%- endif -%}
+            
             {{ product.description }}
+            
+            {%- if product.metafields.shopify.scent != blank -%}
+              <hr>
+              <div class="product-scent">
+                <h6 class="h--alt">Scent</h6>
+                {{ product.metafields.shopify.scent | metafield_text: field: 'label' }}
+              </div>
+            {%- endif -%}
+            
+            {%- if product.metafields.shopify.constitutive-ingredients != blank -%}
+              <hr>
+              <div class="product-ingredients">
+                <h6 class="h--alt">Key Ingredients</h6>
+                {{ product.metafields.shopify.constitutive-ingredients | metafield_text: field: 'label' }}
+                <h6 class="h--alt"><a href="/pages/ingredients">Explore Ingredients Glossary</a></h6>
+              </div>
+            {%- endif -%}
           </div>
         {%- endif -%}
 
@@ -122,7 +153,37 @@
       </div>
     </div>
   </div>
+
+{%- if product.metafields.custom.quote != blank -%}
+  <div class="product-quote padded padded--thick page-width">
+    <div class="product-quote__content text-center">
+      {{ product.metafields.custom.quote | metafield_tag }}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- if product.metafields.custom.left != blank or product.metafields.custom.right != blank -%}
+  <div class="product-columns padded padded--thick page-width">
+    <div class="grid grid--2-col-desktop">
+      {%- if product.metafields.custom.left != blank -%}
+        <div class="product-columns__content">
+          {{ product.metafields.custom.left | metafield_tag }}
+        </div>
+      {%- endif -%}
+      
+      {%- if product.metafields.custom.right != blank -%}
+        <div class="product-columns__content">
+          {{ product.metafields.custom.right | metafield_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
 </section>
+
+
+
 
 {% schema %}
 {

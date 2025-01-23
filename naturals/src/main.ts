@@ -9,13 +9,11 @@ mount(App, { target: document.getElementById('app')! })
 
 // Initialize carousels after the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded')
   initCarousels()
 })
 
 // Re-initialize carousels when the Shopify section is reloaded
 document.addEventListener('shopify:section:load', (event) => {
-  console.log('shopify:section:load', event)
   initCarousels()
 })
 
