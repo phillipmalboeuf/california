@@ -1,21 +1,17 @@
 {%- paginate collection.products by section.settings.products_per_page -%}
-  <div class="collection page-width" id="MainCollectionGrid">
+  <div class="collection page-width padded flex flex--thick_gapped" id="MainCollectionGrid">
     {%- if collection.description != blank and section.settings.show_description -%}
       <div class="collection__description padded rte">
         {{ collection.description }}
       </div>
     {%- endif -%}
 
-    <div class="collection__toolbar">
+    <div class="collection__toolbar flex flex--gapped">
       {%- if section.settings.menu != blank -%}
         <nav class="collection__nav">
-          <ul class="list--nostyle">
+          <ul class="list--nostyle flex flex--gapped">
             {%- for link in linklists[section.settings.menu].links -%}
-              <li>
-                <a href="{{ link.url }}" {% if link.current %}aria-current="page"{% endif %}>
-                  {{ link.title }}
-                </a>
-              </li>
+              <li class="h5"><a href="{{ link.url }}" class="collection__nav_link {% if link.current %} collection__nav_link--current{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a></li>
             {%- endfor -%}
           </ul>
         </nav>
@@ -28,7 +24,7 @@
       {%- if section.settings.enable_sorting and collection.products_count > 0 -%}
         <div class="collection__sort">
           <label for="SortBy" class="visually-hidden">{{ 'collections.sorting.title' | t }}</label>
-          <select name="sort_by" id="SortBy" class="collection__sort-select">
+          <select name="sort_by" id="SortBy" class="collection__sort-select h5">
             {%- for option in collection.sort_options -%}
               <option 
                 value="{{ option.value }}" 

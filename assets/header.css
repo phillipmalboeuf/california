@@ -39,6 +39,8 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
     flex: 1;
   }
 
+.header__menu-link:hover,
+.header__menu-link:focus,
 .header__menu-link--active {
   text-decoration-line: underline;
   text-decoration-style: wavy;

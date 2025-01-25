@@ -22,17 +22,27 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary"
+          }
+        },
+        "button_U86yJR": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Body",
+            "button_link": "shopify://collections/shampoo",
             "button_style": "primary"
           }
         }
       },
       "block_order": [
         "heading_MMVXQp",
-        "button_64rP3j"
+        "button_64rP3j",
+        "button_U86yJR"
       ],
       "settings": {
         "image": "shopify://shop_images/low-tide-at-the-beach-house.jpg",
+        "curves": false,
         "show_overlay": true,
         "text_alignment": "center"
       }
@@ -83,6 +93,15 @@
         "video_link_label": "@abigalesonline"
       }
     },
+    "hero_banner_ibFVLb": {
+      "type": "hero-banner",
+      "settings": {
+        "image": "shopify://shop_images/Ingredients.png",
+        "curves": true,
+        "show_overlay": false,
+        "text_alignment": "center"
+      }
+    },
     "text-columns": {
       "type": "text-columns",
       "blocks": {
@@ -120,12 +139,56 @@
         "column-3"
       ],
       "settings": {}
+    },
+    "image_with_text_z4FXgn": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_FWKwnH": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\"</h3>"
+          }
+        }
+      },
+      "block_order": [
+        "text_FWKwnH"
+      ],
+      "settings": {
+        "color_scheme": "inverse-2",
+        "curves": false,
+        "image_ratio": "square",
+        "text_alignment": "center"
+      }
+    },
+    "image_with_text_f8edJ8": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_LpFk8V": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>We use Certified Ocean-Bound recycled plastic for every bottle we make, and donate 1% of every sale to our partner, Sea Trees, who are doing the work to restore Coastlines and Kelp Forests across the world.</h4>"
+          }
+        }
+      },
+      "block_order": [
+        "text_LpFk8V"
+      ],
+      "settings": {
+        "color_scheme": "light-1",
+        "curves": false,
+        "image": "shopify://shop_images/logos.svg",
+        "image_ratio": "square",
+        "text_alignment": "left"
+      }
     }
   },
   "order": [
     "hero",
     "image_with_text",
     "featured_collection",
-    "text-columns"
+    "hero_banner_ibFVLb",
+    "text-columns",
+    "image_with_text_z4FXgn",
+    "image_with_text_f8edJ8"
   ]
 }

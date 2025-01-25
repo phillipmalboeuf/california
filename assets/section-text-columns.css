@@ -21,4 +21,6 @@
 }
 
 .text-column__stars {
+  color: var(--colors-accent);
+  letter-spacing: 0.1em;
 } 

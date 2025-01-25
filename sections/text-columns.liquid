@@ -1,9 +1,12 @@
 {{ 'section-text-columns.css' | asset_url | stylesheet_tag }}
 
-<div class="text-columns padded page-width">
-  <div class="text-columns__grid flex flex--gapped">
+<div class="text-columns flex flex--thick_gapped{% if section.settings.title_alignment != 'left' %} flex--column flex--middle{% endif %} padded padded--thick page-width">
+  {%- if section.settings.title != blank -%}
+    <h3 class="text-columns__title{% if section.settings.title_alignment != 'left' %} text-center{% else %} col col--4of12{% endif %}">{{ section.settings.title }}</h3>
+  {%- endif -%}
+  <div class="text-columns__grid flex flex--thick_gapped{% if section.settings.title_alignment == 'left' %} col col--8of12{% endif %}">
     {%- for block in section.blocks -%}
-      <div class="text-column col" {{ block.shopify_attributes }}>
+      <div class="text-column flex flex--column flex--gapped col" {{ block.shopify_attributes }}>
         {%- if block.settings.subtitle != blank -%}
           <h5 class="text-column__subtitle text-center">{{ block.settings.subtitle }}</h5>
         {%- endif -%}
@@ -13,8 +16,8 @@
             src="{{ block.settings.thumbnail | image_url: width: 200 }}"
             alt="{{ block.settings.thumbnail.alt | escape }}"
             loading="lazy"
-            width="100"
-            height="100"
+            width="100%"
+            height="auto"
             class="text-column__thumbnail"
           >
         {%- endif -%}
@@ -30,7 +33,7 @@
         {%- endif -%}
 
         {%- if block.settings.author != blank -%}
-          <div class="text-column__author">{{ block.settings.author }}</div>
+          <div class="text-column__author h6 h--alt">{{ block.settings.author }}</div>
         {%- endif -%}
       </div>
     {%- endfor -%}
@@ -43,6 +46,28 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Reasons to love California Naturals"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    }
   ],
   "blocks": [
     {

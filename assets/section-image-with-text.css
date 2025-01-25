@@ -3,12 +3,20 @@
   /* margin: 0 auto; */
 }
 
+.image-with-text:has(> .image-with-text__curves) {
+  /* overflow-x: hidden; */
+}
+
+.image-with-text__grid {
+  flex-wrap: nowrap;
+}
+
 .image-with-text__curves {
   position: absolute;
   bottom: calc(100% - 40px);
   left: -1px;
   right: 0;
-  width: calc(100% + 2px);
+  width: calc(100% + 1px);
   height: auto;
   pointer-events: none;
   z-index: 1;

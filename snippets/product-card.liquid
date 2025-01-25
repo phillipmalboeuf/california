@@ -8,7 +8,7 @@
   - show_quick_add: {Boolean} Show quick add button
 {% endcomment %}
 
-<div class="product-card">
+<div class="product-card text-center">
   <a href="{{ product.url }}" class="product-card__link">
     <div class="product-card__media">
       {%- if product.featured_media -%}
@@ -53,14 +53,10 @@
         <p class="product-card__vendor">{{ product.vendor }}</p>
       {%- endif -%}
 
-      <h5 class="h--alt product-card__title">{{ product.title }}</h5>
+      <h6 class="h--alt product-card__title">{{ product.title }}</h6>
       {%- if product.metafields.descriptors.subtitle != blank -%}
         <p class="product-card__subtitle">{{ product.metafields.descriptors.subtitle }}</p>
       {%- endif -%}
-
-      <div class="product-card__price">
-        {% render 'price', product: product %}
-      </div>
     </div>
   </a>
 
@@ -68,12 +64,15 @@
     <div class="product-card__quick-add">
       <button
         type="button"
-        class="button button--primary"
+        class="button button--inverse"
         data-quick-add-button
         data-product-id="{{ product.id }}"
         data-variant-id="{{ product.first_available_variant.id }}"
       >
-        {{ 'products.product.add_to_cart' | t }}
+        {{ 'products.product.add_to_cart' | t }} –
+        <span class="product-card__price">
+          {% render 'price', product: product %}
+        </span>
       </button>
     </div>
   {%- endif -%}

@@ -118,7 +118,7 @@
       },
       "light-1": {
         "settings": {
-          "colors_body": "#000000",
+          "colors_body": "#00a74d",
           "colors_light": "#f9f9f9",
           "colors_accent": "#00a74d",
           "colors_secondary": "#000000",

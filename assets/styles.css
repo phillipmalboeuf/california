@@ -86,6 +86,10 @@ button,
   background-color: var(--colors-secondary);
 }
 
+.button--inverse {
+  background-color: var(--colors-body);
+}
+
 /* .button--primary {
   background-color: var(--color-primary);
   color: var(--color-background);
@@ -100,6 +104,10 @@ button,
 .button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.metafield-rich_text_field * {
+  white-space: normal;
 }
 
 /* Forms */
