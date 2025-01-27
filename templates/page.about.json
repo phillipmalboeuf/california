@@ -81,7 +81,6 @@
       "settings": {
         "color_scheme": "inverse-2",
         "curves": false,
-        "image_ratio": "square",
         "text_alignment": "center"
       }
     }

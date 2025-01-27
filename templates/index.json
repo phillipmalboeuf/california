@@ -14,8 +14,15 @@
       "blocks": {
         "heading_MMVXQp": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Finally, Clean & Natural Hair and Body Products that Serve Unreal Results"
+          }
+        },
+        "text_b8pETY": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Finally, Clean & Natural Hair<br/>and Body Products that Serve<br/>Unreal Results</h2>"
           }
         },
         "button_64rP3j": {
@@ -37,6 +44,7 @@
       },
       "block_order": [
         "heading_MMVXQp",
+        "text_b8pETY",
         "button_64rP3j",
         "button_U86yJR"
       ],
@@ -70,7 +78,7 @@
       "settings": {
         "color_scheme": "inverse-1",
         "curves": true,
-        "image_ratio": "square",
+        "bleed": false,
         "text_alignment": "center"
       }
     },
@@ -181,7 +189,7 @@
       "settings": {
         "color_scheme": "inverse-2",
         "curves": false,
-        "image_ratio": "square",
+        "bleed": false,
         "text_alignment": "center"
       }
     },
@@ -202,7 +210,7 @@
         "color_scheme": "light-1",
         "curves": false,
         "image": "shopify://shop_images/logos.svg",
-        "image_ratio": "square",
+        "bleed": false,
         "text_alignment": "left"
       }
     }

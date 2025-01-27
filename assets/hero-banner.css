@@ -21,8 +21,18 @@ main > section:first-child > .hero-banner {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
   background-color: #000;
+}
+
+.hero-banner__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
 }
 
 .hero-banner--overlay::before {
@@ -80,6 +90,8 @@ main > section:first-child > .hero-banner {
   top: calc(100% - 40px);
   transform: rotate(180deg);
 }
+
+
 
 @media screen and (max-width: 768px) {
   .hero-banner {
