@@ -79,18 +79,37 @@
       "settings": {
         "title": "Super Moisture routine",
         "description": "",
-        "collection": "frontpage",
+        "collection": "super-moisture",
         "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": 2,
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_quick_add": false,
-        "show_view_all": true,
+        "show_quick_add": true,
+        "show_view_all": false,
         "video_url": "https://cdn.shopify.com/videos/c/o/v/5079afb2505945b78107d454f13c2fe6.mp4",
-        "video_text": "<h4>Super Moisture routine</h4><h6>Skin Type: sensitive, combination</h6>",
+        "video_text": "<h4>Super Moisture routine</h4><p>Skin Type: sensitive, combination</p>",
         "video_link_url": "https://instagram.com",
         "video_link_label": "@abigalesonline"
+      }
+    },
+    "featured_collection_FjR36Q": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Daily Essentials",
+        "description": "",
+        "collection": "body",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_quick_add": true,
+        "show_view_all": true,
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/5079afb2505945b78107d454f13c2fe6.mp4",
+        "video_text": "<h4>Daily Essentials  routine</h4><p>Skin Type: sensitive, combination</p>",
+        "video_link_url": "",
+        "video_link_label": ""
       }
     },
     "hero_banner_ibFVLb": {
@@ -108,27 +127,30 @@
         "column-1": {
           "type": "column",
           "settings": {
-            "subtitle": "Amazing Service",
-            "text": "<p>Your text here</p>",
-            "author": "John Doe",
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>The smell of is amazing and the texture is perfect for a nice gentle exfoliation before shaving</p>",
+            "author": "Jillian E.",
             "showStars": true
           }
         },
         "column-2": {
           "type": "column",
           "settings": {
-            "subtitle": "Great Quality",
-            "text": "<p>Your text here</p>",
-            "author": "Jane Smith",
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>It wasnt super rough but just enough to know its working on my skin. Great lather but not a lot. Love the shape as makes it easy to hold on to and to use.</p>",
+            "author": "Cameron B.",
             "showStars": true
           }
         },
         "column-3": {
           "type": "column",
           "settings": {
-            "subtitle": "Fast Delivery",
-            "text": "<p>Your text here</p>",
-            "author": "Mike Johnson",
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>I just hopped on line to order more! It is exfoliating and saves me a step in the shower. I am sorry I didn’t find it before</p>",
+            "author": "Alice V.",
             "showStars": true
           }
         }
@@ -138,7 +160,10 @@
         "column-2",
         "column-3"
       ],
-      "settings": {}
+      "settings": {
+        "title": "Reasons to love California Naturals",
+        "title_alignment": "left"
+      }
     },
     "image_with_text_z4FXgn": {
       "type": "image-with-text",
@@ -186,6 +211,7 @@
     "hero",
     "image_with_text",
     "featured_collection",
+    "featured_collection_FjR36Q",
     "hero_banner_ibFVLb",
     "text-columns",
     "image_with_text_z4FXgn",

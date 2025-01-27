@@ -1,9 +1,10 @@
-// Main JavaScript file
-document.addEventListener('DOMContentLoaded', () => {
-  // Theme JavaScript initialization
+const ready = fn => document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn);
+
+ready(() => {
   initProductForms();
+  initQuickAdd();
   initCollectionPage();
-});
+})
 
 function initProductForms() {
   const productForms = document.querySelectorAll('.product-form');
@@ -155,4 +156,54 @@ function initCollectionPage() {
       window.location.href = url.href;
     });
   }
+}
+
+async function handleQuickAdd(event) {
+  const button = event.currentTarget;
+  const spinner = button.querySelector('.loading-spinner');
+  
+  // Show loading state
+  button.disabled = true;
+  spinner?.classList.remove('hidden');
+
+  try {
+    const response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        items: [{
+          id: button.dataset.variantId,
+          quantity: 1
+        }]
+      })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Success - update cart drawer/counter
+      document.dispatchEvent(new CustomEvent('product:added', {
+        detail: {
+          product: data
+        }
+      }));
+    } else {
+      // Error handling
+      console.error('Error:', data);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  } finally {
+    // Reset button state
+    button.disabled = false;
+    spinner?.classList.add('hidden');
+  }
+}
+
+function initQuickAdd() {
+  document.querySelectorAll('[data-quick-add-button]').forEach(button => {
+    button.addEventListener('click', handleQuickAdd);
+  });
 } 

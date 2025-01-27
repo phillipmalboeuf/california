@@ -79,7 +79,7 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
   /* background: var(--colors-background); */
   z-index: 2;
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.333s;
   transition-behavior: allow-discrete;
 }
 
@@ -95,8 +95,14 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
   position: absolute;
   top: var(--step-1);
   right: var(--step-1);
+  outline: none;
 }
 
 #cart-dialog::backdrop {
   background: transparent;
+  transition: background-color 0.333s;
+}
+
+#cart-dialog.open::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
 }

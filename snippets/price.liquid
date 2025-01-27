@@ -17,16 +17,16 @@
   
   <div class="price__regular">
     {%- if price_varies -%}
-      <span class="price__from">{{ 'products.product.from_lowest_price_html' | t: lowest_price: price | money }}</span>
+      <span class="price__from">{{ 'products.product.from_lowest_price_html' | t: lowest_price: price | money_without_trailing_zeros }}</span>
     {%- else -%}
-      <span class="price__amount">{{ price | money }}</span>
+      <span class="price__amount">{{ price | money_without_trailing_zeros }}</span>
     {%- endif -%}
   </div>
 
   {%- if compare_at_price > price -%}
     <div class="price__sale">
-      <span class="price__current">{{ price | money }}</span>
-      <span class="price__compare">{{ compare_at_price | money }}</span>
+      <span class="price__current">{{ price | money_without_trailing_zeros }}</span>
+      <span class="price__compare">{{ compare_at_price | money_without_trailing_zeros }}</span>
     </div>
   {%- endif -%}
 </div> 

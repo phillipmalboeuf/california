@@ -1,19 +1,16 @@
 class CartManager {
   constructor() {
     this.cartDialog = document.getElementById('cart-dialog');
-    this.fetchCart();
-  }
-
-  async fetchCart() {
-    const response = await fetch('/cart?sections=cart&sections_url=%5C/cart')
-    const render = await response.json()
-    document.getElementById('cart-render').innerHTML = render.cart
-    
-    this.bindEvents();
     this.updateCartUI();
-  }
 
-  bindEvents() {
+    // Listen for product:added events
+    document.addEventListener('product:added', () => {
+      this.updateCartUI();
+      
+      setTimeout(()=> this.cartDialog.classList.add('open'), 10)
+      this.cartDialog.showModal();
+    });
+
     // Add cart toggle event
     document.querySelectorAll('[data-cart-toggle]').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
@@ -21,7 +18,9 @@ class CartManager {
         this.toggleCart();
       });
     });
+  }
 
+  bindEvents() {
     // Quantity selector events
     document.querySelectorAll('.quantity-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -118,27 +117,39 @@ class CartManager {
       const response = await fetch('/cart.js');
       const cart = await response.json();
 
-      // Update progress bar
-      const threshold = 7500; // $75.00
-      const progress = Math.min((cart.total_price / threshold) * 100, 100);
-      document.querySelectorAll('.progress-fill').forEach(el => {
-        el.style.width = `${progress}%`;
+      const section = await fetch('/cart?section_id=template--18769867440366__cart')
+      const render = await section.text()
+      document.getElementById('cart-render').innerHTML = render
+
+      // Update cart count
+      document.querySelectorAll('[data-cart-count]').forEach(el => {
+        el.textContent = `(${cart.item_count})`;
+        el.classList.toggle('hidden', cart.item_count === 0);
       });
+
+      this.bindEvents();
+
+      // // Update progress bar
+      // const threshold = 7500; // $75.00
+      // const progress = Math.min((cart.total_price / threshold) * 100, 100);
+      // document.querySelectorAll('.progress-fill').forEach(el => {
+      //   el.style.width = `${progress}%`;
+      // });
       
-      // Update progress text
-      const remaining = threshold - cart.total_price;
-      document.querySelectorAll('.progress-text').forEach(progressText => {
-        if (remaining > 0) {
-          progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
-        } else {
-          progressText.textContent = '🎉 You\'ve got FREE shipping!';
-        }
-      });
+      // // Update progress text
+      // const remaining = threshold - cart.total_price;
+      // document.querySelectorAll('.progress-text').forEach(progressText => {
+      //   if (remaining > 0) {
+      //     progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
+      //   } else {
+      //     progressText.textContent = '🎉 You\'ve got FREE shipping!';
+      //   }
+      // });
       
-      // Update subtotal
-      document.querySelectorAll('.cart-subtotal span:last-child').forEach(el => {
-        el.textContent = formatMoney(cart.total_price);
-      });
+      // // Update subtotal
+      // document.querySelectorAll('.cart-subtotal span:last-child').forEach(el => {
+      //   el.textContent = formatMoney(cart.total_price);
+      // });
     } catch (error) {
       console.error('Error updating cart UI:', error);
     }
@@ -154,7 +165,7 @@ class CartManager {
   toggleCart() {
     if (this.cartDialog.open) {
       this.cartDialog.classList.remove('open')
-      this.cartDialog.close();
+      setTimeout(()=> this.cartDialog.close(), 333);
     } else {
       setTimeout(()=> this.cartDialog.classList.add('open'), 10)
       this.cartDialog.showModal();
@@ -163,8 +174,7 @@ class CartManager {
 }
 
 
-
-// Initialize cart manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// const ready = fn => document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn);
+ready(() => {
   new CartManager();
 }); 

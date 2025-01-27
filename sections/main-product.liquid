@@ -1,10 +1,33 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
 <section class="product-section">
-  <div class="page-width padded">
+  <div class="page-width padded padded--thick">
     <div class="product-grid flex flex--around flex--gapped">
-      <div class="product-media col col--5of12">
+      <div class="product-media flex flex--gapped col col--5of12">
         {%- if product.media.size > 0 -%}
+          <nav class="product-gallery__nav flex flex--column flex--gapped">
+            {%- for media in product.media -%}
+              <button class="product-gallery__thumb button button--none" data-slide-index="{{ forloop.index0 }}">
+                {%- if media.media_type == 'image' -%}
+                  {{ media | image_url: width: 150 | image_tag:
+                    loading: 'lazy',
+                    width: media.width,
+                    height: media.height,
+                    class: "product-gallery__thumb_image"
+                  }}
+                {%- else -%}
+                  <div class="product-gallery__thumb-placeholder color-inverse-1 h6 h--alt">
+                    {%- case media.media_type -%}
+                      {%- when 'external_video' or 'video' -%}
+                        Video
+                      {%- when 'model' -%}
+                        3D Model
+                    {%- endcase -%}
+                  </div>
+                {%- endif -%}
+              </button>
+            {%- endfor -%}
+          </nav>
           <div class="product-gallery carousel" data-carousel>
             <div class="carousel__container">
             {%- for media in product.media -%}
@@ -32,7 +55,7 @@
       </div>
 
       <div class="product-info col col--5of12 flex flex--column flex--gapped">
-        {%- if section.settings.show_vendor and product.vendor -%}
+        {%- if section.settings.show_vendor and product.vendor and product.vendor != 'California Naturals' -%}
           <div class="product-vendor">{{ product.vendor }}</div>
         {%- endif -%}
 
@@ -40,25 +63,22 @@
 
         {%- if section.settings.show_description -%}
           <div class="product-description flex flex--gapped flex--column rte">
-              <div class="product-weight">
+              <div class="product-weight flex flex--gapped flex--middle h6 h--alt">
+                {%- if product.metafields.shopify.suitable-for-hair-type != blank -%}
+                  <div class="product-hair-type em">
+                    {{ product.metafields.shopify.suitable-for-hair-type | metafield_text: field: 'label' }}
+                  </div>
+                {%- endif -%}
                 {% comment %} <h6 class="h--alt">Weight</h6> {% endcomment %}
                 {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'oz' }} / {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'g' }}
               </div>
               <hr>
-
-            {%- if product.metafields.shopify.suitable-for-hair-type != blank -%}
-              <div class="product-hair-type">
-                {% comment %} <h6 class="h--alt">Suitable For Hair Type</h6> {% endcomment %}
-                {{ product.metafields.shopify.suitable-for-hair-type | metafield_text: field: 'label' }}
-              </div>
-              <hr>
-            {%- endif -%}
             
             {{ product.description }}
             
             {%- if product.metafields.shopify.scent != blank -%}
               <hr>
-              <div class="product-scent">
+              <div class="product-scent flex flex--column flex--gapped">
                 <h6 class="h--alt">Scent</h6>
                 {{ product.metafields.shopify.scent | metafield_text: field: 'label' }}
               </div>
@@ -66,7 +86,7 @@
             
             {%- if product.metafields.shopify.constitutive-ingredients != blank -%}
               <hr>
-              <div class="product-ingredients">
+              <div class="product-ingredients flex flex--column flex--gapped">
                 <h6 class="h--alt">Key Ingredients</h6>
                 {{ product.metafields.shopify.constitutive-ingredients | metafield_text: field: 'label' }}
                 <h6 class="h--alt"><a href="/pages/ingredients">Explore Ingredients Glossary</a></h6>
@@ -105,7 +125,7 @@
             </div>
           {%- endif -%}
 
-          <div class="product-quantity">
+          <div class="product-quantity flex flex--gapped flex--middle">
             {% comment %} <label class="form__label visually-hidden" for="Quantity">{{ 'products.product.quantity' | t }}</label> {% endcomment %}
             <div class="quantity-input">
               <button type="button" class="button--none quantity-button" data-action="decrease">-</button>
@@ -124,7 +144,7 @@
             <button
               type="submit"
               name="add"
-              class="button button--full"
+              class="button button--full button--inverse h6 h--alt"
               {% unless product.available %}disabled{% endunless %}
               data-add-to-cart
             >
@@ -139,10 +159,10 @@
                     <span class="price-from">{{ 'products.product.from_price_html' | t }}</span>
                   {%- endif -%}
                   <span class="price" data-product-price>
-                    {{ product.selected_or_first_available_variant.price | money }}
+                    {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
                   </span>
                   {%- if product.compare_at_price > product.price -%}
-                    <span class="compare-price">{{ product.compare_at_price | money }}</span>
+                    <span class="compare-price">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
                   {%- endif -%}
                 </span>
               </span>
@@ -150,13 +170,47 @@
             </button>
           </div>
         {%- endform -%}
+
+        {%- if product.metafields.custom.goes_well_with != blank -%}
+          <div class="product-related flex flex--column flex--gapped">
+            <h5>Goes well with:</h5>
+            <div class="product-related__grid flex flex--gapped flex--wrap">
+              {%- for related in product.metafields.custom.goes_well_with.value -%}
+                <div class="product-related__item padded color-light-2 col col--6of12">
+                  <div class="flex flex--gapped">
+                    {{ related | image_url: width: 500 | image_tag:
+                      loading: 'lazy',
+                      width: related.featured_image.width,
+                      height: related.featured_image.height,
+                      class: "col col--3of12 product-related__image"
+                    }}
+                    <h6 class="col col--9of12 h--alt">{{ related.title }}</h6>
+                    <button 
+                      class="button button--full button--outline h6 h--alt"
+                      {% unless related.available %}disabled{% endunless %}
+                      data-quick-add-button
+                      data-variant-id="{{ related.selected_or_first_available_variant.id }}"
+                    >
+                      {%- if related.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                      {{ related.price | money_without_trailing_zeros }}
+                    </button>
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
 
 {%- if product.metafields.custom.quote != blank -%}
-  <div class="product-quote padded padded--thick page-width">
-    <div class="product-quote__content text-center">
+  <div class="product-quote flex flex--middle flex--center">
+    <div class="product-quote__content padded padded--thick page-width text-center">
       {{ product.metafields.custom.quote | metafield_tag }}
     </div>
   </div>
@@ -164,22 +218,21 @@
 
 {%- if product.metafields.custom.left != blank or product.metafields.custom.right != blank -%}
   <div class="product-columns padded padded--thick page-width">
-    <div class="grid grid--2-col-desktop">
+    <div class="flex flex--center">
       {%- if product.metafields.custom.left != blank -%}
-        <div class="product-columns__content">
+        <div class="col col--6of12 product-columns__content">
           {{ product.metafields.custom.left | metafield_tag }}
         </div>
       {%- endif -%}
       
       {%- if product.metafields.custom.right != blank -%}
-        <div class="product-columns__content">
+        <div class="col col--6of12 product-columns__content">
           {{ product.metafields.custom.right | metafield_tag }}
         </div>
       {%- endif -%}
     </div>
   </div>
 {%- endif -%}
-
 </section>
 
 

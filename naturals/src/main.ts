@@ -7,8 +7,8 @@ import { initCarousels } from './lib/carousel'
 mount(App, { target: document.getElementById('app')! })
 // mount(Cart, { target: document.getElementById('cart-render')! })
 
-// Initialize carousels after the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+const ready = fn => document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn)
+ready(() => {
   initCarousels()
 })
 

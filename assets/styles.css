@@ -90,6 +90,13 @@ button,
   background-color: var(--colors-body);
 }
 
+.button--outline {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid;
+}
+
+
 /* .button--primary {
   background-color: var(--color-primary);
   color: var(--color-background);
@@ -197,7 +204,7 @@ button,
 .price {
   display: flex;
   flex-direction: column;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 .price--on-sale .price__regular {
@@ -211,15 +218,15 @@ button,
 .price__compare {
   text-decoration: line-through;
   opacity: 0.7;
-  margin-left: 0.5rem;
+  margin-left: var(--step--1);
 }
 
 .price__from {
-  color: var(--color-text-secondary, rgba(0, 0, 0, 0.6));
+  color: var(--colors-secondary, rgba(0, 0, 0, 0.6));
 }
 
 .price__current {
-  color: var(--color-error, #cf0000);
+  color: var(--colors-error, #cf0000);
 }
 
 /* Embla Carousel Styles */
@@ -241,6 +248,7 @@ button,
   flex: 0 0 100%;
   /* padding-left: 1rem; */
   max-width: 100%;
+  margin-right: var(--step-0);
 }
 
 /* Ensure images inside slides maintain aspect ratio */

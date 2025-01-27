@@ -12,7 +12,7 @@
     "cart": {
       "type": "cart",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "light-2",
         "free_shipping_threshold": 7500,
         "cart_message": "",
         "show_upsell_products": true,

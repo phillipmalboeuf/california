@@ -126,6 +126,17 @@
           "colors_background": "#bfe9d2",
           "colors_background_gradient": ""
         }
+      },
+      "light-2": {
+        "settings": {
+          "colors_body": "#000",
+          "colors_light": "#f9f9f9",
+          "colors_accent": "#00a74d",
+          "colors_secondary": "#000000",
+          "colors_bold": "#00a74d",
+          "colors_background": "#E5F6ED",
+          "colors_background_gradient": ""
+        }
       }
     }
   }

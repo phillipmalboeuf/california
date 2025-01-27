@@ -6,7 +6,7 @@
 {% assign color_scheme = section.settings.color_scheme | default: 'light-1' %}
 
 <form action="{{ routes.cart_url }}" class="cart-container flex flex--column flex--gapped padded page-width color-{{ color_scheme }} gradient" method="post" id="cart">
-  <h4 class="cart-title">{{ 'cart.general.title' | t }} ({{ cart.item_count }})</h4>
+  <h4 class="cart-title">{{ 'cart.general.title' | t }} <span data-cart-count>({{ cart.item_count }})</span></h4>
   
   <!-- Shipping Progress Bar -->
   {% if section.settings.cart_message != blank %}
@@ -19,7 +19,7 @@
       {% assign progress_percentage = current_cart_total | times: 100.0 | divided_by: free_shipping_threshold %}
       
       <h6 class="h--alt progress-text">
-        {{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount | money }}
+        {{ 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount | money_without_trailing_zeros }}
       </h6>
       <div class="progress-bar">
         <div class="progress-fill" style="width: {{ progress_percentage }}%"></div>
@@ -38,12 +38,13 @@
     {% for item in cart.items %}
       <div class="cart-item flex flex--gapped" data-item-id="{{ item.id }}">
         <img 
+          class="cart-item-image col col--3of12"
           src="{{ item.image | img_url: '120x' }}" 
           alt="{{ item.title }}"
-          width="120"
-          height="120"
+          width="100%"
+          height="auto"
         >
-        <div class="item-details">
+        <div class="item-details col col--6of12">
           <h6 class="h--alt">{{ item.product.title }}</h6>
           
           <div class="quantity-selector">
@@ -61,7 +62,7 @@
           
           <button class="remove-item" type="button" data-remove="{{ item.key }}">Remove</button>
         </div>
-        <h6 class="h--alt item-price">{{ item.price | money }}</h6>
+        <h6 class="h--alt item-price col col--3of12">{{ item.price | money_without_trailing_zeros }}</h6>
       </div>
       <hr>
     {% endfor %}
@@ -82,7 +83,7 @@
               height="200"
             >
             <h3>{{ product.title }}</h3>
-            <p class="upsell-price">{{ product.price | money }}</p>
+            <p class="upsell-price">{{ product.price | money_without_trailing_zeros }}</p>
             <button class="add-to-cart-btn" type="button" data-product-id="{{ product.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
           </div>
         {% endfor %}
@@ -94,7 +95,7 @@
   <div class="cart-footer">
     <div class="cart-subtotal h6 h--alt flex flex--spaced">
       <span>{{ 'cart.general.subtotal' | t }}:</span>
-      <span>{{ cart.total_price | money }}</span>
+      <span>{{ cart.total_price | money_without_trailing_zeros }}</span>
     </div>
     <hr>
     <button type="submit" class="h6 h--alt button--full button--secondary checkout-btn">{{ 'cart.general.proceed_to_checkout' | t }}</button>

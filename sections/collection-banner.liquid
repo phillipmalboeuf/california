@@ -1,4 +1,4 @@
-<div class="collection-banner color-inverse-1 page-width padded padded--thick {% if section.settings.show_collection_image and collection.image %}collection-banner--has-image{% endif %}">
+<div class="collection-banner color-inverse-1 page-width padded padded--thick flex flex--column flex--center flex--middle {% if section.settings.show_collection_image and collection.image %}collection-banner--has-image{% endif %}">
   {%- if section.settings.show_collection_image and collection.image -%}
     <div class="collection-banner__image-wrapper">
       {{ collection.image | image_url: width: 2000 | image_tag:
@@ -27,6 +27,8 @@
 {% schema %}
 {
   "name": "Collection banner",
+  "tag": "section",
+  "class": "section section-collection-banner section-header",
   "settings": [
     {
       "type": "checkbox",

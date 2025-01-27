@@ -1,9 +1,22 @@
+.section-featured-collection + .section-featured-collection .padded--thick {
+  padding-top: var(--step-0);
+}
+
+.section-featured-collection:has(+ .section-featured-collection) .padded--thick {
+  padding-bottom: var(--step-0);
+}
+
 .product-grid {
 
 }
 
   .product-grid__item {
 
+  }
+
+  .product-card__media {
+    overflow: hidden;
+    border-radius: var(--step--1);
   }
   
   .product-grid__item.product-grid__item--video .video-container {
@@ -16,6 +29,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--step--1);
+    background-color: #000;
   }
 
   .product-grid__item.product-grid__item--video .video-link {
@@ -35,6 +49,7 @@
     position: relative;
     margin: var(--step-2) auto;
     background-color: transparent !important;
+    min-height: 50lvh;
   }
 
   .collection-banner__image-wrapper img {
