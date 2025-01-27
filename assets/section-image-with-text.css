@@ -23,6 +23,28 @@
   z-index: 1;
 }
 
+.image-with-text__text {
+  width: auto;
+}
+
 .image-with-text__subheading {
   color: var(--colors-body-inverse);
+}
+
+.text-right .image-with-text__media-item {
+  order: -1;
+}
+
+.image-with-text__media-item--bleed .image-with-text__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.image-with-text__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

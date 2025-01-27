@@ -50,26 +50,24 @@
   </header>
 
   {%- paginate blog.articles by section.settings.posts_per_page -%}
-    <div class="blog-articles">
+    <div class="blog-articles flex flex--thick_gapped padded">
       {%- for article in blog.articles -%}
-        <article class="blog-articles__article">
-          <div class="article-card" style="background-color: {{ article.metafields.custom.color }};">
+        <article class="col {% if article.metafields.custom.featured %}col--8of12{% else %}col--4of12{% endif %} blog-articles__article">
+          <a href="{{ article.url }}" class="article-card flex flex--column flex--gapped" style="background-color: {{ article.metafields.custom.color }};">
             {%- if article.image and section.settings.show_image -%}
               <div class="article-card__image-wrapper">
-                <a href="{{ article.url }}" class="article-card__link">
-                  {{ article.image | image_url: width: 533 | image_tag:
-                    loading: 'lazy',
-                    class: 'article-card__image'
-                  }}
-                </a>
+                {{ article.image | image_url: width: 533 | image_tag:
+                  loading: 'lazy',
+                  class: 'article-card__image'
+                }}
               </div>
             {%- endif -%}
 
-            <div class="article-card__content flex flex--column flex--gapped flex--middle text-center">
+            <div class="article-card__content flex flex--column flex--middle text-center">
               <header class="article-card__header">
-                <h5 class="article-card__title">
-                  <a href="{{ article.url }}">{{ article.title | escape }}</a>
-                </h5>
+                <h6 class="h--alt em article-card__title">
+                  {{ article.title | escape }}
+                </h6>
 
                 {%- if section.settings.show_date or section.settings.show_author -%}
                   <div class="article-card__meta">
@@ -90,11 +88,11 @@
                 </div>
               {%- endif -%}
 
-              <div class="article-card__footer">
+              {% comment %} <div class="article-card__footer">
                 <a href="{{ article.url }}" class="button button--secondary">{{ 'blogs.article.read_more' | t }}</a>
-              </div>
+              </div> {% endcomment %}
             </div>
-          </div>
+          </a>
         </article>
       {%- endfor -%}
     </div>

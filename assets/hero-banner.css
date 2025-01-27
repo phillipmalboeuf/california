@@ -56,18 +56,6 @@ main > section:first-child > .hero-banner {
   max-width: 600px; */
 }
 
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
 .text-center .hero-banner__text {
   margin-left: auto;
   margin-right: auto;

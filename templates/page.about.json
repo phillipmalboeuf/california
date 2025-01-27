@@ -1,37 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "blocks": {
+        "text_fa3tF3": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>California Naturals  is a daily lifestyle brand</h1><h5>Keeping it real natural</h5>"
+          }
+        }
+      },
+      "block_order": [
+        "text_fa3tF3"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Group_4970.png",
+        "curves": false,
+        "show_overlay": false,
+        "text_alignment": "center"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-      }
-    },
-    "hero": {
-      "type": "hero-banner",
-      "settings": {
-        "text_alignment": "center"
+        "hide_title": true,
+        "image": "shopify://shop_images/Background.png",
+        "bubble_text": "<h4>We believe in radical accessibility and openness</h4>"
       }
     },
     "video": {
       "type": "video-with-text",
       "blocks": {
-        "heading": {
+        "heading_bYfcAK": {
           "type": "heading",
           "settings": {
-            "heading": "Our Story"
+            "heading": "Owen Wilson",
+            "subheading": "Chief Shampoo Officer"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share your brand's unique story and mission with your customers.</p>"
+            "text": "<p>Meet Owen, our Chief Shampoo Officer and resident Californian. Hailing from Texas, Owen is a world-renowned actor + writer, and we're lucky enough to have him on the team here at California Naturals. Below is an excerpt from his interview with People Magazine, see the full article here.</p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading_bYfcAK",
+        "text"
+      ],
       "settings": {
+        "color_scheme": "",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/e57e1bf96327486ea361a3fa0bb6f0da.mp4",
+        "autoplay": false,
+        "text_alignment": "center"
+      }
+    },
+    "image_with_text_94MNeL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_k6EXcY": {
+          "type": "heading",
+          "settings": {
+            "heading": "\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\""
+          }
+        }
+      },
+      "block_order": [
+        "heading_k6EXcY"
+      ],
+      "settings": {
+        "color_scheme": "inverse-2",
+        "curves": false,
+        "image_ratio": "square",
         "text_alignment": "center"
       }
     }
   },
-  "order": ["hero", "main", "video"]
-} 
+  "order": [
+    "hero",
+    "main",
+    "video",
+    "image_with_text_94MNeL"
+  ]
+}

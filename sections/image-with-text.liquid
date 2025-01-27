@@ -4,8 +4,8 @@
       <path d="M1444.5 84.8525C1444.5 97.0028 1434.65 106.853 1422.5 106.853L22.1594 106.852C10.0092 106.852 0.159425 97.0027 0.159426 84.8524L0.159431 28.1738C0.159432 14.9536 11.4829 4.67426 24.6116 6.22777C123.861 17.9721 501.518 60.8495 715.983 59.732C930.845 58.6124 1319 12.8507 1419.96 0.505277C1433.12 -1.10291 1444.5 9.18407 1444.5 22.4344L1444.5 84.8525Z" fill="#00A74D"/>
     </svg>
   {%- endif -%}
-  <div class="image-with-text__grid flex flex--thick_gapped padded padded--thick page-width">
-    <div class="image-with-text__text-item flex flex--column flex--middle flex--thick_gapped">
+  <div class="image-with-text__grid flex flex--thick_gapped flex--middle padded padded--thick page-width">
+    <div class="image-with-text__text-item flex flex--column flex--middle flex--thick_gapped{% if section.settings.image != blank %} col col--6of12{% endif %}">
       {%- for block in section.blocks -%}
         {% case block.type %}
           {% when 'heading' %}
@@ -13,7 +13,7 @@
           {% when 'subheading' %}
             <h6 class="h--alt em image-with-text__subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</h6>
           {% when 'text' %}
-            <div class="image-with-text__text" {{ block.shopify_attributes }}>
+            <div class="image-with-text__text flex flex--column flex--gapped" {{ block.shopify_attributes }}>
               {{ block.settings.text }}
             </div>
           {% when 'button' %}
@@ -25,12 +25,13 @@
       {%- endfor -%}
     </div>
     {%- if section.settings.image != blank -%}
-    <div class="image-with-text__media-item">
-      <div class="image-with-text__media image-with-text__media--{{ section.settings.image_ratio }}">
+    <div class="image-with-text__media-item col col--6of12{% if section.settings.bleed %} image-with-text__media-item--bleed{% endif %}">
+      <div class="image-with-text__media">
         {{ section.settings.image | image_url: width: 1500 | image_tag:
           loading: 'lazy',
           width: section.settings.image.width,
-          height: section.settings.image.height
+          height: section.settings.image.height,
+          class: 'image-with-text__image'
         }}
       </div>
     </div>
@@ -62,24 +63,10 @@
       "label": "Image"
     },
     {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "square",
-          "label": "Square"
-        },
-        {
-          "value": "portrait",
-          "label": "Portrait"
-        },
-        {
-          "value": "landscape",
-          "label": "Landscape"
-        }
-      ],
-      "default": "square",
-      "label": "Image ratio"
+      "type": "checkbox",
+      "id": "bleed",
+      "label": "Bleed image",
+      "default": false
     },
     {
       "type": "select",
@@ -92,6 +79,10 @@
         {
           "value": "center",
           "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
         }
       ],
       "default": "left",
@@ -163,9 +154,6 @@
       "blocks": [
         {
           "type": "heading"
-        },
-        {
-          "type": "subheading"
         },
         {
           "type": "text"

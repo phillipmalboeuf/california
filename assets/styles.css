@@ -197,7 +197,7 @@ button,
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
-.text-right { text-align: right; }
+/* .text-right { text-align: right; } */
 
 .hidden { display: none; }
 

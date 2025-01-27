@@ -32,7 +32,7 @@
             <div class="ingredient-background" style="background-image: url({{ block.settings.background_image | image_url: width: 1500 }});">
           {% endif %}
             <div class="ingredient-content">
-              <h3>{{ block.settings.title }}</h3>
+              <h5>{{ block.settings.title }}</h5>
               <div class="rte">{{ block.settings.description }}</div>
             </div>
           {% if block.settings.background_image %}
@@ -50,9 +50,9 @@
     top: 0;
     z-index: 10;
     background: #ffffff;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e5e5e5;
+    padding: var(--step-0) 0;
+    margin-bottom: var(--step-2);
+    {% comment %} border-bottom: 1px solid #e5e5e5; {% endcomment %}
   }
 
   .ingredients-nav__list {
@@ -61,7 +61,7 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--step--2);
     justify-content: center;
   }
 
@@ -71,35 +71,36 @@
 
   .ingredients-nav__link {
     display: inline-block;
-    padding: 0.5rem 0.75rem;
+    {% comment %} padding: 0.5rem 0.75rem; {% endcomment %}
+    padding: var(--step--2) var(--step--1);
     text-decoration: none;
     color: inherit;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    {% comment %} border-radius: var;
+    transition: background-color 0.2s ease; {% endcomment %}
   }
 
   .ingredients-nav__link:hover {
-    background-color: #f5f5f5;
+    {% comment %} background-color: #f5f5f5; {% endcomment %}
   }
 
   .ingredients-letter-heading {
-    width: 100%;
+    {% comment %} width: 100%;
     padding: 1rem 0;
     margin: 2rem 0 1rem;
     border-bottom: 2px solid currentColor;
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 5rem; {% endcomment %}
   }
 
   .ingredients-grid {
     display: grid;
     grid-template-columns: repeat(var(--columns-desktop), 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: var(--step-1);
+    margin: var(--step-2) 0;
   }
 
   .ingredient-block {
     position: relative;
-    min-height: 300px;
+    min-height: 33lvh;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -117,25 +118,25 @@
   .ingredient-content {
     position: relative;
     z-index: 1;
-    padding: 2rem;
+    padding: var(--step-1);
     color: #ffffff;
-    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    {% comment %} justify-content: flex-end; {% endcomment %}
   }
 
-  .ingredient-content h3 {
-    margin: 0 0 1rem;
-    font-size: 1.5rem;
+  .ingredient-content h5 {
+    margin: 0 0 var(--step--1);
+    {% comment %} font-size: 1.5rem; {% endcomment %}
   }
 
   .ingredient-content .rte {
     margin: 0;
   }
 
-  @media screen and (max-width: 749px) {
+  {% comment %} @media screen and (max-width: 749px) {
     .ingredients-grid {
       grid-template-columns: repeat(var(--columns-mobile), 1fr);
     }
@@ -148,7 +149,7 @@
       padding: 0.25rem 0.5rem;
       font-size: 0.875rem;
     }
-  }
+  } {% endcomment %}
 </style>
 
 {% schema %}

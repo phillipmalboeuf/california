@@ -1,11 +1,18 @@
+{{ 'section-blog.css' | asset_url | stylesheet_tag }}
 {{ 'section-article.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template page-width">
-  <header class="article-template__header">
-    <h1 class="article-template__title">{{ article.title | escape }}</h1>
+<article class="article-template padded padded--thick flex flex--gapped flex--center page-width">
+  <header class="article-template__header flex flex--gapped">
+    <h1 class="h2 article-template__title col col--8of12">{{ article.title | escape }}</h1>
+    <figure class="col col--4of12">
+      {{ article.metafields.custom.illustration | image_url: width: 150 | image_tag:
+        loading: 'lazy',
+        class: 'article-template__illustration'
+      }}
+    </figure>
 
     {%- if section.settings.show_date or section.settings.show_author -%}
-      <div class="article-template__meta">
+      <div class="article-template__meta flex flex--column flex--gapped col col--4of12">
         {%- if section.settings.show_date -%}
           <span class="article-template__date">
             {{ article.published_at | time_tag: format: 'date' }}
@@ -21,6 +28,12 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+
+    {%- if article.excerpt.size > 0 -%}
+      <div class="article-template__excerpt h5 col col--8of12 rte">
+        {{ article.excerpt }}
+      </div>
+    {%- endif -%}
   </header>
 
   {%- if article.image and section.settings.show_featured_image -%}
@@ -32,7 +45,7 @@
     </div>
   {%- endif -%}
 
-  <div class="article-template__content rte">
+  <div class="article-template__content flex flex--gapped flex--middle flex--column rte">
     {{ article.content }}
   </div>
 
@@ -108,6 +121,58 @@
   {%- endif -%}
 </article>
 
+{%- if section.settings.show_related_products and article.metafields.custom.related_products != blank -%}
+  <nav class="article-template__related-products padded padded--thick flex flex--column flex--gapped page-width">
+    <h4>{{ section.settings.related_products_title | default: 'Related products' }}</h4>
+
+    <div class="product-grid flex flex--thick_gapped flex--center">
+      {%- for product in article.metafields.custom.related_products.value -%}
+        <div class="col col--4of12">
+          {%- render 'product-card',
+            product: product,
+            show_secondary_image: true,
+            show_vendor: false,
+            show_quick_add: true
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </nav>
+{%- endif -%}
+
+{%- if section.settings.show_related_articles and blog.articles_count > 1 -%}
+  <nav class="article-template__related padded padded--thick flex flex--column flex--gapped flex--middle page-width">
+    {%- if section.settings.related_articles_title != blank -%}
+      <h3 class="h--alt">{{ section.settings.related_articles_title }}</h3>
+    {%- endif -%}
+    
+    {%- if section.settings.related_articles_subtitle != blank -%}
+      <div class="article-template__related-subtitle rte">{{ section.settings.related_articles_subtitle }}</div>
+    {%- endif -%}
+
+    <div class="blog-articles flex flex--gapped flex--center">
+      {%- for related in blog.articles limit: 3 -%}
+        {%- if related.handle != article.handle -%}
+          <div class="blog-articles__article col col--4of12">
+              <a href="{{ related.url }}" class="article-card flex flex--column flex--gapped text-center" style="background-color: {{ article.metafields.custom.color }};">
+              {%- if related.image -%}
+                {{ related.image | image_url: width: 350 | image_tag:
+                  loading: 'lazy',
+                  class: 'article-template__related-image'
+                }}
+              {%- endif -%}
+              <h6 class="h--alt em">{{ related.title }}</h6>
+              {%- if related.excerpt != blank -%}
+              <div class="rte">{{ related.excerpt | truncate: 120 }}</div>
+              {%- endif -%}
+            </a>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </nav>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Article",
@@ -129,6 +194,44 @@
       "id": "show_featured_image",
       "default": true,
       "label": "Show featured image"
+    },
+    {
+      "type": "header",
+      "content": "Related Products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_related_products",
+      "default": true,
+      "label": "Show related products"
+    },
+    {
+      "type": "text",
+      "id": "related_products_title",
+      "label": "Related products title",
+      "default": "Related products:"
+    },
+    {
+      "type": "header",
+      "content": "Related Articles"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_related_articles",
+      "default": true,
+      "label": "Show related articles"
+    },
+    {
+      "type": "text",
+      "id": "related_articles_title",
+      "label": "Related articles title",
+      "default": "MORE 'ZINE"
+    },
+    {
+      "type": "richtext",
+      "id": "related_articles_subtitle",
+      "label": "Related articles subtitle",
+      "default": "<p>A few other articles you may like</p>"
     }
   ]
 }
