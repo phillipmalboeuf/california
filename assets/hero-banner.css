@@ -51,6 +51,7 @@ main > section:first-child > .hero-banner {
 }
 
 .hero-banner__text {
+  width: 100%;
   /* margin-bottom: 2rem;
   font-size: 1.25rem;
   max-width: 600px; */

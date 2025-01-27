@@ -27,6 +27,7 @@ body {
 
 	font-size: $s0;
 	font-weight: 400;
+	letter-spacing: -0.01em;
 	font-optical-sizing: auto;
 	color: black;
 	background-color: white;
@@ -57,7 +58,7 @@ h1, h2, h3, h4, h5, h6,
 	font-family: var(--font-heading);
 	// text-transform: uppercase;
 	font-weight: 300;
-	letter-spacing: -0.002em;
+	letter-spacing: -0.02em;
 	line-height: 1.1;
 	// white-space: pre-line;
 
