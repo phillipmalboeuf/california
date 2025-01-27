@@ -1,13 +1,31 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 {% comment %} {{ 'shogun-override.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
-<div class="page-width padded padded--thick">
+<div class="page-width main-page flex flex--gapped flex--center padded padded--thick">
   {%- unless section.settings.hide_title -%}
     <h1 class="main-page-title page-title text-center h2">{{ page.title | escape }}</h1>
   {%- endunless -%}
-  <div class="rte">
+  
+  <div class="flex flex--column flex--gapped rte{% if section.settings.bubble_text != blank %} col col--5of12 has-bubble padded color-inverse-1{% endif %}">
     {{ page.content }}
   </div>
+
+  {% if section.settings.image != blank %}
+    <div class="page-image col col--5of12">
+      {{ section.settings.image | image_url: width: 1500 | image_tag:
+          loading: 'lazy',
+          width: section.settings.image.width,
+          height: section.settings.image.height,
+          class: 'page-image__image'
+        }}
+    </div>
+  {% endif %}
+
+  {% if section.settings.bubble_text != blank %}
+    <div class="page-bubble-text text-center padded color-inverse-2 rte">
+      {{ section.settings.bubble_text }}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}
@@ -21,6 +39,16 @@
       "id": "hide_title",
       "label": "Hide title",
       "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "bubble_text",
+      "label": "Bubble text"
     }
   ]
 }

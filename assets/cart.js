@@ -129,22 +129,22 @@ class CartManager {
 
       this.bindEvents();
 
-      // // Update progress bar
-      // const threshold = 7500; // $75.00
-      // const progress = Math.min((cart.total_price / threshold) * 100, 100);
-      // document.querySelectorAll('.progress-fill').forEach(el => {
-      //   el.style.width = `${progress}%`;
-      // });
+      // Update progress bar
+      const threshold = 7500; // $75.00
+      const progress = Math.min((cart.total_price / threshold) * 100, 100);
+      document.querySelectorAll('.progress-fill').forEach(el => {
+        el.style.width = `${progress}%`;
+      });
       
-      // // Update progress text
-      // const remaining = threshold - cart.total_price;
-      // document.querySelectorAll('.progress-text').forEach(progressText => {
-      //   if (remaining > 0) {
-      //     progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
-      //   } else {
-      //     progressText.textContent = '🎉 You\'ve got FREE shipping!';
-      //   }
-      // });
+      // Update progress text
+      const remaining = threshold - cart.total_price;
+      document.querySelectorAll('.progress-text').forEach(progressText => {
+        if (remaining > 0) {
+          progressText.textContent = `Add ${formatMoney(remaining)} more to get FREE shipping!`;
+        } else {
+          progressText.textContent = '🎉 You\'ve got FREE shipping!';
+        }
+      });
       
       // // Update subtotal
       // document.querySelectorAll('.cart-subtotal span:last-child').forEach(el => {

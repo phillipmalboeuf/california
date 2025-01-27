@@ -5,3 +5,33 @@
 .stockist-result-name {
   font-family: var(--font-alt-heading);
 }
+
+.main-page:has(> .has-bubble) {
+  position: relative;
+}
+
+.has-bubble {
+  border-radius: var(--step-1);
+  padding: var(--step-3) var(--step-4) var(--step-3) var(--step-3);
+  margin-top: calc(-20vh);
+}
+
+.page-image {
+  margin-top: calc(-24vh);
+  margin-left: calc(-2vw);
+}
+
+.page-image__image {
+  border-radius: var(--step--1);
+  width: 100%;
+  height: auto;
+}
+
+.page-bubble-text {
+  border-radius: var(--step-2);
+  max-width: 420px;
+  transform: rotate(7deg);
+  position: absolute;
+  bottom: 10lvh;
+  left: calc(50% - var(--step-2));
+}

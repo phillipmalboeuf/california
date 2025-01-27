@@ -1,5 +1,6 @@
 .image-with-text {
   position: relative;
+  min-height: 40lvh;
   /* margin: 0 auto; */
 }
 
