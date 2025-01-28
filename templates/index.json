@@ -50,6 +50,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/low-tide-at-the-beach-house.jpg",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/bec4b9e1427341739224b87b5a92f636.mp4",
         "curves": false,
         "show_overlay": true,
         "text_alignment": "center"
@@ -82,10 +83,140 @@
         "text_alignment": "center"
       }
     },
+    "text_columns_74ND4i": {
+      "type": "text-columns",
+      "blocks": {
+        "column_ERQ88f": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f_webp.png",
+            "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to spot for all things cleansing<br/>and conditioning.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/shampoo"
+          }
+        },
+        "column_KFRPnC": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f-2_webp.png",
+            "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love,<br/>don’t worry, we’ve got you.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "column_teHXGE": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2-3_webp_7dd155dc-ca56-4053-bf50-ce56a427b337.png",
+            "text": "<h4>Body</h4><p>We make our body products with all of<br/>your senses in mind.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/body"
+          }
+        }
+      },
+      "block_order": [
+        "column_ERQ88f",
+        "column_KFRPnC",
+        "column_teHXGE"
+      ],
+      "settings": {
+        "title": "Meet the products",
+        "title_alignment": "center"
+      }
+    },
+    "hero_banner_ibFVLb": {
+      "type": "hero-banner",
+      "settings": {
+        "image": "shopify://shop_images/Ingredients.png",
+        "video_url": "",
+        "curves": true,
+        "show_overlay": false,
+        "text_alignment": "center"
+      }
+    },
+    "text-columns": {
+      "type": "text-columns",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>The smell of is amazing and the texture is perfect for a nice gentle exfoliation before shaving</p>",
+            "author": "Jillian E.",
+            "showStars": true,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>It wasnt super rough but just enough to know its working on my skin. Great lather but not a lot. Love the shape as makes it easy to hold on to and to use.</p>",
+            "author": "Cameron B.",
+            "showStars": true,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
+            "text": "<p>I just hopped on line to order more! It is exfoliating and saves me a step in the shower. I am sorry I didn’t find it before</p>",
+            "author": "Alice V.",
+            "showStars": true,
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3"
+      ],
+      "settings": {
+        "title": "Reasons to love California Naturals",
+        "title_alignment": "left"
+      }
+    },
+    "image_with_text_z4FXgn": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_FWKwnH": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\"</h3>"
+          }
+        }
+      },
+      "block_order": [
+        "text_FWKwnH"
+      ],
+      "settings": {
+        "color_scheme": "inverse-2",
+        "curves": false,
+        "bleed": false,
+        "text_alignment": "center"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Super Moisture routine",
+        "title": "Super Moisture",
         "description": "",
         "collection": "super-moisture",
         "products_to_show": 8,
@@ -120,79 +251,6 @@
         "video_link_label": ""
       }
     },
-    "hero_banner_ibFVLb": {
-      "type": "hero-banner",
-      "settings": {
-        "image": "shopify://shop_images/Ingredients.png",
-        "curves": true,
-        "show_overlay": false,
-        "text_alignment": "center"
-      }
-    },
-    "text-columns": {
-      "type": "text-columns",
-      "blocks": {
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>The smell of is amazing and the texture is perfect for a nice gentle exfoliation before shaving</p>",
-            "author": "Jillian E.",
-            "showStars": true
-          }
-        },
-        "column-2": {
-          "type": "column",
-          "settings": {
-            "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>It wasnt super rough but just enough to know its working on my skin. Great lather but not a lot. Love the shape as makes it easy to hold on to and to use.</p>",
-            "author": "Cameron B.",
-            "showStars": true
-          }
-        },
-        "column-3": {
-          "type": "column",
-          "settings": {
-            "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>I just hopped on line to order more! It is exfoliating and saves me a step in the shower. I am sorry I didn’t find it before</p>",
-            "author": "Alice V.",
-            "showStars": true
-          }
-        }
-      },
-      "block_order": [
-        "column-1",
-        "column-2",
-        "column-3"
-      ],
-      "settings": {
-        "title": "Reasons to love California Naturals",
-        "title_alignment": "left"
-      }
-    },
-    "image_with_text_z4FXgn": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_FWKwnH": {
-          "type": "text",
-          "settings": {
-            "text": "<h3>\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\"</h3>"
-          }
-        }
-      },
-      "block_order": [
-        "text_FWKwnH"
-      ],
-      "settings": {
-        "color_scheme": "inverse-2",
-        "curves": false,
-        "bleed": false,
-        "text_alignment": "center"
-      }
-    },
     "image_with_text_f8edJ8": {
       "type": "image-with-text",
       "blocks": {
@@ -218,11 +276,12 @@
   "order": [
     "hero",
     "image_with_text",
-    "featured_collection",
-    "featured_collection_FjR36Q",
+    "text_columns_74ND4i",
     "hero_banner_ibFVLb",
     "text-columns",
     "image_with_text_z4FXgn",
+    "featured_collection",
+    "featured_collection_FjR36Q",
     "image_with_text_f8edJ8"
   ]
 }

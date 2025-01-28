@@ -9,6 +9,8 @@
 }
 
 .text-column__thumbnail {
+  width: 100%;
+  height: auto;
 }
 
 .text-column__subtitle {
