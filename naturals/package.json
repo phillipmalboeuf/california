@@ -19,8 +19,10 @@
     "vite": "^6.0.1"
   },
   "dependencies": {
+    "@swup/scripts-plugin": "^2.1.0",
     "embla-carousel": "^8.5.2",
     "sass": "^1.83.0",
+    "swup": "^4.8.1",
     "utopia-core-scss": "^1.2.1"
   }
 }

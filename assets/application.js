@@ -6,6 +6,12 @@ ready(() => {
   initCollectionPage();
 })
 
+document.addEventListener('page:reset', () => {
+  initProductForms();
+  initQuickAdd();
+  initCollectionPage();
+})
+
 function initProductForms() {
   const productForms = document.querySelectorAll('.product-form');
   

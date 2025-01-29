@@ -44,6 +44,16 @@ main {
   min-height: 100lvh;
 }
 
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {
+  transition: opacity 0.666s;
+  opacity: 1;
+}
+/* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
 /* Layout Helpers */
 .page-width {
   max-width: var(--page-width);

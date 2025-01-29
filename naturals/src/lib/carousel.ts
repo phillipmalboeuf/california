@@ -36,7 +36,6 @@ export function initCarousels() {
     setActiveThumb() // Set initial state
 
     thumbElements.forEach(thumb => {
-      console.log('thumb', thumb)
       thumb.addEventListener('click', () => {
         embla.scrollTo(parseInt(thumb.getAttribute('data-slide-index') || '0'))
       })

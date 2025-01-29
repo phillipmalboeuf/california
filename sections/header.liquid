@@ -69,7 +69,7 @@
         <span>{{- 'sections.header.account' | t -}}</span>
       </a> {% endcomment %}
 
-      <a href="{{- routes.cart_url -}}" class="button button--outline header__icon-button header__cart" data-cart-toggle>
+      <a href="{{- routes.cart_url -}}" data-no-swup class="button button--outline header__icon-button header__cart" data-cart-toggle>
         <span>{{- 'sections.header.cart' | t -}}</span>
         {%- if cart.item_count > 0 -%}
         <div class="header__cart-count" data-cart-count>
