@@ -80,22 +80,44 @@ button,
   color: var(--colors-body-inverse);
   border-color: transparent;
   background-color: var(--colors-accent);
+  transition: background-color 0.333s, color 0.333s, border-color 0.333s;
+
+  &:not(.button--none):hover,
+  &:not(.button--none):focus {
+    background-color: var(--colors-body);
+  }
 }
 
 .button--secondary {
   background-color: var(--colors-secondary);
+
+  &:hover,
+  &:focus {
+    background-color: var(--colors-accent);
+  }
 }
 
 .button--inverse {
   background-color: var(--colors-body);
+
+  &:hover,
+  &:focus {
+    background-color: var(--colors-accent);
+  }
 }
 
 .button--outline {
   background-color: transparent;
   color: inherit;
   border: 1px solid;
-}
 
+  &:hover,
+  &:focus {
+    color: var(--colors-body-inverse);
+    background-color: var(--colors-body);
+    border-color: transparent;
+  }
+}
 
 /* .button--primary {
   background-color: var(--color-primary);
@@ -134,12 +156,16 @@ button,
     border-radius: 0;
     border: none;
     border-bottom: 0.1em solid;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .field--inline button {
     position: absolute;
     right: 0;
-    bottom: var(--step--1);
+    bottom: var(--step-0);
   }
 
 .field__label {
@@ -260,3 +286,10 @@ button,
   object-fit: cover;
 }
 
+[data-oke-widget] {
+  --oke-button-fontWeight: 300;
+  --oke-button-fontFamily: var(--font-alt-heading);
+  --oke-button-borderRadius: var(--step-1);
+  --oke-button-backgroundColor: var(--colors-body);
+  --oke-button-textColor: var(--colors-body-inverse);
+}

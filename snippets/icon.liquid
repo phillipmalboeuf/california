@@ -34,4 +34,15 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
+
+  {%- when 'play' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M7 4.5c-.5 0-1 .2-1 .9v13.2c0 .7.5.9 1 .9.3 0 .5-.1.8-.3l10-6.6c.4-.3.7-.6.7-1.1s-.3-.8-.7-1.1l-10-6.6c-.3-.2-.5-.3-.8-.3z"/>
+    </svg>
+
+  {%- when '3d' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
+      <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/>
+    </svg>
 {%- endcase -%} 

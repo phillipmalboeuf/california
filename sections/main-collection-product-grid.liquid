@@ -24,16 +24,21 @@
       {%- if section.settings.enable_sorting and collection.products_count > 0 -%}
         <div class="collection__sort">
           <label for="SortBy" class="visually-hidden">{{ 'collections.sorting.title' | t }}</label>
-          <select name="sort_by" id="SortBy" class="collection__sort-select h5">
-            {%- for option in collection.sort_options -%}
-              <option 
-                value="{{ option.value }}" 
-                {% if option.value == collection.sort_by %}selected="selected"{% endif %}
-              >
-                {{ option.name | escape }}
-              </option>
-            {%- endfor -%}
-          </select>
+          <div class="collection__sort-wrapper" style="position: relative;">
+            <select name="sort_by" id="SortBy" class="collection__sort-select h5">
+              {%- for option in collection.sort_options -%}
+                <option 
+                  value="{{ option.value }}" 
+                  {% if option.value == collection.sort_by %}selected="selected"{% endif %}
+                >
+                  {{ option.name | escape }}
+                </option>
+              {%- endfor -%}
+            </select>
+            <div class="collection__sort-icon">
+              {% render 'icon', type: 'chevron-down' %}
+            </div>
+          </div>
         </div>
       {%- endif -%}
     </div>

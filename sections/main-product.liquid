@@ -19,9 +19,9 @@
                   <div class="product-gallery__thumb-placeholder color-inverse-1 h6 h--alt">
                     {%- case media.media_type -%}
                       {%- when 'external_video' or 'video' -%}
-                        Video
+                        {%- render 'icon', type: 'play' -%}
                       {%- when 'model' -%}
-                        3D Model
+                        {%- render 'icon', type: '3d' -%}
                     {%- endcase -%}
                   </div>
                 {%- endif -%}

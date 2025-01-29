@@ -1,11 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "settings": {
-        "show_vendor": true
+        "show_vendor": true,
+        "show_description": true,
+        "gallery_layout": "stacked",
+        "media_size": "medium"
       }
+    },
+    "173810002346eab90f": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_carousel_XyKAd6": {
+          "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "show_heading": true,
+            "heading": "Reasons to love {{ block.settings.product.title }}",
+            "badge_link": "",
+            "product": "{{product}}"
+          }
+        },
+        "okendo_reviews_widget_CYeiXX": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_carousel_XyKAd6",
+        "okendo_reviews_widget_CYeiXX"
+      ],
+      "settings": {}
     }
   },
-  "order": ["main"]
-} 
+  "order": [
+    "main",
+    "173810002346eab90f"
+  ]
+}

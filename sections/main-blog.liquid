@@ -21,8 +21,7 @@
     {% if blog.metafields.custom.banner %}
       {{ blog.metafields.custom.banner | image_url: width: 1100 | image_tag: 
         class: 'blog-header__banner',
-        loading: 'lazy',
-        style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;'
+        loading: 'lazy'
       }}
     {% endif %}
     <h1 class="blog-title h--alt">{{ blog.title | escape }}</h1>

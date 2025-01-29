@@ -72,6 +72,31 @@
     margin-left: auto;
   }
 
+    .collection__sort-select {
+      border: 2px solid var(--colors-accent);
+      border-radius: var(--step-0);
+      padding-right: var(--step-2);
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: transparent;
+    }
+
+    .collection__sort-icon {
+      width: var(--step-0);
+      height: var(--step-0);
+      color: currentColor;
+      position: absolute;
+      right: var(--step-0);
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .collection__sort-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
   .collection__nav_link:hover,
   .collection__nav_link:focus,
   .collection__nav_link--current {

@@ -2,6 +2,8 @@
 }
 
 .product-media {
+  position: sticky;
+  top: var(--step-6);
   flex-wrap: nowrap;
 }
 
@@ -35,7 +37,7 @@
   }
 
   .product-gallery__thumb-placeholder {
-    padding: var(--step-0) 0;
+    padding: var(--step--1) 0;
   }
 
   .product-hair-type {
