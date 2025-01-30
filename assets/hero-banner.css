@@ -87,7 +87,7 @@ main > section:first-child > .hero-banner {
 
 .hero-banner__curves:last-of-type {
   bottom: auto;
-  top: calc(100% - 40px);
+  top: calc(100% - 20px);
   transform: rotate(180deg);
 }
 

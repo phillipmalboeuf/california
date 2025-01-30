@@ -28,7 +28,7 @@
         "button_64rP3j": {
           "type": "button",
           "settings": {
-            "button_label": "Shop Now",
+            "button_label": "Shop Hair",
             "button_link": "shopify://collections/all",
             "button_style": "primary"
           }
@@ -62,7 +62,7 @@
         "subheading_Awyc9X": {
           "type": "subheading",
           "settings": {
-            "subheading": "who are we/ why are we here"
+            "subheading": "personal care you can feel good about"
           }
         },
         "heading_kWNNJY": {
@@ -91,7 +91,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f_webp.png",
-            "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to spot for all things cleansing<br/>and conditioning.</p>",
+            "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to for all things cleansing<br/>and conditioning.</p>",
             "author": "",
             "showStars": false,
             "button_label": "Shop Now",
@@ -150,9 +150,9 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>The smell of is amazing and the texture is perfect for a nice gentle exfoliation before shaving</p>",
-            "author": "Jillian E.",
+            "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.25.21_AM.png",
+            "text": "<p>\"I didn't even use a hot tool to smooth it out...this is so great for dry damaged hair, it's going to get it so silky soft\"</p>",
+            "author": "Maggie I.",
             "showStars": true,
             "button_label": "",
             "button_link": ""
@@ -162,9 +162,9 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>It wasnt super rough but just enough to know its working on my skin. Great lather but not a lot. Love the shape as makes it easy to hold on to and to use.</p>",
-            "author": "Cameron B.",
+            "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.38.32_AM.png",
+            "text": "<p>\"this duo was a gamechanger for me, after styling my hair feels super clean, looks super shiny and it feels incredibly soft\"</p>",
+            "author": "Ellen M.",
             "showStars": true,
             "button_label": "",
             "button_link": ""
@@ -174,9 +174,9 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/reelUp_n0ci5bhzgb91728406734526_thumbnail_jpg.png",
-            "text": "<p>I just hopped on line to order more! It is exfoliating and saves me a step in the shower. I am sorry I didn’t find it before</p>",
-            "author": "Alice V.",
+            "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.28.30_AM.png",
+            "text": "<p>\"not only did it smell amazing it make my hair super shiny and had a really good lather and detangled really well\"</p>",
+            "author": "Catt S.",
             "showStars": true,
             "button_label": "",
             "button_link": ""

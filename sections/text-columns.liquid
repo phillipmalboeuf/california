@@ -13,17 +13,30 @@
 
         {%- if block.settings.thumbnail != blank -%}
           {%- if block.settings.button_link != blank -%}
-            <a href="{{ block.settings.button_link }}">
+            <a href="{{ block.settings.button_link }}" class="text-column__thumbnail-wrapper">
+          {%- else -%}
+            <div class="text-column__thumbnail-wrapper">
           {%- endif -%}
           {{ block.settings.thumbnail | image_url: width: 600 | image_tag:
             loading: 'lazy',
             alt: block.settings.thumbnail.alt,
             width: block.settings.thumbnail.width,
             height: block.settings.thumbnail.height,
-            class: 'text-column__thumbnail'
+            class: 'text-column__thumbnail text-column__thumbnail--main'
           }}
+          {%- if block.settings.hover_thumbnail != blank -%}
+            {{ block.settings.hover_thumbnail | image_url: width: 600 | image_tag:
+              loading: 'lazy',
+              alt: block.settings.hover_thumbnail.alt,
+              width: block.settings.hover_thumbnail.width,
+              height: block.settings.hover_thumbnail.height,
+              class: 'text-column__thumbnail text-column__thumbnail--hover'
+            }}
+          {%- endif -%}
           {%- if block.settings.button_link != blank -%}
             </a>
+          {%- else -%}
+            </div>
           {%- endif -%}
         {%- endif -%}
 
@@ -93,6 +106,11 @@
           "type": "image_picker",
           "id": "thumbnail",
           "label": "Thumbnail Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_thumbnail",
+          "label": "Hover Thumbnail Image"
         },
         {
           "type": "richtext",
