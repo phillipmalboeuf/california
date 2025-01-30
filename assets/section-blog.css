@@ -7,7 +7,8 @@
 }
 
   .blog-header__banner {
-    border-radius: var(--step-2);
+    border-top-left-radius: var(--step-1);
+    border-top-right-radius: var(--step-1);
     position: absolute;
     top: 0;
     left: 0;
@@ -18,14 +19,14 @@
   }
 
   .blog-header__banner-overlay {
-    /* --offset: 15%;
+    /* --offset: 15%; */
     position: absolute;
-    top: calc(var(--offset) * -1);
-    left: calc(var(--offset) * -1);
-    width: calc(100% + var(--offset) * 2);
-    height: calc(100% + var(--offset) * 2);
-    object-fit: contain;
-    z-index: -1; */
+    bottom: 0;
+    left: 0;
+    width: calc(100% + 1px);
+    height: auto;
+    /* object-fit: contain; */
+    z-index: -1;
   }
 
 .blog-title {
