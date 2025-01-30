@@ -170,6 +170,6 @@ function toggleCart() {
 }
 
 // Initialize cart when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+ready(() => {
   initializeCart();
 }); 

@@ -24,6 +24,20 @@
     color: var(--colors-body-inverse);
   }
 
+  .footer__link {
+    &:hover,
+    &:focus {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-skip-ink: auto;
+      text-decoration-color: currentColor;
+
+      text-decoration-thickness: 5%;
+      text-underline-offset: 0.1em;
+      text-underline-position: from-font;
+    }
+  }
+
   /* .header__logo {
     margin: 0;
   }

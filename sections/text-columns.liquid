@@ -15,7 +15,7 @@
           {%- if block.settings.button_link != blank -%}
             <a href="{{ block.settings.button_link }}">
           {%- endif -%}
-          {{ block.settings.thumbnail | image_url: width: 500 | image_tag:
+          {{ block.settings.thumbnail | image_url: width: 600 | image_tag:
             loading: 'lazy',
             alt: block.settings.thumbnail.alt,
             width: block.settings.thumbnail.width,
