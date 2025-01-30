@@ -7,6 +7,24 @@
     "theme_support_email": "phil@phils.computer",
     "theme_documentation_url": "https://phils.computer"
   },
+  {
+    "name": "Icons",
+    "settings": [
+      // {
+      //   "type": "text",
+      //   "id": "icons_info",
+      //   "label": "Icons Information",
+      //   "info": "Icons can be referenced in text using [icon-name] syntax"
+      // },
+      {
+        "type": "metaobject_list",
+        "id": "icons",
+        "label": "Icons",
+        "info": "Upload SVG icons to use throughout the site",
+        "metaobject_type": "icon"
+      }
+    ]
+  },
   // {
   //   "name": "Colors",
   //   "settings": [

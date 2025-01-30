@@ -4,6 +4,36 @@
   /* margin: 0 auto; */
 }
 
+.image-with-text__text {
+  h1, h2, h3, h4, h5, h6 {
+    a {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-skip-ink: auto;
+      text-decoration-color: var(--colors-secondary);
+
+      text-decoration-thickness: 5%;
+      text-underline-offset: 0.1em;
+      text-underline-position: from-font;
+
+      &:hover,
+      &:focus {
+        text-decoration-color: currentColor;
+      }
+    }
+
+    img {
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 0;
+      background-color: var(--colors-body);
+      border-radius: 50%;
+    }
+  }
+}
+
 .image-with-text:has(> .image-with-text__curves) {
   /* overflow-x: hidden; */
 }

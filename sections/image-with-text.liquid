@@ -14,7 +14,13 @@
             <h6 class="h--alt em image-with-text__subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</h6>
           {% when 'text' %}
             <div class="image-with-text__text flex flex--column flex--gapped" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
+              {% assign text_with_icons = block.settings.text %}
+              {%- for icon in settings.icons -%}
+                {%- assign icon_id = icon.label | prepend: '[' | append: ']' -%}
+                {%- assign icon_html = icon.svg | image_url: width: 100, height: 100 | image_tag -%}
+                {%- assign text_with_icons = text_with_icons | replace: icon_id, icon_html -%}
+              {%- endfor -%}
+              {{ text_with_icons }}
             </div>
           {% when 'button' %}
             <a href="{{ block.settings.button_link }}" class="button"

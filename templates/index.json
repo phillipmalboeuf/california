@@ -67,14 +67,22 @@
         },
         "heading_kWNNJY": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "California Naturals is a personal care brand on a mission to provide clean, safe + natural products to everyone at an unbelievable price, replacing toxic (and simply bad) products in bathrooms and homes across the globe."
+          }
+        },
+        "text_Fpytc9": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>At California Naturals, we’re on a mission to provide clean, [Vegan Cruelty Free] <a href=\"/pages/science\" title=\"Science\">safe & natural products</a> to everybody at an unreal price, [Agave] that don’t compromise on results.</h3>"
           }
         }
       },
       "block_order": [
         "subheading_Awyc9X",
-        "heading_kWNNJY"
+        "heading_kWNNJY",
+        "text_Fpytc9"
       ],
       "settings": {
         "color_scheme": "inverse-1",
@@ -91,6 +99,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f_webp.png",
+            "hover_thumbnail": "shopify://shop_images/Hair2.png",
             "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to for all things cleansing<br/>and conditioning.</p>",
             "author": "",
             "showStars": false,
@@ -103,6 +112,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f-2_webp.png",
+            "hover_thumbnail": "shopify://shop_images/Treatments2.png",
             "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love,<br/>don’t worry, we’ve got you.</p>",
             "author": "",
             "showStars": false,
@@ -115,6 +125,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2-3_webp_7dd155dc-ca56-4053-bf50-ce56a427b337.png",
+            "hover_thumbnail": "shopify://shop_images/Body2.png",
             "text": "<h4>Body</h4><p>We make our body products with all of<br/>your senses in mind.</p>",
             "author": "",
             "showStars": false,

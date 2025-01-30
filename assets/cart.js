@@ -119,7 +119,7 @@ async function updateCartUI() {
     const response = await fetch('/cart.js');
     const cart = await response.json();
 
-    const section = await fetch('/cart?section_id=template--18769867440366__cart')
+    const section = await fetch('/cart?section_id=template--18833287708910__cart')
     const render = await section.text()
     document.getElementById('cart-render').innerHTML = render
 

@@ -9,6 +9,10 @@
  */
 {
   "current": {
+    "icons": [
+      "vegan-cruelty-free",
+      "agave"
+    ],
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
