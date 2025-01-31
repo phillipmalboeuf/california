@@ -16,168 +16,384 @@
     "ingredients": {
       "type": "ingredients",
       "blocks": {
+        "acetyl_tetrapeptide": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Acetyl Tetrapeptide 3",
+            "description": "<p>A synthetic peptide that can help stimulate hair growth and improve hair density by promoting healthy follicle function and supporting the hair growth cycle.</p>"
+          }
+        },
+        "aleurites_moluccanus": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Aleurites Moluccanus Seed Oil",
+            "description": "<p>Oil derived from the seeds of the candlenut tree, native to the Pacific Islands; it can nourish and protect hair from environmental damage while enhancing shine.</p>"
+          }
+        },
         "allantoin": {
           "type": "ingredient",
           "settings": {
             "title": "Allantoin",
-            "description": "<p>A gentle, soothing compound that promotes cell regeneration and helps heal dry, irritated skin.</p>"
+            "description": "<p>An ingredient that can be naturally derived or made synthetically. It has skin-soothing and moisturizing properties, making it an excellent inclusion in products designed for sensitive skin.</p>"
           }
         },
-        "aloe_vera": {
+        "aloe": {
           "type": "ingredient",
           "settings": {
-            "title": "Aloe Vera",
-            "description": "<p>A soothing succulent known for its healing and moisturizing properties. Rich in vitamins and antioxidants.</p>"
+            "title": "Aloe Barbadendis Leaf Juice",
+            "description": "<p>Juice extracted from the leaves of the aloe vera plant; it can soothe the scalp, hydrate hair, and promote shine while reducing itchiness.</p>"
           }
         },
-        "argan_oil": {
+        "amaranthus": {
           "type": "ingredient",
           "settings": {
-            "title": "Argan Oil",
-            "description": "<p>Rich in vitamin E and fatty acids, this oil nourishes and protects skin while fighting aging.</p>"
+            "title": "Amaranthus Caudatus Seed Extract",
+            "description": "<p>Extract from the seeds of the amaranth plant; it can provide proteins and nutrients that help strengthen hair and promote overall health.</p>"
           }
         },
-        "calendula": {
+        "argan": {
           "type": "ingredient",
           "settings": {
-            "title": "Calendula Extract",
-            "description": "<p>A gentle botanical extract with anti-inflammatory properties that helps calm and heal the skin.</p>"
+            "title": "Argania Spinosa (Argan) Kernel Oil",
+            "description": "<p>Oil extracted from the nuts of the argan tree; it can be rich in essential fatty acids that help hydrate and repair hair while enhancing shine.</p>"
           }
         },
-        "centella": {
+        "oat": {
           "type": "ingredient",
           "settings": {
-            "title": "Centella Asiatica",
-            "description": "<p>An herb known for its healing properties, helping to calm inflammation and support collagen production.</p>"
+            "title": "Avena Sativa (Oat) Kernel Flour",
+            "description": "<p>Flour made from oats; it can help soothe the scalp, provide moisture, and add softness to hair.</p>"
           }
         },
-        "ceramides": {
+        "behentrimonium": {
           "type": "ingredient",
           "settings": {
-            "title": "Ceramides",
-            "description": "<p>Lipids that help form the skin's barrier and protect against moisture loss and environmental damage.</p>"
+            "title": "Behentrimonium Chloride (Canola Derived)",
+            "description": "<p>A conditioning agent derived from canola oil; it can help soften hair and make it easier to detangle.</p>"
           }
         },
-        "chamomile": {
+        "shea": {
           "type": "ingredient",
           "settings": {
-            "title": "Chamomile Extract",
-            "description": "<p>A gentle, calming ingredient that reduces redness and soothes sensitive or irritated skin.</p>"
+            "title": "Butyrospermum Parkii (Shea) Butter",
+            "description": "<p>A natural fat extracted from the nuts of the shea tree, native to West Africa; it can help nourish and moisturize hair, reducing dryness and frizz.</p>"
+          }
+        },
+        "hemp": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cannabis Savita (Hemp) Seed Oil",
+            "description": "<p>Oil pressed from hemp seeds, rich in essential fatty acids; it can nourish hair and promote strength and elasticity.</p>"
+          }
+        },
+        "cetyl_alcohol": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cetyl Alcohol",
+            "description": "<p>A fatty alcohol derived from coconut or palm oil; it can help condition hair and provide a smooth, soft feel.</p>"
+          }
+        },
+        "cocamidopropyl": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cocamidopropyl Hydroxysultaine (Coconut Derived)",
+            "description": "<p>This coconut-derived surfactant provides gentle cleansing, lathering, and helps thicken and stabilize cosmetic formulas.</p>"
+          }
+        },
+        "coccinia": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Coccinia Indica Fruit Extract",
+            "description": "<p>Extract from the ivy gourd, a plant native to India; it can provide nutrients that help nourish hair and support healthy growth.</p>"
+          }
+        },
+        "coco_glucoside": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Coco-Glucoside",
+            "description": "<p>A gentle cleanser derived from coconut and fruit sugars; it can help clean hair without stripping away moisture.</p>"
+          }
+        },
+        "coconut_fruit": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cocos Nucifera (Coconut) Fruit Juice",
+            "description": "<p>The extract of the fruit of the coconut tree, this ingredient is rich in skin-conditioning fatty acids, proteins, and complex B vitamins.</p>"
+          }
+        },
+        "coconut_water": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cocos Nucifera (Coconut) Liquid Endosperm",
+            "description": "<p>The clear liquid found inside young coconuts; it can help hydrate hair and scalp, promoting moisture retention and preventing dryness.</p>"
+          }
+        },
+        "coconut_oil": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Cocos Nucifera (Coconut) Oil",
+            "description": "<p>Oil extracted from the flesh of mature coconuts; it can penetrate the hair shaft to provide deep moisture, reducing protein loss and enhancing shine.</p>"
+          }
+        },
+        "disodium": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Disodium 2-Sulfolaurate",
+            "description": "<p>A mild surfactant that can help cleanse hair and scalp without harshness, providing a gentle cleansing experience.</p>"
+          }
+        },
+        "ethylhexylglycerin": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Ethylhexylglycerin",
+            "description": "<p>A synthetic compound derived from glycerin; it can act as a preservative and skin-conditioning agent, helping to enhance the moisture and softness of hair.</p>"
+          }
+        },
+        "fragrance": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Food-Grade Fragrance",
+            "description": "<p>Fragrance safe enough to be used in food-grade instances like lip balms and toothpaste. Paraben, Silicone + Phthalate free.</p>"
           }
         },
         "glycerin": {
           "type": "ingredient",
           "settings": {
             "title": "Glycerin",
-            "description": "<p>A natural humectant that attracts moisture to the skin, keeping it hydrated and supple.</p>"
+            "description": "<p>A naturally occurring substance in skin that helps retain moisture. It is used in skin care products to help defend against dryness.</p>"
           }
         },
-        "green_tea": {
+        "guar": {
           "type": "ingredient",
           "settings": {
-            "title": "Green Tea Extract",
-            "description": "<p>Packed with antioxidants and anti-inflammatory properties to protect and soothe the skin.</p>"
+            "title": "Guar Hydroxypropyltrimonium Chloride",
+            "description": "<p>A modified guar gum derived from the guar bean; it can help condition hair, making it smoother and easier to detangle while providing a soft feel.</p>"
           }
         },
-        "hyaluronic": {
+        "sunflower": {
           "type": "ingredient",
           "settings": {
-            "title": "Hyaluronic Acid",
-            "description": "<p>A powerful humectant that can hold up to 1000x its weight in water, providing deep hydration to the skin.</p>"
+            "title": "Helianthus Annuus (Sunflower) Seed Oil",
+            "description": "<p>A non-volatile, non-fragrant plant oil used as skin-calming antioxidant and an emollient in cosmetics.</p>"
           }
         },
-        "jojoba": {
+        "honey": {
           "type": "ingredient",
           "settings": {
-            "title": "Jojoba Oil",
-            "description": "<p>A lightweight oil that closely mimics skin's natural oils. Perfect for balancing and nourishing all skin types.</p>"
+            "title": "Honey",
+            "description": "<p>A natural sweet substance produced by bees; it can act as a humectant that helps attract moisture, keeping hair hydrated and soft.</p>"
           }
         },
-        "licorice": {
+        "quinoa": {
           "type": "ingredient",
           "settings": {
-            "title": "Licorice Root Extract",
-            "description": "<p>A natural ingredient that helps brighten skin and reduce the appearance of dark spots.</p>"
+            "title": "Hydrolyzed Quinoa",
+            "description": "<p>A protein derived from quinoa; it can provide protein and moisture to hair, helping to strengthen and repair damage.</p>"
           }
         },
-        "niacinamide": {
+        "hydroxyacetophenone": {
           "type": "ingredient",
           "settings": {
-            "title": "Niacinamide",
-            "description": "<p>A form of vitamin B3 that helps minimize pores, regulate oil production, and even skin tone.</p>"
+            "title": "Hydroxyacetophenone",
+            "description": "<p>A synthetic compound known for its soothing properties; it can help reduce scalp irritation and promote a healthy scalp environment.</p>"
+          }
+        },
+        "meadowfoam": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Limnanthes Alba (Meadowfoam) Seed Oil",
+            "description": "<p>Oil extracted from meadowfoam seeds; it can help lock in moisture, adding shine and softness to hair.</p>"
+          }
+        },
+        "honeysuckle_caprifolium": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Lonicera Caprifolium (Honeysuckle) Flower Extract",
+            "description": "<p>Extract from the honeysuckle plant, known for its fragrant flowers; it can soothe the scalp and has anti-inflammatory properties, promoting a healthy environment for hair growth.</p>"
+          }
+        },
+        "honeysuckle_japonica": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Lonicera Japonica (Honeysuckle) Flower Extract",
+            "description": "<p>Extract from a different species of honeysuckle; it can help hydrate and calm the scalp, supporting overall scalp health.</p>"
+          }
+        },
+        "mango": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Mangifera Indica (Mango) Seed Butter",
+            "description": "<p>A butter extracted from the seed of the mango fruit, found in tropical regions; it can help deeply moisturize hair and assist in repairing damage, making it softer and more manageable.</p>"
+          }
+        },
+        "neem": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Melia Azadirachta Flower Extract",
+            "description": "<p>Extract from the neem tree; it can have antibacterial properties that help maintain a healthy scalp.</p>"
+          }
+        },
+        "banana": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Musa Sapientum (Banana) Fruit Extract",
+            "description": "<p>Extract from bananas; it can be packed with vitamins and minerals that help moisturize and soften hair.</p>"
+          }
+        },
+        "caramel": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Natural Caramel Color",
+            "description": "<p>Natural coloring agent.</p>"
+          }
+        },
+        "coconut_water_alt": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Nucifera (Coconut) Water",
+            "description": "<p>The clear liquid found inside young coconuts; it can hydrate and nourish hair and scalp, promoting moisture retention and preventing dryness.</p>"
+          }
+        },
+        "olive": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Olea Europaea (Olive) Oil",
+            "description": "<p>Oil derived from the fruit of the olive tree; it can help moisturize and nourish hair, improving shine and manageability.</p>"
           }
         },
         "panthenol": {
           "type": "ingredient",
           "settings": {
             "title": "Panthenol",
-            "description": "<p>A form of vitamin B5 that helps improve skin barrier function and promote wound healing.</p>"
+            "description": "<p>Also known as pro-vitamin B5. Humectant that increases hydration substantially by attracting/retaining moisture. Can also play a role in visibly reducing facial redness triggered by sensitivity.</p>"
           }
         },
-        "peptides": {
+        "avocado_butter": {
           "type": "ingredient",
           "settings": {
-            "title": "Peptides",
-            "description": "<p>Small proteins that signal skin cells to produce collagen, helping improve firmness and reduce wrinkles.</p>"
+            "title": "Persea Gratissima (Avocado) Butter",
+            "description": "<p>A butter made from avocados, rich in healthy fats and vitamins; it can help nourish and strengthen hair, making it smoother and healthier.</p>"
           }
         },
-        "rosehip": {
+        "avocado_oil": {
           "type": "ingredient",
           "settings": {
-            "title": "Rosehip Oil",
-            "description": "<p>Rich in vitamin A and essential fatty acids, helping to reduce scars and promote skin regeneration.</p>"
+            "title": "Persea Gratissima (Avocado) Oil",
+            "description": "<p>Persea gratisima is the Latin name for avocado, and the oil from this fruit is an excellent source of skin-replenishing fatty acids</p>"
           }
         },
-        "shea": {
+        "potassium_sorbate": {
           "type": "ingredient",
           "settings": {
-            "title": "Shea Butter",
-            "description": "<p>Rich in vitamins A and E, this natural butter deeply moisturizes and helps improve skin elasticity.</p>"
+            "title": "Potassium Sorbate",
+            "description": "<p>This preservative, which can be naturally derived, also is used to help preserve foods like dried meats and cheeses.</p>"
           }
         },
-        "squalane": {
+        "rose": {
           "type": "ingredient",
           "settings": {
-            "title": "Squalane",
-            "description": "<p>A lightweight oil that mimics your skin's natural oils, providing moisture without clogging pores.</p>"
+            "title": "Rosa Centifolia Flower Extract",
+            "description": "<p>Extract from the cabbage rose; it can hydrate and soothe both hair and scalp, enhancing overall health.</p>"
           }
         },
-        "vitamin_c": {
+        "sodium_benzoate": {
           "type": "ingredient",
           "settings": {
-            "title": "Vitamin C",
-            "description": "<p>A potent antioxidant that brightens skin, boosts collagen production, and fights free radical damage.</p>"
+            "title": "Sodium Benzoate",
+            "description": "<p>This preservative is used to prevent the growth of bacteria and fungi in cosmetics and food products. It's derived from benzoic acid.</p>"
           }
         },
-        "zinc": {
+        "sodium_hyaluronate": {
           "type": "ingredient",
           "settings": {
-            "title": "Zinc Oxide",
-            "description": "<p>A mineral that provides broad-spectrum UV protection while being gentle on sensitive skin.</p>"
+            "title": "Sodium Hyaluronate",
+            "description": "<p>The salt form of hyaluronic acid. Like its sister ingredient, it's considered an excellent moisturizer, helping skin retain water so it looks and feels smoother. It is more bioavailable than hyaluronic acid, meaning it is more readily absorbed by skin.</p>"
+          }
+        },
+        "sodium_lauroyl": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Sodium Lauroyl Methyl Isethionate (Coconut Derived)",
+            "description": "<p>Naturally-derived cleansing agent that is noted in research for its gentleness on skin</p>"
+          }
+        },
+        "sodium_methyl": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Sodium Methyl 2-Sulfolaurate (Coconut Derived)",
+            "description": "<p>Naturally-derived cleansing agent</p>"
+          }
+        },
+        "stearyl_alcohol": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Stearyl Alcohol",
+            "description": "<p>A fatty alcohol made from natural fats, commonly sourced from plants; it can provide moisture and improve hair texture without causing dryness.</p>"
+          }
+        },
+        "water": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Water/Aqua/Eau",
+            "description": "<p>you know this one - Water!</p>"
+          }
+        },
+        "awapuhi": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Zingiber Zerumbet (Awapuhi) Extract",
+            "description": "<p>Extract from the awapuhi plant; it can hydrate and revitalize hair, leaving it soft and shiny while preventing dryness.</p>"
           }
         }
       },
       "block_order": [
+        "acetyl_tetrapeptide",
+        "aleurites_moluccanus",
         "allantoin",
-        "aloe_vera",
-        "argan_oil",
-        "calendula",
-        "centella",
-        "ceramides",
-        "chamomile",
-        "glycerin",
-        "green_tea",
-        "hyaluronic",
-        "jojoba",
-        "licorice",
-        "niacinamide",
-        "panthenol",
-        "peptides",
-        "rosehip",
+        "aloe",
+        "amaranthus",
+        "argan",
+        "oat",
+        "behentrimonium",
         "shea",
-        "squalane",
-        "vitamin_c",
-        "zinc"
+        "hemp",
+        "cetyl_alcohol",
+        "cocamidopropyl",
+        "coccinia",
+        "coco_glucoside",
+        "coconut_fruit",
+        "coconut_water",
+        "coconut_oil",
+        "disodium",
+        "ethylhexylglycerin",
+        "fragrance",
+        "glycerin",
+        "guar",
+        "sunflower",
+        "honey",
+        "quinoa",
+        "hydroxyacetophenone",
+        "meadowfoam",
+        "honeysuckle_caprifolium",
+        "honeysuckle_japonica",
+        "mango",
+        "neem",
+        "banana",
+        "caramel",
+        "coconut_water_alt",
+        "olive",
+        "panthenol",
+        "avocado_butter",
+        "avocado_oil",
+        "potassium_sorbate",
+        "rose",
+        "sodium_benzoate",
+        "sodium_hyaluronate",
+        "sodium_lauroyl",
+        "sodium_methyl",
+        "stearyl_alcohol",
+        "water",
+        "awapuhi"
       ],
       "settings": {}
     }

@@ -29,15 +29,14 @@
         {%- endif -%}
         <div id="letter-{{ current_letter }}" class="ingredient-block" {{ block.shopify_attributes }}>
           {% if block.settings.background_image %}
-            <div class="ingredient-background" style="background-image: url({{ block.settings.background_image | image_url: width: 1500 }});">
+            <div class="ingredient-background">
+              {{ block.settings.background_image | image_url: width: 500 | image_tag: class: 'ingredient-background__image' }}
+            </div>
           {% endif %}
             <div class="ingredient-content">
               <h5>{{ block.settings.title }}</h5>
               <div class="rte">{{ block.settings.description }}</div>
             </div>
-          {% if block.settings.background_image %}
-            </div>
-          {% endif %}
         </div>
       {% endif %}
     {% endfor %}
@@ -111,8 +110,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+  }
+
+  .ingredient-background__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+    transform: scale(1.1);
   }
 
   .ingredient-content {
