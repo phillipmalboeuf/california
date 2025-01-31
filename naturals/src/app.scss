@@ -633,6 +633,10 @@ dialog {
   &.flex--thick_gapped {
     --gap: #{$s2};
 
+		@media (max-width: $mobile) {
+      --gap: #{$s0};
+    }
+
 		// hr {
 		// 	margin: 0;
 		// }

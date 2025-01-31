@@ -52,7 +52,7 @@
   {%- paginate blog.articles by section.settings.posts_per_page -%}
     <div class="blog-articles flex flex--thick_gapped padded">
       {%- for article in blog.articles -%}
-        <article class="col {% if article.metafields.custom.featured %}col--8of12{% else %}col--4of12{% endif %} blog-articles__article">
+        <article class="col {% if article.metafields.custom.featured %}col--8of12{% else %}col--4of12{% endif %} col--mobile--12of12 blog-articles__article">
           <a href="{{ article.url }}" class="article-card flex flex--column flex--gapped" style="background-color: {{ article.metafields.custom.color }};">
             {%- if article.image and section.settings.show_image -%}
               <div class="article-card__image-wrapper">

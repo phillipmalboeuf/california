@@ -5,7 +5,7 @@
     </svg>
   {%- endif -%}
   <div class="image-with-text__grid flex flex--thick_gapped flex--middle padded padded--thick page-width">
-    <div class="image-with-text__text-item flex flex--column flex--middle flex--thick_gapped{% if section.settings.image != blank %} col col--6of12{% endif %}">
+    <div class="image-with-text__text-item flex flex--column flex--middle flex--thick_gapped{% if section.settings.image != blank %} col col--6of12 col--mobile--12of12{% endif %}">
       {%- for block in section.blocks -%}
         {% case block.type %}
           {% when 'heading' %}
@@ -31,7 +31,7 @@
       {%- endfor -%}
     </div>
     {%- if section.settings.image != blank -%}
-    <div class="image-with-text__media-item col col--6of12{% if section.settings.bleed %} image-with-text__media-item--bleed{% endif %}">
+    <div class="image-with-text__media-item col col--6of12 col--mobile--12of12 {% if section.settings.bleed %} image-with-text__media-item--bleed{% endif %}">
       <div class="image-with-text__media">
         {{ section.settings.image | image_url: width: 1500 | image_tag:
           loading: 'lazy',

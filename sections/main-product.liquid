@@ -3,7 +3,7 @@
 <section class="product-section">
   <div class="page-width padded padded--thick">
     <div class="product-grid flex flex--around flex--gapped">
-      <div class="product-media flex flex--gapped col col--5of12">
+      <div class="product-media flex flex--gapped col col--5of12 col--mobile--12of12">
         {%- if product.media.size > 0 -%}
           <nav class="product-gallery__nav flex flex--column flex--gapped">
             {%- for media in product.media -%}
@@ -54,7 +54,7 @@
         {%- endif -%}
       </div>
 
-      <div class="product-info col col--5of12 flex flex--column flex--gapped">
+      <div class="product-info col col--5of12 col--mobile--12of12 flex flex--column flex--gapped">
         {%- if section.settings.show_vendor and product.vendor and product.vendor != 'California Naturals' -%}
           <div class="product-vendor">{{ product.vendor }}</div>
         {%- endif -%}
@@ -220,13 +220,13 @@
   <div class="product-columns padded padded--thick page-width">
     <div class="flex flex--center">
       {%- if product.metafields.custom.left != blank -%}
-        <div class="col col--6of12 product-columns__content">
+        <div class="col col--6of12 col--mobile--12of12 product-columns__content">
           {{ product.metafields.custom.left | metafield_tag }}
         </div>
       {%- endif -%}
       
       {%- if product.metafields.custom.right != blank -%}
-        <div class="col col--6of12 product-columns__content">
+        <div class="col col--6of12 col--mobile--12of12 product-columns__content">
           {{ product.metafields.custom.right | metafield_tag }}
         </div>
       {%- endif -%}

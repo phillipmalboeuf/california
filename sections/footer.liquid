@@ -23,7 +23,7 @@
               {%- endif -%}
               <ul class="footer__menu flex flex--gapped flex--center list--nostyle">
                 {%- for link in block.settings.menu.links -%}
-                  <li class="footer__menu-item flex flex--column flex--gapped">
+                  <li class="footer__menu-item col col--mobile--6of12 flex flex--column flex--gapped">
                     <a href="{{ link.url }}" class="footer__link">
                       {%- if link.links != blank -%}
                         <strong class="h6 h--alt">{{ link.title }}</strong>

@@ -84,6 +84,13 @@ html.is-animating .transition-fade {
   .grid--5-col-desktop { grid-template-columns: repeat(5, 1fr); }
 }
 
+@media screen and (max-width: 991px) {
+  .grid--2-col-mobile { grid-template-columns: repeat(2, 1fr); }
+  .grid--3-col-mobile { grid-template-columns: repeat(3, 1fr); }
+  .grid--4-col-mobile { grid-template-columns: repeat(4, 1fr); }
+  .grid--5-col-mobile { grid-template-columns: repeat(5, 1fr); }
+}
+
 /* Buttons */
 button,
 .button {

@@ -2,9 +2,12 @@
 }
 
 .product-media {
-  position: sticky;
-  top: var(--step-6);
   flex-wrap: nowrap;
+
+  @media screen and (min-width: 990px) {
+    position: sticky;
+    top: var(--step-6);
+  }
 }
 
 .product-gallery__nav {

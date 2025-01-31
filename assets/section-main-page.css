@@ -19,6 +19,11 @@
 .page-image {
   margin-top: calc(-24vh);
   margin-left: calc(-2vw);
+
+  @media screen and (max-width: 990px) {
+    margin-top: calc(-3vh);
+    margin-left: calc(-15vw);
+  }
 }
 
 .page-image__image {
@@ -34,4 +39,10 @@
   position: absolute;
   bottom: 10lvh;
   left: calc(50% - var(--step-2));
+
+  @media screen and (max-width: 990px) {
+    width: 85%;
+    left: auto;
+    right: var(--step-0);
+  }
 }

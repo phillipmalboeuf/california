@@ -39,12 +39,14 @@
 }
 
 .image-with-text__grid {
-  flex-wrap: nowrap;
+  @media screen and (min-width: 990px) {
+    flex-wrap: wrap;
+  }
 }
 
 .image-with-text__curves {
   position: absolute;
-  bottom: calc(100% - 40px);
+  bottom: calc(100% - 2vw);
   left: -1px;
   right: 0;
   width: calc(100% + 1px);

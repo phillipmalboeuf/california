@@ -2,9 +2,9 @@
 
 <div class="text-columns flex flex--thick_gapped{% if section.settings.title_alignment != 'left' %} flex--column {% endif %} padded padded--thick page-width">
   {%- if section.settings.title != blank -%}
-    <h3 class="text-columns__title{% if section.settings.title_alignment != 'left' %} {% else %} col col--4of12{% endif %}">{{ section.settings.title }}</h3>
+    <h3 class="text-columns__title{% if section.settings.title_alignment != 'left' %} {% else %} col col--4of12 col--mobile--12of12{% endif %}">{{ section.settings.title }}</h3>
   {%- endif -%}
-  <div class="text-columns__grid flex flex--thick_gapped{% if section.settings.title_alignment == 'left' %} col col--8of12{% endif %}">
+  <div class="text-columns__grid flex flex--thick_gapped{% if section.settings.title_alignment == 'left' %} col col--8of12 col--mobile--12of12{% endif %}">
     {%- for block in section.blocks -%}
       <div class="text-column flex flex--column flex--gapped col{% if block.settings.button_label != blank and block.settings.button_link != blank %} flex--middle text-center{% endif %}" {{ block.shopify_attributes }}>
         {%- if block.settings.subtitle != blank -%}

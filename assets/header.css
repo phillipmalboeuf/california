@@ -39,6 +39,13 @@ body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"
     flex: 1;
   }
 
+.header__menu-item:not(:has(> .header__menu-link[href="/collections/all"])) {
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+}
+
+
 .header__menu-link:hover,
 .header__menu-link:focus,
 .header__menu-link--active {

@@ -127,7 +127,7 @@
 
     <div class="product-grid flex flex--thick_gapped flex--center">
       {%- for product in article.metafields.custom.related_products.value -%}
-        <div class="col col--4of12">
+        <div class="col col--4of12 col--mobile--6of12">
           {%- render 'product-card',
             product: product,
             show_secondary_image: true,
@@ -153,12 +153,12 @@
     <div class="blog-articles flex flex--gapped flex--center">
       {%- for related in blog.articles limit: 3 -%}
         {%- if related.handle != article.handle -%}
-          <div class="blog-articles__article col col--4of12">
+          <div class="blog-articles__article col col--4of12 col--mobile--12of12">
               <a href="{{ related.url }}" class="article-card flex flex--column flex--gapped text-center" style="background-color: {{ article.metafields.custom.color }};">
               {%- if related.image -%}
                 {{ related.image | image_url: width: 350 | image_tag:
                   loading: 'lazy',
-                  class: 'article-template__related-image'
+                  class: 'article-card__image'
                 }}
               {%- endif -%}
               <h6 class="h--alt em">{{ related.title }}</h6>
