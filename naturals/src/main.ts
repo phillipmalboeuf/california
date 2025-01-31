@@ -23,15 +23,15 @@ document.addEventListener('shopify:section:load', (event) => {
 })
 
 
-const swup = new Swup({
-  containers: ['#MainContent'],
-  // plugins: [new SwupScriptsPlugin()]
-});
+// const swup = new Swup({
+//   containers: ['#MainContent'],
+//   // plugins: [new SwupScriptsPlugin()]
+// });
 
-swup.hooks.on('page:view', (visit) => {
-  initCarousels()
-  document.dispatchEvent(new Event('page:reset'))
-})
+// swup.hooks.on('page:view', (visit) => {
+//   initCarousels()
+//   document.dispatchEvent(new Event('page:reset'))
+// })
 
 // const app = mount(App, {
 //   target: document.getElementById('app')!,

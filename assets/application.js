@@ -4,12 +4,14 @@ ready(() => {
   initProductForms();
   initQuickAdd();
   initCollectionPage();
+  initStockist();
 })
 
 document.addEventListener('page:reset', () => {
   initProductForms();
   initQuickAdd();
   initCollectionPage();
+  initStockist();
 })
 
 function initProductForms() {
@@ -212,4 +214,30 @@ function initQuickAdd() {
   document.querySelectorAll('[data-quick-add-button]').forEach(button => {
     button.addEventListener('click', handleQuickAdd);
   });
+}
+
+function initStockist() {
+  // const stockistContainer = document.querySelector('[data-stockist-widget-tag]');
+  
+  // if (stockistContainer && window.Stockist) {
+  //   // If there's an existing widget instance, destroy it
+  //   // if (window.stockistWidget) {
+  //   //   window.stockistWidget.destroy();
+  //   // }
+
+  //   // Initialize a new widget instance
+    
+
+  //   // Rebuild the widget if needed
+  //   if (typeof window.stockistRebuildWidget === 'function') {
+  //     window.stockistRebuildWidget();
+  //   } else {
+  //     window.stockistWidget = window.Stockist({
+  //     widget_id: stockistContainer.dataset.stockistWidgetTag,
+  //     container: stockistContainer,
+  //     loader_image: false,
+  //     platform: 'shopify'
+  //   });
+  //   }
+  // }
 } 
