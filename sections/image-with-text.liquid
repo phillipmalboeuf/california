@@ -13,7 +13,7 @@
           {% when 'subheading' %}
             <h6 class="h--alt em image-with-text__subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</h6>
           {% when 'text' %}
-            <div class="image-with-text__text flex flex--column flex--gapped" {{ block.shopify_attributes }}>
+            <div class="image-with-text__text flex flex--column flex--gapped{% if section.settings.text_alignment == 'center' %} flex--middle{% endif %}" {{ block.shopify_attributes }}>
               {% assign text_with_icons = block.settings.text %}
               {%- for icon in settings.icons -%}
                 {%- assign icon_id = icon.label | prepend: '[' | append: ']' -%}

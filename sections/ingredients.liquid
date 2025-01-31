@@ -20,7 +20,7 @@
   </nav>
 
   {%- assign current_letter = '' -%}
-  <div class="ingredients-grid" style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};">
+  <div class="padded ingredients-grid" style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};">
     {% for block in sorted_blocks %}
       {% if block.type == 'ingredient' %}
         {%- assign first_letter = block.settings.title | slice: 0 | upcase -%}
@@ -102,6 +102,7 @@
     min-height: 33lvh;
     border-radius: 10px;
     overflow: hidden;
+    scroll-margin-top: 80px;
   }
 
   .ingredient-background {

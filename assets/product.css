@@ -20,7 +20,8 @@
   .product-gallery__thumb,
   .product-gallery__thumb_image,
   .product-gallery__thumb-placeholder,
-  .product-related__image {
+  .product-related__image,
+  .product-columns__image {
     width: 100%;
     height: auto;
     border-radius: var(--step--1);
@@ -112,4 +113,32 @@
 
   .product-related__item {
     border-radius: var(--step--1);
+  }
+
+.product-columns {
+  position: relative;
+}
+
+.product-columns__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.product-columns__content > *:not(.product-columns__background) {
+  position: relative;
+  z-index: 1;
+}
+
+  .product-icons__image {
+    
+  }
+
+  .product-icons__item {
+    flex-wrap: nowrap;
+    margin-bottom: var(--step-0);
   }

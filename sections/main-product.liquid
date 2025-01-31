@@ -216,23 +216,66 @@
   </div>
 {%- endif -%}
 
-{%- if product.metafields.custom.left != blank or product.metafields.custom.right != blank -%}
-  <div class="product-columns padded padded--thick page-width">
-    <div class="flex flex--center">
-      {%- if product.metafields.custom.left != blank -%}
-        <div class="col col--6of12 col--mobile--12of12 product-columns__content">
-          {{ product.metafields.custom.left | metafield_tag }}
-        </div>
+
+  <div class="product-columns padded padded--thick">
+    <div class="page-width">
+    <div class="flex flex--gapped flex--around">
+      {%- if product.metafields.custom.content_title != blank or product.metafields.custom.content != blank or product.metafields.custom.content_media != blank -%}
+      <div class="col col--5of12 col--mobile--12of12 product-columns__content flex flex--column flex--gapped">
+        {%- if product.metafields.custom.content_background != blank -%}
+          {{ product.metafields.custom.content_background | image_url: width: 1000 | image_tag:
+            loading: 'lazy',
+            class: "product-columns__background"
+          }}
+        {%- endif -%}
+        {%- if product.metafields.custom.content_title != blank -%}
+          <h4>{{ product.metafields.custom.content_title }}</h4>
+        {%- endif -%}
+        {%- if product.metafields.custom.content_media != blank -%}
+          {{ product.metafields.custom.content_media | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              class: "product-columns__image"
+            }}
+        {%- endif -%}
+        {%- if product.metafields.custom.content != blank -%}
+          {{ product.metafields.custom.content | metafield_tag }}
+        {%- endif -%}
+      </div>
       {%- endif -%}
       
-      {%- if product.metafields.custom.right != blank -%}
-        <div class="col col--6of12 col--mobile--12of12 product-columns__content">
-          {{ product.metafields.custom.right | metafield_tag }}
-        </div>
-      {%- endif -%}
+      <div class="col col--5of12 col--mobile--12of12 product-columns__content product-columns__content--icons flex flex--column flex--gapped">
+        {%- if product.metafields.custom.icons_title != blank -%}
+          <h4>{{ product.metafields.custom.icons_title }}</h4>
+        {%- endif -%}
+
+        {%- if product.metafields.custom.icons != blank -%}
+          <ul class="product-icons__list list--nostyle flex flex--column flex--gapped">
+            {%- for icon in product.metafields.custom.icons.value -%}
+              <li class="product-icons__item flex flex--gapped">
+                {%- if icon.svg != blank -%}
+                  {{ icon.svg | image_url: width: 50 | image_tag:
+                    loading: 'lazy',
+                    class: "product-icons__image",
+                    width: 50,
+                    height: 50
+                  }}
+                {%- endif -%}
+                <div class="product-icons__content flex flex--gapped flex--column">
+                  {%- if icon.label != blank -%}
+                    <h6 class="h--alt">{{ icon.label }}</h6>
+                  {%- endif -%}
+                  {%- if icon.text != blank -%}
+                    <div class="product-icons__text">{{ icon.text | metafield_tag | replace: '[product_title]', product.title }}</div>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+      </div>
     </div>
   </div>
-{%- endif -%}
 </section>
 
 
