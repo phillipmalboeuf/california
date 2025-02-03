@@ -99,6 +99,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f_webp.png",
+            "video_url": "",
             "hover_thumbnail": "shopify://shop_images/Hair2.png",
             "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to for all things cleansing<br/>and conditioning.</p>",
             "author": "",
@@ -112,6 +113,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG.jpg",
+            "video_url": "",
             "hover_thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG-1.jpg",
             "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love,<br/>don’t worry, we’ve got you.</p>",
             "author": "",
@@ -125,6 +127,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg",
+            "video_url": "",
             "hover_thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg_2.jpg",
             "text": "<h4>Body</h4><p>We make our body products with all of<br/>your senses in mind.</p>",
             "author": "",
@@ -162,6 +165,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.25.21_AM.png",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/73ab8219ba3645bb88be9ba19ca04100.mp4",
             "text": "<p>\"I didn't even use a hot tool to smooth it out...this is so great for dry damaged hair, it's going to get it so silky soft\"</p>",
             "author": "Maggie I.",
             "showStars": true,
@@ -174,6 +178,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.38.32_AM.png",
+            "video_url": "",
             "text": "<p>\"this duo was a gamechanger for me, after styling my hair feels super clean, looks super shiny and it feels incredibly soft\"</p>",
             "author": "Ellen M.",
             "showStars": true,
@@ -186,6 +191,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.28.30_AM.png",
+            "video_url": "",
             "text": "<p>\"not only did it smell amazing it make my hair super shiny and had a really good lather and detangled really well\"</p>",
             "author": "Catt S.",
             "showStars": true,

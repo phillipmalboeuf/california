@@ -88,7 +88,15 @@
               <hr>
               <div class="product-ingredients flex flex--column flex--gapped">
                 <h6 class="h--alt">Key Ingredients</h6>
-                {{ product.metafields.shopify.constitutive-ingredients | metafield_text: field: 'label' }}
+                {{- product.metafields.shopify.constitutive-ingredients | metafield_text: field: 'label' -}}
+                {% if product.metafields.custom.full_ingredients != blank %}
+                  <details class="product-ingredients__full">
+                    <summary class="product-ingredients__full-summary h6 h--alt">See</summary>
+                    {{ product.metafields.custom.full_ingredients | metafield_tag }}
+                  </details>
+                {% endif %}
+
+                
                 <h6 class="h--alt"><a href="/pages/ingredients">Explore Ingredients Glossary</a></h6>
               </div>
             {%- endif -%}

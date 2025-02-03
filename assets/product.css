@@ -142,3 +142,35 @@
     flex-wrap: nowrap;
     margin-bottom: var(--step-0);
   }
+
+  .product-ingredients {
+    position: relative;
+  }
+
+  .product-ingredients__full {
+    display: inline-block;
+
+    &[open] {
+      display: block;
+
+      summary {
+        margin-bottom: var(--step--1);
+
+        &:after {
+          content: ' less';
+        }
+      }
+    }
+  }
+
+  .product-ingredients__full-summary {
+    cursor: pointer;
+    color: var(--colors-accent);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:after {
+      content: ' all';
+    }
+  }
