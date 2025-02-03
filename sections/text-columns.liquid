@@ -17,13 +17,30 @@
           {%- else -%}
             <div class="text-column__thumbnail-wrapper">
           {%- endif -%}
-          {{ block.settings.thumbnail | image_url: width: 600 | image_tag:
-            loading: 'lazy',
-            alt: block.settings.thumbnail.alt,
-            width: block.settings.thumbnail.width,
-            height: block.settings.thumbnail.height,
-            class: 'text-column__thumbnail text-column__thumbnail--main'
-          }}
+          {%- if block.settings.video_url != blank -%}
+            {% if block.settings.video_url contains 'cdn.shopify.com' %}
+              <video class="text-column__thumbnail text-column__thumbnail--main" controls>
+                <source src="{{ block.settings.video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {% else %}
+              <iframe
+                class="text-column__thumbnail text-column__thumbnail--main"
+                src="{{ block.settings.video_url }}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            {% endif %}
+          {%- else -%}
+            {{ block.settings.thumbnail | image_url: width: 600 | image_tag:
+              loading: 'lazy',
+              alt: block.settings.thumbnail.alt,
+              width: block.settings.thumbnail.width,
+              height: block.settings.thumbnail.height,
+              class: 'text-column__thumbnail text-column__thumbnail--main'
+            }}
+          {%- endif -%}
           {%- if block.settings.hover_thumbnail != blank -%}
             {{ block.settings.hover_thumbnail | image_url: width: 600 | image_tag:
               loading: 'lazy',
@@ -106,6 +123,12 @@
           "type": "image_picker",
           "id": "thumbnail",
           "label": "Thumbnail Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "Paste your video URL here (YouTube, Vimeo, or direct video link)"
         },
         {
           "type": "image_picker",

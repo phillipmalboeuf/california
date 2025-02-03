@@ -37,7 +37,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Body",
-            "button_link": "shopify://collections/shampoo",
+            "button_link": "shopify://collections/body",
             "button_style": "primary"
           }
         }
@@ -111,8 +111,8 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2_273ddacd-bdd9-40a6-83d1-2d0510cdec7f-2_webp.png",
-            "hover_thumbnail": "shopify://shop_images/Treatments2.png",
+            "thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG.jpg",
+            "hover_thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG-1.jpg",
             "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love,<br/>don’t worry, we’ve got you.</p>",
             "author": "",
             "showStars": false,
@@ -124,8 +124,8 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/GetSet-PACKSHOT_2-3_webp_7dd155dc-ca56-4053-bf50-ce56a427b337.png",
-            "hover_thumbnail": "shopify://shop_images/Body2.png",
+            "thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg",
+            "hover_thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg_2.jpg",
             "text": "<h4>Body</h4><p>We make our body products with all of<br/>your senses in mind.</p>",
             "author": "",
             "showStars": false,
