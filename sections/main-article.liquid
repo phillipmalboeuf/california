@@ -5,10 +5,12 @@
   <header class="article-template__header flex flex--gapped">
     <h1 class="h2 article-template__title col col--8of12">{{ article.title | escape }}</h1>
     <figure class="col col--4of12">
-      {{ article.metafields.custom.illustration | image_url: width: 150 | image_tag:
-        loading: 'lazy',
-        class: 'article-template__illustration'
-      }}
+      {%- if article.metafields.custom.illustration != blank -%}
+        {{ article.metafields.custom.illustration | image_url: width: 150 | image_tag:
+          loading: 'lazy',
+          class: 'article-template__illustration'
+        }}
+      {%- endif -%}
     </figure>
 
     {%- if section.settings.show_date or section.settings.show_author -%}
@@ -162,9 +164,9 @@
                 }}
               {%- endif -%}
               <h6 class="h--alt em">{{ related.title }}</h6>
-              {%- if related.excerpt != blank -%}
+              {% comment %} {%- if related.excerpt != blank -%}
               <div class="rte">{{ related.excerpt | truncate: 120 }}</div>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
             </a>
           </div>
         {%- endif -%}

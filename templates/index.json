@@ -75,7 +75,7 @@
         "text_Fpytc9": {
           "type": "text",
           "settings": {
-            "text": "<h3>At California Naturals, we’re on a mission to provide clean, [Vegan Cruelty Free] <a href=\"/pages/science\" title=\"Science\">safe & natural products</a> to everybody at an unreal price, [Agave] that don’t compromise on results.</h3>"
+            "text": "<h3>At California Naturals, we’re on a mission to provide clean, <a href=\"/pages/science\" title=\"Science\">safe & natural products</a> to everybody at an unreal price, that don’t compromise on results.</h3>"
           }
         }
       },
@@ -165,7 +165,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.25.21_AM.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/73ab8219ba3645bb88be9ba19ca04100.mp4",
+            "video_url": "",
             "text": "<p>\"I didn't even use a hot tool to smooth it out...this is so great for dry damaged hair, it's going to get it so silky soft\"</p>",
             "author": "Maggie I.",
             "showStars": true,

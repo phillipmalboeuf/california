@@ -46,7 +46,7 @@
 <style>
   .ingredients-nav {
     position: sticky;
-    top: 0;
+    top: 70px;
     z-index: 10;
     background: #ffffff;
     padding: var(--step-0) 0;
@@ -95,6 +95,14 @@
     grid-template-columns: repeat(var(--columns-desktop), 1fr);
     gap: var(--step-1);
     margin: var(--step-2) 0;
+
+    {% comment %} @media screen and (min-width: 990px) {
+      grid-template-columns: repeat(var(--columns-desktop), 1fr);
+    } {% endcomment %}
+
+    @media screen and (max-width: 989px) {
+      grid-template-columns: repeat(var(--columns-mobile), 1fr);
+    }
   }
 
   .ingredient-block {
