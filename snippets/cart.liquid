@@ -5,7 +5,7 @@
 {% assign upsell_products_limit = section.settings.upsell_products_limit | default: 4 %}
 {% assign color_scheme = section.settings.color_scheme | default: 'light-1' %}
 
-<form action="{{ routes.cart_url }}" class="cart-container flex flex--column flex--gapped padded page-width color-{{ color_scheme }} gradient" method="post" id="cart">
+<form action="/checkout" class="cart-container flex flex--column flex--gapped padded page-width color-{{ color_scheme }} gradient" method="post" id="cart">
   <h4 class="cart-title">{{ 'cart.general.title' | t }} <span data-cart-count>({{ cart.item_count }})</span></h4>
   
   <!-- Shipping Progress Bar -->
