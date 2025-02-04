@@ -39,7 +39,7 @@
       <div class="cart-item flex flex--gapped" data-item-id="{{ item.id }}">
         <img 
           class="cart-item-image col col--3of12"
-          src="{{ item.image | img_url: '120x' }}" 
+          src="{{ item.image | image_url: width: 240 }}" 
           alt="{{ item.title }}"
           width="100%"
           height="auto"

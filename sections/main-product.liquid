@@ -186,13 +186,15 @@
               {%- for related in product.metafields.custom.goes_well_with.value -%}
                 <div class="product-related__item padded color-light-2 col col--6of12">
                   <div class="flex flex--gapped">
-                    {{ related | image_url: width: 500 | image_tag:
-                      loading: 'lazy',
-                      width: related.featured_image.width,
-                      height: related.featured_image.height,
-                      class: "col col--3of12 product-related__image"
-                    }}
-                    <h6 class="col col--9of12 h--alt">{{ related.title }}</h6>
+                    <a href="{{ related.url }}" class="col col--3of12">
+                      {{ related | image_url: width: 500 | image_tag:
+                        loading: 'lazy',
+                        width: related.featured_image.width,
+                        height: related.featured_image.height,
+                        class: "product-related__image"
+                      }}
+                    </a>
+                    <h6 class="col col--9of12 h--alt"><a href="{{ related.url }}">{{ related.title }}</a></h6>
                     <button 
                       class="button button--full button--outline h6 h--alt"
                       {% unless related.available %}disabled{% endunless %}
@@ -229,7 +231,7 @@
     <div class="page-width">
     <div class="flex flex--gapped flex--around">
       {%- if product.metafields.custom.content_title != blank or product.metafields.custom.content != blank or product.metafields.custom.content_media != blank -%}
-      <div class="col col--5of12 col--mobile--12of12 product-columns__content flex flex--column flex--gapped">
+      <div class="col col--5of12 col--mobile--12of12 product-columns__content flex flex--column flex--gapped{% if product.metafields.custom.content_background != blank %} color-inverse-1{% endif %}">
         {%- if product.metafields.custom.content_background != blank -%}
           {{ product.metafields.custom.content_background | image_url: width: 1000 | image_tag:
             loading: 'lazy',
