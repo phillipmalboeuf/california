@@ -27,6 +27,15 @@
               {{ block.shopify_attributes }}>
               {{ block.settings.button_label | escape }}
             </a>
+          {% when 'extra_image' %}
+            <div class="image-with-text__extra-image" {{ block.shopify_attributes }}>
+              {{ block.settings.image | image_url: width: 800 | image_tag:
+                loading: 'lazy',
+                width: block.settings.image.width,
+                height: block.settings.image.height,
+                class: 'image-with-text__extra-image-item'
+              }}
+            </div>
         {% endcase %}
       {%- endfor -%}
     </div>
@@ -150,6 +159,17 @@
           "type": "url",
           "id": "button_link",
           "label": "Button link"
+        }
+      ]
+    },
+    {
+      "type": "extra_image",
+      "name": "Extra image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }
