@@ -231,7 +231,7 @@
     <div class="page-width">
     <div class="flex flex--gapped flex--around">
       {%- if product.metafields.custom.content_title != blank or product.metafields.custom.content != blank or product.metafields.custom.content_media != blank -%}
-      <div class="col col--5of12 col--mobile--12of12 product-columns__content flex flex--column flex--gapped{% if product.metafields.custom.content_background != blank %} color-inverse-1{% endif %}">
+      <div class="col col--5of12 col--mobile--12of12 product-columns__content flex flex--column flex--gapped">
         {%- if product.metafields.custom.content_background != blank -%}
           {{ product.metafields.custom.content_background | image_url: width: 1000 | image_tag:
             loading: 'lazy',

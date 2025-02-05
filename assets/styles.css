@@ -101,8 +101,8 @@ button,
   background-color: var(--colors-accent);
   transition: background-color 0.333s, color 0.333s, border-color 0.333s;
 
-  &:not(.button--none):hover,
-  &:not(.button--none):focus {
+  &:not(.button--none):not(.plyr__control):hover,
+  &:not(.button--none):not(.plyr__control):focus {
     background-color: var(--colors-body);
   }
 }
@@ -315,6 +315,7 @@ button,
 
 :root {
   --plyr-video-controls-background: linear-gradient(#000000bf,#0000);
+  /* --plyr-video-control-background-hover: black; */
 }
 
 .plyr--video.plyr--hide-controls .plyr__controls {
