@@ -150,7 +150,7 @@
     "hero_banner_ibFVLb": {
       "type": "hero-banner",
       "settings": {
-        "image": "shopify://shop_images/Ingredients.png",
+        "image": "shopify://shop_images/Background_1cbeb006-eb7b-427d-b02f-dd0446019493.png",
         "video_url": "",
         "curves": true,
         "show_overlay": false,
@@ -165,7 +165,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.25.21_AM.png",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/s/files/1/0720/9192/6766/files/IG_story_maggie_ilicheva_2024-11-04_2_1.MP4?v=1738709066",
             "text": "<p>\"I didn't even use a hot tool to smooth it out...this is so great for dry damaged hair, it's going to get it so silky soft\"</p>",
             "author": "Maggie I.",
             "showStars": true,
@@ -178,7 +178,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.38.32_AM.png",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/57cfc9e968cd4681bdc040367bed53f3.mp4",
             "text": "<p>\"this duo was a gamechanger for me, after styling my hair feels super clean, looks super shiny and it feels incredibly soft\"</p>",
             "author": "Ellen M.",
             "showStars": true,
@@ -191,7 +191,7 @@
           "settings": {
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.28.30_AM.png",
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/s/files/1/0720/9192/6766/files/TT_post_cattsmithx_2024-10-25_2.MP4?v=1738709188",
             "text": "<p>\"not only did it smell amazing it make my hair super shiny and had a really good lather and detangled really well\"</p>",
             "author": "Catt S.",
             "showStars": true,
@@ -216,7 +216,7 @@
         "text_FWKwnH": {
           "type": "text",
           "settings": {
-            "text": "<h3>\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\"</h3><p>ADADA</p>"
+            "text": "<h3>\"What we like best? You won’t break the bank for luxe-level products\"</h3><h5>ET</h5>"
           }
         }
       },
@@ -243,7 +243,7 @@
         "show_vendor": false,
         "show_quick_add": true,
         "show_view_all": false,
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/5079afb2505945b78107d454f13c2fe6.mp4",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/d115a467b2414ecd825336f902436b54.mov",
         "video_text": "<h4>Super Moisture routine</h4><p>Skin Type: sensitive, combination</p>",
         "video_link_url": "https://instagram.com",
         "video_link_label": "@abigalesonline"
@@ -262,7 +262,7 @@
         "show_vendor": false,
         "show_quick_add": true,
         "show_view_all": true,
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/5079afb2505945b78107d454f13c2fe6.mp4",
+        "video_url": "https://cdn.shopify.com/s/files/1/0720/9192/6766/files/TT_post_donovan_house_2024-12-20_1.MOV?v=1738709957",
         "video_text": "<h4>Daily Essentials  routine</h4><p>Skin Type: sensitive, combination</p>",
         "video_link_url": "",
         "video_link_label": ""

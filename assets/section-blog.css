@@ -97,9 +97,16 @@
   height: 100%;
   padding: var(--step-0);
   border-radius: var(--step--1);
+  transition: transform 0.333s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+  }
 }
 
 .article-card__image-wrapper {
+  width: 100%;
   /* position: relative;
   padding-bottom: 66.67%;
   margin-bottom: 1.5rem; */
