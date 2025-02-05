@@ -10,6 +10,8 @@
   --colors-body-inverse: #FFFFFF;
   --colors-error: #DC3545;
   --colors-success: #28A745;
+
+  --plyr-color-main: var(--colors-accent);
   
   /* Typography */
   /* --font-heading: var(--font-heading-family);
@@ -309,4 +311,28 @@ button,
   --oke-button-borderRadius: var(--step-1);
   --oke-button-backgroundColor: var(--colors-body);
   --oke-button-textColor: var(--colors-body-inverse);
+}
+
+:root {
+  --plyr-video-controls-background: linear-gradient(#000000bf,#0000);
+}
+
+.plyr--video.plyr--hide-controls .plyr__controls {
+  transform: translateY(-100%);
+}
+
+.plyr__video-wrapper {
+  width: auto;
+  background-color: transparent;
+}
+
+.plyr--video .plyr__controls {
+  top: 0;
+  bottom: auto;
+  padding: var(--step--1);
+  background: transparent;
+}
+
+.plyr__control {
+  border-radius: var(--step-2);
 }

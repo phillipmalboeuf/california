@@ -19,7 +19,7 @@
           {%- endif -%}
           {%- if block.settings.video_url != blank -%}
             {% if block.settings.video_url contains 'cdn.shopify.com' %}
-              <video class="text-column__thumbnail text-column__thumbnail--main" controls>
+              <video class="text-column__thumbnail text-column__thumbnail--main" data-plyr-video playsinline controls>
                 <source src="{{ block.settings.video_url }}" type="video/mp4">
                 Your browser does not support the video tag.
               </video>

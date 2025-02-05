@@ -16,7 +16,7 @@
       {%- if section.settings.video_url != blank -%}
         <li class="product-grid__item product-grid__item--video">
           <div class="video-container">
-            <video src="{{ section.settings.video_url }}" controls playsinline></video>
+            <video src="{{ section.settings.video_url }}" data-plyr-video></video>
             {%- if section.settings.video_text != blank -%}
               <div class="video-text rte">{{ section.settings.video_text }}</div>
             {%- endif -%}

@@ -21,6 +21,7 @@
   "dependencies": {
     "@swup/scripts-plugin": "^2.1.0",
     "embla-carousel": "^8.5.2",
+    "plyr": "^3.7.8",
     "sass": "^1.83.0",
     "swup": "^4.8.1",
     "utopia-core-scss": "^1.2.1"
