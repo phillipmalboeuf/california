@@ -9,14 +9,43 @@
  */
 {
   "sections": {
+    "image_with_text_razUmW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aXXCHy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find us at your favorite stores."
+          }
+        },
+        "text_kHH7HM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Finally, clean hair & body care that gives seriously good results. All our essentials include 95%+ naturally-derived ingredients & luxury-level formulas -- minus the markup.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aXXCHy",
+        "text_kHH7HM"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "curves": false,
+        "bleed": false,
+        "text_alignment": "center"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-        "hide_title": false
+        "hide_title": true,
+        "bubble_text": ""
       }
     }
   },
   "order": [
+    "image_with_text_razUmW",
     "main"
   ]
 }

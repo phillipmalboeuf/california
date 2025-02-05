@@ -7,7 +7,7 @@ export function initPlyr() {
     videoPlayers.forEach(player => {
       if (!(player as any).plyr) { // Only initialize if not already initialized
         new Plyr(player as HTMLElement, {
-          controls: ['play-large', 'mute'],
+          controls: ['play-large', 'mute', 'fullscreen'],
           hideControls: true,
           autoplay: true,
           muted: true,
