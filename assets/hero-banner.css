@@ -81,6 +81,7 @@ main > section:first-child > .hero-banner {
   bottom: calc(100% - 40px);
   left: -1px;
   width: calc(100% + 1px);
+  height: auto;
   z-index: -2;
   pointer-events: none;
 }
