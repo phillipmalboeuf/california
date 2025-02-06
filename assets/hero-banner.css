@@ -70,6 +70,9 @@ main > section:first-child > .hero-banner {
 .text-center .hero-banner__text {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-right .hero-banner__text {

@@ -15,7 +15,7 @@
         "text_Q9UDpj": {
           "type": "text",
           "settings": {
-            "text": "<h1>The Science of<br/>Cali Hair</h1><p>Keeping it real natural</p>"
+            "text": "<h1>The Science of<br/>Cali Hair</h1><p></p>"
           }
         }
       },
@@ -23,7 +23,8 @@
         "text_Q9UDpj"
       ],
       "settings": {
-        "image": "shopify://shop_images/Group_4970.png",
+        "image": "shopify://shop_images/Screenshot_2025-02-06_at_2.50.54_PM.png",
+        "video_url": "",
         "curves": false,
         "show_overlay": true,
         "text_alignment": "center"
@@ -56,7 +57,7 @@
         "text_hgYXCg": {
           "type": "text",
           "settings": {
-            "text": "<h3>Study results</h3><p>STUDY DETAILS ARE INSERTED HERE STUDY DETAILS ARE INSERTED HERESTUDY DETAILS ARE INSERTED HERE</p><h3>100% Agree</h3><p>To ensure your hair is squeaky clean, silky smooth, and distractingly gorgeous after every wash.</p><p>Our Coconut Daily Shampoo is carefully crafted with our original Coconut Cleansing Complex</p><h3>93% Agree</h3><p>Saw softer hair within a week</p>"
+            "text": "<h3></h3><h3>8/10 agree that after using the Super Moisture Shampoo and Conditioner they had softer and more hydrated hair</h3><p>*Tested on 30 females, age 20 - 55 with various hair types and conditions. 30 participants used at home 3x a week over a 4 week period.</p><p></p>"
           }
         }
       },
@@ -66,7 +67,7 @@
       "settings": {
         "color_scheme": "inverse-1",
         "curves": false,
-        "image": "shopify://shop_images/Background_0d1d25f1-a875-4452-962c-e0834810fbc0.png",
+        "image": "shopify://shop_images/Group_4955.jpg",
         "bleed": true,
         "text_alignment": "left"
       }
@@ -77,41 +78,53 @@
         "column_jnL9NK": {
           "type": "column",
           "settings": {
-            "subtitle": "Straight",
+            "subtitle": "1A - 1C",
             "thumbnail": "shopify://shop_images/alice-v-review_png.png",
+            "video_url": "",
             "text": "<p>Frizzy hair attributes and needs:</p><ul><li>Attribute 1</li><li>Attribute 2</li></ul><p>Suggested Products:<br/><a href=\"/products/classic-coconut-body-wash\" title=\"Classic Coconut Body Wash\">Coconut Daily Shampoo</a></p>",
             "author": "",
-            "showStars": false
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
           }
         },
         "column_tLA9R9": {
           "type": "column",
           "settings": {
-            "subtitle": "Straight",
+            "subtitle": "2A - 2C",
             "thumbnail": "shopify://shop_images/alice-v-review_png.png",
+            "video_url": "",
             "text": "<p>Frizzy hair attributes and needs:</p><ul><li>Attribute 1</li><li>Attribute 2</li></ul><p>Suggested Products:<br/><a href=\"/products/classic-coconut-body-wash\" title=\"Classic Coconut Body Wash\">Coconut Daily Shampoo</a></p>",
             "author": "",
-            "showStars": false
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
           }
         },
         "column_yzN9C3": {
           "type": "column",
           "settings": {
-            "subtitle": "Straight",
+            "subtitle": "3A - 3C",
             "thumbnail": "shopify://shop_images/alice-v-review_png.png",
-            "text": "<p>Frizzy hair attributes and needs:</p><ul><li>Attribute 1</li><li>Attribute 2</li></ul><p>Suggested Products:<br/><a href=\"/products/classic-coconut-body-wash\" title=\"Classic Coconut Body Wash\">Coconut Daily Shampoo</a></p>",
+            "video_url": "",
+            "text": "<p>Well-Defined Curls</p><ul><li>Attribute 1</li><li>Attribute 2</li></ul><p>Suggested Products:<br/><a href=\"/products/classic-coconut-body-wash\" title=\"Classic Coconut Body Wash\">Coconut Daily Shampoo</a></p>",
             "author": "",
-            "showStars": false
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
           }
         },
         "column_dgaN99": {
           "type": "column",
           "settings": {
-            "subtitle": "Straight",
+            "subtitle": "4A - 4C",
             "thumbnail": "shopify://shop_images/alice-v-review_png.png",
-            "text": "<p>Frizzy hair attributes and needs:</p><ul><li>Attribute 1</li><li>Attribute 2</li></ul><p>Suggested Products:<br/><a href=\"/products/classic-coconut-body-wash\" title=\"Classic Coconut Body Wash\">Coconut Daily Shampoo</a></p>",
+            "video_url": "",
+            "text": "<p>Tight Coils:</p><ul><li>Prone to frizz </li><li>Prone to Dryness</li></ul><p>Suggested Products:<br/>Gentle Shampoo</p><p>Moisture Shampoo </p><p>Moisture Conditioner</p><p>Hair Mask</p><p>Leave in Conditioner </p>",
             "author": "",
-            "showStars": false
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
           }
         }
       },

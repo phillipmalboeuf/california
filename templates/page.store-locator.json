@@ -23,11 +23,18 @@
           "settings": {
             "text": "<p>Finally, clean hair & body care that gives seriously good results. All our essentials include 95%+ naturally-derived ingredients & luxury-level formulas -- minus the markup.</p>"
           }
+        },
+        "extra_image_becn99": {
+          "type": "extra_image",
+          "settings": {
+            "image": "shopify://shop_images/cn_logos.svg"
+          }
         }
       },
       "block_order": [
         "heading_aXXCHy",
-        "text_kHH7HM"
+        "text_kHH7HM",
+        "extra_image_becn99"
       ],
       "settings": {
         "color_scheme": "",
