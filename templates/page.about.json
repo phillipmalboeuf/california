@@ -15,7 +15,7 @@
         "text_fa3tF3": {
           "type": "text",
           "settings": {
-            "text": "<h1>California Naturals  is a daily lifestyle brand</h1><h5>Keeping it real natural</h5>"
+            "text": "<h1>California Naturals  is a daily lifestyle brand</h1><h5>and we like to keep it real, Natural.</h5>"
           }
         }
       },
@@ -23,7 +23,8 @@
         "text_fa3tF3"
       ],
       "settings": {
-        "image": "shopify://shop_images/Group_4970.png",
+        "image": "shopify://shop_images/Oshiro_20230312_GoogleChromebook_1263_SAMPLES_1.jpg",
+        "video_url": "",
         "curves": false,
         "show_overlay": false,
         "text_alignment": "center"
@@ -71,7 +72,7 @@
         "heading_k6EXcY": {
           "type": "heading",
           "settings": {
-            "heading": "\"Even celebs 👀 like Hailey Bieber, Khloe Kardashianand Olivia Rodrigo are hooked.\""
+            "heading": "It's All Good."
           }
         }
       },
@@ -81,6 +82,7 @@
       "settings": {
         "color_scheme": "inverse-2",
         "curves": false,
+        "bleed": false,
         "text_alignment": "center"
       }
     }
