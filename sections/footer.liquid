@@ -2,6 +2,9 @@
   <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded padded--thick page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+
         {%- when 'logo' -%}
           <div class="footer__block flex flex--center footer__block--logo" {{ block.shopify_attributes }}>
             {%- if block.settings.image != blank -%}
@@ -129,6 +132,9 @@
     }
   ],
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "logo",
       "name": "Logo",
