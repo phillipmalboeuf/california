@@ -305,12 +305,29 @@ button,
   object-fit: cover;
 }
 
-[data-oke-widget] {
+[data-oke-widget],
+[data-oke-carousel],
+div.oke-reviewCarousel,
+div.oke-w {
   --oke-button-fontWeight: 300;
   --oke-button-fontFamily: var(--font-alt-heading);
   --oke-button-borderRadius: var(--step-1);
   --oke-button-backgroundColor: var(--colors-body);
   --oke-button-textColor: var(--colors-body-inverse);
+  --oke-title-fontWeight: 300;
+  --oke-title-fontFamily: var(--font-alt-heading);
+
+  strong,
+  div.okeReviews .oke-w-reviewer-verified,
+  div.okeReviews .oke-w-filter-title,
+  .oke-sortSelect-label {
+    font-weight: normal;
+  }
+}
+
+[data-oke-carousel] {
+  background-color: #F8F2ED;
+  padding: var(--step-3);
 }
 
 :root {

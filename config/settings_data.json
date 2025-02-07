@@ -49,6 +49,12 @@
               "image_width": 600
             }
           },
+          "social_HAD3PW": {
+            "type": "social",
+            "settings": {
+              "title": "@california naturals"
+            }
+          },
           "link_list_nCcgJh": {
             "type": "link_list",
             "settings": {
@@ -60,6 +66,7 @@
         "block_order": [
           "newsletter_dxUJKh",
           "logo_AH73QQ",
+          "social_HAD3PW",
           "link_list_nCcgJh"
         ],
         "settings": {

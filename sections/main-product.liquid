@@ -72,6 +72,9 @@
                 {% comment %} <h6 class="h--alt">Weight</h6> {% endcomment %}
                 {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'oz' }} / {{ product.selected_or_first_available_variant.weight | weight_with_unit: 'g' }}
               </div>
+              {% if product.metafields.reviews.rating_count != blank and product.metafields.reviews.rating_count > 0 %} 
+              <div data-oke-star-rating data-oke-reviews-product-id="shopify-{{ product.id }}">{{ product.metafields.okendo.StarRatingSnippet }}</div>
+              {% endif %} 
               <hr>
             
             {{ product.description }}

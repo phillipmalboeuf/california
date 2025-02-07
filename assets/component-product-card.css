@@ -9,6 +9,10 @@
   height: 100%;
 }
 
+.product-card [data-oke-star-rating] {
+  margin-top: var(--step--1);
+}
+
 .product-card__link {
   display: block;
   text-decoration: none;
