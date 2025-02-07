@@ -2,9 +2,6 @@
   <div class="footer__wrapper flex flex--column flex--middle flex--thick_gapped padded padded--thick page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
-        {%- when '@app' -%}
-          {% render block %}
-
         {%- when 'logo' -%}
           <div class="footer__block flex flex--center footer__block--logo" {{ block.shopify_attributes }}>
             {%- if block.settings.image != blank -%}
@@ -87,24 +84,12 @@
           </div>
 
         {%- when 'social' -%}
-          <div class="footer__block footer__block--social" {{ block.shopify_attributes }}>
+          <div class="footer__block footer__block--social flex flex--gapped flex--column flex--middle" {{ block.shopify_attributes }}>
             {%- if block.settings.title != blank -%}
-              <h2 class="footer__title">{{ block.settings.title | escape }}</h2>
+              <h6 class="h--alt em footer__title">{{ block.settings.title | escape }}</h6>
             {%- endif -%}
-            <ul class="footer__social list-unstyled">
-              {%- if settings.social_facebook_link != blank -%}
-                <li><a href="{{ settings.social_facebook_link }}" target="_blank">{% render 'icon', type: 'facebook' %}</a></li>
-              {%- endif -%}
-              {%- if settings.social_instagram_link != blank -%}
-                <li><a href="{{ settings.social_instagram_link }}" target="_blank">{% render 'icon', type: 'instagram' %}</a></li>
-              {%- endif -%}
-              {%- if settings.social_twitter_link != blank -%}
-                <li><a href="{{ settings.social_twitter_link }}" target="_blank">{% render 'icon', type: 'twitter' %}</a></li>
-              {%- endif -%}
-              {%- if settings.social_tiktok_link != blank -%}
-                <li><a href="{{ settings.social_tiktok_link }}" target="_blank">{% render 'icon', type: 'tiktok' %}</a></li>
-              {%- endif -%}
-            </ul>
+            
+            <div id="insta-feed" class="instafeed-shopify"></div>
           </div>
       {%- endcase -%}
     {%- endfor -%}
@@ -132,9 +117,6 @@
     }
   ],
   "blocks": [
-    {
-      "type": "@app"
-    },
     {
       "type": "logo",
       "name": "Logo",
