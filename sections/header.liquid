@@ -9,6 +9,7 @@
         <nav class="header__nav">
           <ul class="header__menu list--nostyle flex flex--gapped">
             {%- for link in section.settings.menu.links -%}
+              {%- unless forloop.last -%}
               <li class="header__menu-item{% if link.links.size > 0 %} header__menu-item--has-dropdown{% endif %}">
                 <a href="{{- link.url -}}" class="header__menu-link{% if link.current %} header__menu-link--active{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{- link.title -}}
                   {%- if link.links.size > 0 -%}
@@ -26,6 +27,7 @@
                   </ul>
                 {%- endif -%}
               </li>
+              {%- endunless -%}
             {%- endfor -%}
           </ul>
         </nav>
@@ -58,7 +60,7 @@
       </a>
     </div>
 
-    <div class="header__right flex flex--gapped flex--end">
+    <div class="header__right header__menu flex flex--gapped flex--middle flex--end">
       {% comment %} {%- if section.settings.show_search -%}
         <button type="button" class="header__icon-button" aria-expanded="false" data-search-toggle>
           <span>{{- 'sections.header.search' | t -}}</span>
@@ -68,6 +70,12 @@
       <a href="{{- routes.account_url -}}" class="button header__icon-button">
         <span>{{- 'sections.header.account' | t -}}</span>
       </a> {% endcomment %}
+      {%- assign last_link = section.settings.menu.links.last -%}
+      <div class="header__menu-item">
+        <a href="{{- last_link.url -}}" class="header__menu-link{% if last_link.current %} header__menu-link--active{% endif %}" {% if last_link.current %}aria-current="page"{% endif %}>
+          <span>{{- last_link.title -}}</span>
+        </a>
+      </div>
 
       <a href="{{- routes.cart_url -}}" data-no-swup class="button button--outline header__icon-button header__cart" data-cart-toggle>
         <span>{{- 'sections.header.cart' | t -}}</span>
