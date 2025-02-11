@@ -47,8 +47,10 @@ function initProductForms() {
 }
 
 function updateVariantSelection(form) {
-  const productJson = JSON.parse(document.getElementById('ProductJson-' + form.dataset.productId).textContent);
-  const variants = productJson.variants;
+  const formData = new FormData(form)
+  const productId = Object.fromEntries(formData).product_id;
+  const productJson = JSON.parse(document.getElementById('ProductJson-' + productId).textContent);
+  const variants = productJson.product.variants;
   
   // Get selected options
   const selectedOptions = Array.from(form.querySelectorAll('[data-option-index]')).map(select => select.value);
@@ -68,17 +70,10 @@ function updateVariantSelection(form) {
       priceElement.innerHTML = formatMoney(matchingVariant.price);
     }
 
-    // Update availability
-    const addToCartButton = form.querySelector('[data-add-to-cart]');
-    const addToCartText = form.querySelector('[data-add-to-cart-text]');
-    
-    if (matchingVariant.available) {
-      addToCartButton.disabled = false;
-      addToCartText.textContent = theme.strings.addToCart;
-    } else {
-      addToCartButton.disabled = true;
-      addToCartText.textContent = theme.strings.soldOut;
-    }
+    // Reload page with variant ID
+    // const url = new URL(window.location.href);
+    // url.searchParams.set('variant', matchingVariant.id);
+    // window.location.href = url.href;
   }
 }
 

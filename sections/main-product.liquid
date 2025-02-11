@@ -108,7 +108,8 @@
 
         {%- form 'product', product, class: 'product-form flex flex--column flex--gapped', id: 'product-form', novalidate: 'novalidate' -%}
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          
           {%- if product.variants.size > 1 -%}
             <div class="product-variants">
               {%- for option in product.options_with_values -%}
@@ -166,9 +167,9 @@
                   {{- 'products.product.sold_out' | t -}}
                 {%- endif -%}
                 <span class="product-price">
-                  {%- if product.price_varies -%}
+                  {% comment %} {%- if product.price_varies -%}
                     <span class="price-from">{{ 'products.product.from_price_html' | t }}</span>
-                  {%- endif -%}
+                  {%- endif -%} {% endcomment %}
                   <span class="price" data-product-price>
                     {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
                   </span>
@@ -291,8 +292,12 @@
   </div>
 </section>
 
-
-
+<script type="application/json" data-product-json id="ProductJson-{{ product.id }}">
+  {
+    "product": {{ product | json }},
+    "selected_variant_id": {{ product.selected_or_first_available_variant.id | json }}
+  }
+</script>
 
 {% schema %}
 {

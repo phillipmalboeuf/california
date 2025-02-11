@@ -313,7 +313,7 @@ textarea {
 	color: black;
 	background-color: white;
 	border: 1px solid;
-	border-radius: calc($radius / 2);
+	// border-radius: calc($radius / 2);
 	padding: ($s-2) ($s-1);
 
 	&:focus {
