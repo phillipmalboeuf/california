@@ -8,6 +8,16 @@
     "theme_documentation_url": "https://phils.computer"
   },
   {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image"
+      }
+    ]
+  },
+  {
     "name": "Icons",
     "settings": [
       // {
