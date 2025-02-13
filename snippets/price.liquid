@@ -2,6 +2,7 @@
   if product.price_varies
     assign compare_at_price = product.compare_at_price_max
     assign price = product.price_min
+    assign price_formatted = product.price_min | money_without_trailing_zeros
     assign price_varies = true
   else
     assign compare_at_price = product.compare_at_price
@@ -16,11 +17,11 @@
   {%- if product.compare_at_price_varies %} price--compare-varies{% endif -%}">
   
   <div class="price__regular">
-    {%- if price_varies -%}
-      <span class="price__from">{{ 'products.product.from_lowest_price_html' | t: lowest_price: price | money_without_trailing_zeros }}</span>
-    {%- else -%}
+    {% comment %} {%- if price_varies -%}
+      <span class="price__from">{{ 'products.product.from_lowest_price_html' | t: lowest_price: price_formatted }}</span>
+    {%- else -%} {% endcomment %}
       <span class="price__amount">{{ price | money_without_trailing_zeros }}</span>
-    {%- endif -%}
+    {% comment %} {%- endif -%} {% endcomment %}
   </div>
 
   {%- if compare_at_price > price -%}
