@@ -11,7 +11,10 @@ export function initPlyr() {
           hideControls: true,
           autoplay: true,
           muted: true,
-          loop: { active: true }
+          loop: { active: true },
+          storage: {
+            enabled: false
+          }
         });
       }
     });

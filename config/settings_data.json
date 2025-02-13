@@ -139,12 +139,12 @@
       },
       "light-1": {
         "settings": {
-          "colors_body": "#00a74d",
+          "colors_body": "#000000",
           "colors_light": "#f9f9f9",
-          "colors_accent": "#00a74d",
+          "colors_accent": "#fff6ed",
           "colors_secondary": "#000000",
-          "colors_bold": "#00a74d",
-          "colors_background": "#bfe9d2",
+          "colors_bold": "#fff6ed",
+          "colors_background": "#dfbccd",
           "colors_background_gradient": ""
         }
       },

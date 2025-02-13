@@ -1,4 +1,4 @@
-{% assign free_shipping_threshold = section.settings.free_shipping_threshold | default: 7500 %}
+{% assign free_shipping_threshold = section.settings.free_shipping_threshold | default: 4000 %}
 {% assign current_cart_total = cart.total_price %}
 {% assign show_upsell_products = section.settings.show_upsell_products | default: true %}
 {% assign upsell_collection_handle = section.settings.upsell_collection | default: 'upsell-products' %}

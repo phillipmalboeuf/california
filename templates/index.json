@@ -149,8 +149,9 @@
     },
     "hero_banner_ibFVLb": {
       "type": "hero-banner",
+      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Background_1cbeb006-eb7b-427d-b02f-dd0446019493.png",
+        "image": "shopify://shop_images/Frame_16564_d622983c-ffd2-4719-99d3-0fec83cc4ab0.jpg",
         "video_url": "",
         "curves": true,
         "show_overlay": false,
