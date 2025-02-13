@@ -58,11 +58,11 @@
         <p class="product-card__subtitle">{{ product.metafields.descriptors.subtitle }}</p>
       {%- endif -%}
     </div>
-
-    {% if product.metafields.reviews.rating_count != blank and product.metafields.reviews.rating_count > 0 %} 
-    <div data-oke-star-rating data-oke-reviews-product-id="shopify-{{ product.id }}">{{ product.metafields.okendo.StarRatingSnippet }}</div>
-    {% endif %} 
   </a>
+
+  {% if product.metafields.reviews.rating_count != blank and product.metafields.reviews.rating_count > 0 %} 
+  <div data-oke-star-rating data-oke-reviews-product-id="shopify-{{ product.id }}">{{ product.metafields.okendo.StarRatingSnippet }}</div>
+  {% endif %} 
 
   {%- if product.available -%}
     <div class="product-card__quick-add">

@@ -131,8 +131,10 @@ async function updateCartUI() {
 
     bindEvents();
 
+    const freeShippingThreshold = document.querySelector('[data-free-shipping-threshold]')
+
     // Update progress bar
-    const threshold = 7500; // $75.00
+    const threshold = freeShippingThreshold?.dataset.freeShippingThreshold || 7500; // $75.00
     const progress = Math.min((cart.total_price / threshold) * 100, 100);
     document.querySelectorAll('.progress-fill').forEach(el => {
       el.style.width = `${progress}%`;
