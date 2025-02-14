@@ -24,7 +24,9 @@
   }
 
   .product-grid__item.product-grid__item--video {
-    grid-column: span 2;
+    @media screen and (max-width: 990px) {
+      grid-column: span 2;
+    }
   }
   
   .product-grid__item.product-grid__item--video .video-container {
