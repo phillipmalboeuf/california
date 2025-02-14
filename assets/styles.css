@@ -360,9 +360,9 @@ div.oke-w {
 }
 
 .newsletter-form__message--success {
-  padding: 1rem;
-  background-color: var(--color-success-background);
-  color: var(--color-success-text);
+  padding: var(--step-1);
+  background-color: var(--colors-secondary);
+  color: var(--colors-body-inverse);
   border-radius: var(--step-1);
 }
 

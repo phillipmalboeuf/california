@@ -65,6 +65,12 @@
               <div class="footer__newsletter-text rte">{{ block.settings.text }}</div>
             {%- endif -%}
             {%- form 'customer', class: 'footer__newsletter-form' -%}
+              {%- if form.posted_successfully? -%}
+              <div class="newsletter-form__message newsletter-form__message--success" tabindex="-1" autofocus>
+                <h5 class="h--alt">{{ 'newsletter.success' | t }}</h5>
+              </div>
+              {%- endif -%}
+
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="footer__newsletter-field field field--inline">
                 <input

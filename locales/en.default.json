@@ -89,7 +89,7 @@
   "newsletter": {
     "label": "Email",
     "button_label": "Subscribe",
-    "success": "Thanks for subscribing",
+    "success": "Thanks for subscribing!",
     "error": "Please enter a valid email address"
   },
   "collections": {
