@@ -62,7 +62,7 @@
 
   <div class="intro-video__wrapper">
     {% if section.settings.video_url contains 'cdn.shopify.com' %}
-      <video autoplay muted loop controls="false" data-plyr-video id="intro-video-player">
+      <video autoplay muted loop playsinline controls="false" data-plyr-video id="intro-video-player">
         <source src="{{ section.settings.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>

@@ -45,7 +45,7 @@
     <div class="video-with-text__wrapper">
     {% if section.settings.video_url != blank %}
       {% if section.settings.video_url contains 'cdn.shopify.com' %}
-        <video {% if section.settings.autoplay %}autoplay muted loop{% else %}controls{% endif %} data-plyr-video>
+        <video {% if section.settings.autoplay %}autoplay muted loop playsinline{% else %}controls{% endif %} data-plyr-video>
           <source src="{{ section.settings.video_url }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>

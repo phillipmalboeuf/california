@@ -335,6 +335,10 @@ div.oke-w {
   /* --plyr-video-control-background-hover: black; */
 }
 
+.plyr {
+  min-width: 100%;
+}
+
 .plyr--video.plyr--hide-controls .plyr__controls {
   transform: translateY(-100%);
 }
