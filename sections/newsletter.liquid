@@ -14,6 +14,12 @@
     {%- endfor -%}
     
     {%- form 'customer', class: 'newsletter-form' -%}
+      {%- if form.posted_successfully? -%}
+      <div class="newsletter-form__message newsletter-form__message--success" tabindex="-1" autofocus>
+        <h3>{{ 'newsletter.success' | t }}</h3>
+      </div>
+    {%- endif -%}
+
       <input type="hidden" name="contact[tags]" value="newsletter">
       <div class="newsletter-form__field-wrapper">
         <div class="field">

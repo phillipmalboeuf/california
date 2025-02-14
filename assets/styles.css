@@ -354,3 +354,19 @@ div.oke-w {
 .plyr__control {
   border-radius: var(--step-2);
 }
+
+.newsletter-form__message {
+  text-align: center;
+}
+
+.newsletter-form__message--success {
+  padding: 1rem;
+  background-color: var(--color-success-background);
+  color: var(--color-success-text);
+  border-radius: var(--step-1);
+}
+
+.newsletter-form__message--success h3 {
+  /* margin: 0;
+  font-size: 1rem; */
+}
