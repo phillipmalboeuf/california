@@ -25,6 +25,10 @@ main > section:first-child > .hero-banner {
   background-color: #000;
 }
 
+.hero-banner__image--mobile {
+  display: none;
+}
+
 .hero-banner__video {
   width: 100%;
   height: 100%;
@@ -95,7 +99,23 @@ main > section:first-child > .hero-banner {
   transform: rotate(180deg);
 }
 
+@media screen and (max-width: 990px) {
+  .hero-banner__curves {
+    bottom: calc(100% - 10px);
+  }
 
+  .hero-banner__curves:last-of-type {
+    top: calc(100% - 10px);
+  }
+
+  .hero-banner__image--mobile {
+    display: block;
+  }
+  
+  .hero-banner__image--mobile + .hero-banner__image--desktop {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .hero-banner {
