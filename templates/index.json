@@ -49,7 +49,7 @@
         "button_U86yJR"
       ],
       "settings": {
-        "image": "shopify://shop_images/low-tide-at-the-beach-house.jpg",
+        "image": "shopify://shop_images/Screenshot_2025-01-31_at_4.27.38_PM.png",
         "video_url": "https://cdn.shopify.com/videos/c/o/v/bec4b9e1427341739224b87b5a92f636.mp4",
         "curves": false,
         "show_overlay": true,
@@ -62,7 +62,7 @@
         "subheading_Awyc9X": {
           "type": "subheading",
           "settings": {
-            "subheading": "Clean. Effective. Feels expensive. (It’s not.) It’s all good."
+            "subheading": "Clean, Effective, Feels expensive (It’s not)... It’s all good."
           }
         },
         "heading_kWNNJY": {
@@ -112,10 +112,10 @@
           "type": "column",
           "settings": {
             "subtitle": "",
-            "thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG.jpg",
+            "thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG-1_a5e4dffa-52cb-42fb-8650-c36af25790cc.jpg",
             "video_url": "",
-            "hover_thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG-1.jpg",
-            "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love,<br/>don’t worry, we’ve got you.</p>",
+            "hover_thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_2.jpg",
+            "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love. <br/>Don’t worry, we’ve got you.</p>",
             "author": "",
             "showStars": false,
             "button_label": "Shop Now",
@@ -149,9 +149,9 @@
     },
     "hero_banner_ibFVLb": {
       "type": "hero-banner",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Frame_16564_d622983c-ffd2-4719-99d3-0fec83cc4ab0.jpg",
+        "image": "shopify://shop_images/Frame_16563_a3821d6c-19ef-483c-8007-6a1e6d5e9b6a.jpg",
+        "mobile_image": "shopify://shop_images/Frame_16564_d622983c-ffd2-4719-99d3-0fec83cc4ab0.jpg",
         "video_url": "",
         "curves": true,
         "show_overlay": false,
@@ -193,7 +193,7 @@
             "subtitle": "",
             "thumbnail": "shopify://shop_images/Screenshot_2025-01-29_at_11.28.30_AM.png",
             "video_url": "https://cdn.shopify.com/s/files/1/0720/9192/6766/files/TT_post_cattsmithx_2024-10-25_2.MP4?v=1738709188",
-            "text": "<p>\"not only did it smell amazing it make my hair super shiny and had a really good lather and detangled really well\"</p>",
+            "text": "<p>\"not only did it smell amazing it made my hair super shiny and had a really good lather and detangled really well\"</p>",
             "author": "Catt S.",
             "showStars": true,
             "button_label": "",
