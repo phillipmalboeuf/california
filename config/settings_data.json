@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "favicon": "shopify://shop_images/cali1.svg",
+    "favicon": "shopify://shop_images/CaliforniaNaturals_Logo_FlowerMotif-01_6.png",
     "icons": [
       "vegan-cruelty-free",
       "agave"
@@ -38,6 +38,7 @@
         "blocks": {
           "newsletter_dxUJKh": {
             "type": "newsletter",
+            "disabled": true,
             "settings": {
               "title": "Keep up with good news and sweet deals. No spam. No junk. Just good, clean, fun.",
               "text": ""
@@ -47,7 +48,7 @@
             "type": "logo",
             "settings": {
               "image": "shopify://shop_images/SVG.svg",
-              "image_width": 600
+              "image_width": 500
             }
           },
           "social_HAD3PW": {
@@ -71,7 +72,7 @@
           "link_list_nCcgJh"
         ],
         "settings": {
-          "color_scheme": ""
+          "color_scheme": "inverse-1"
         }
       },
       "intro-video": {
@@ -165,5 +166,8 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": []
   }
 }

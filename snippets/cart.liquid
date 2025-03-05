@@ -1,4 +1,4 @@
-{% assign free_shipping_threshold = section.settings.free_shipping_threshold | default: 4000 %}
+{% assign free_shipping_threshold = section.settings.free_shipping_threshold %}
 {% assign current_cart_total = cart.total_price %}
 {% assign show_upsell_products = section.settings.show_upsell_products | default: true %}
 {% assign upsell_collection_handle = section.settings.upsell_collection | default: 'upsell-products' %}
@@ -13,6 +13,7 @@
     <p class="cart-message">{{ section.settings.cart_message }}</p>
   {% endif %}
   
+  {% if free_shipping_threshold %}
   <div class="shipping-progress">
     {% if cart.total_price < free_shipping_threshold %}
       {% assign remaining_amount = free_shipping_threshold | minus: current_cart_total %}
@@ -31,6 +32,8 @@
       </div>
     {% endif %}
   </div>
+  {% endif %}
+
   <hr>
 
   <!-- Cart Items -->
@@ -72,19 +75,22 @@
   {% if show_upsell_products and collections[upsell_collection_handle].products.size > 0 %}
     <div class="upsell-products">
       <h4>{{ 'cart.general.you_may_also_like' | t }}</h4>
-      <div class="upsell-grid">
+      <div class="flex flex--gapped upsell-grid">
         {% assign upsell_collection = collections[upsell_collection_handle] %}
         {% for product in upsell_collection.products limit: upsell_products_limit %}
-          <div class="upsell-item">
+          <div class="upsell-item col col--6of12 col--mobile--6of12 flex flex--column flex--gapped">
             <img 
-              src="{{ product.featured_image | img_url: '200x' }}" 
+              class="cart-item-image"
+              src="{{ product.featured_image | image_url: width: 240 }}" 
               alt="{{ product.title }}"
-              width="200"
-              height="200"
+              width="250"
+              height="auto"
             >
-            <h3>{{ product.title }}</h3>
-            <p class="upsell-price">{{ product.price | money_without_trailing_zeros }}</p>
-            <button class="add-to-cart-btn" type="button" data-product-id="{{ product.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
+            <h6 class="h--alt">{{ product.title }} - {{ product.price | money_without_trailing_zeros }}</h6>
+            <button class="add-to-cart-btn" type="button" data-quick-add-button
+      {% unless product.available %}disabled{% endunless %}
+      data-product-id="{{ product.id }}"
+      data-variant-id="{{ product.first_available_variant.id }}">{{ 'cart.general.add_to_cart' | t }}</button>
           </div>
         {% endfor %}
       </div>

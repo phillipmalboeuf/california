@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_razUmW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aXXCHy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find us at your favorite stores."
+          }
+        },
+        "text_kHH7HM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Finally, clean hair & body care that gives seriously good results. All our essentials include 95%+ naturally-derived ingredients & luxury-level formulas -- minus the markup.</p>"
+          }
+        },
+        "extra_image_becn99": {
+          "type": "extra_image",
+          "settings": {
+            "image": "shopify://shop_images/cn_logos.svg"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aXXCHy",
+        "text_kHH7HM",
+        "extra_image_becn99"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "curves": false,
+        "bleed": false,
+        "text_alignment": "center"
+      }
+    },
+    "text_columns_WXAme9": {
+      "type": "text-columns",
+      "blocks": {
+        "column_KbaLA4": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/ClassicDuo_Website_PDP_BG.jpg",
+            "video_url": "",
+            "hover_thumbnail": "shopify://shop_images/ClassicDuo_Website_PDP_BG-1.jpg",
+            "text": "<h4>Shampoo & Conditioner</h4><p>Your go-to spot for all things cleansing and conditioning.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/shampoo"
+          }
+        },
+        "column_DqW9fz": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_BG-1_a5e4dffa-52cb-42fb-8650-c36af25790cc.jpg",
+            "video_url": "",
+            "hover_thumbnail": "shopify://shop_images/LeaveinHairmaskDuo_Website_PDP_2.jpg",
+            "text": "<h4>Treatments</h4><p>Sometimes your hair needs a little extra love, don’t worry, we’ve got you.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/treatments"
+          }
+        },
+        "column_3XaRKb": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg",
+            "video_url": "",
+            "hover_thumbnail": "shopify://shop_images/MoistureBodyWash_Website_PDP_BG.jpg_2.jpg",
+            "text": "<h4>Body</h4><p>We make our body products with all of your senses in mind.</p>",
+            "author": "",
+            "showStars": false,
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/body"
+          }
+        }
+      },
+      "block_order": [
+        "column_KbaLA4",
+        "column_DqW9fz",
+        "column_3XaRKb"
+      ],
+      "settings": {
+        "title": "Meet the products",
+        "title_alignment": "center"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "bubble_text": ""
+      }
+    }
+  },
+  "order": [
+    "image_with_text_razUmW",
+    "text_columns_WXAme9",
+    "main"
+  ]
+}
