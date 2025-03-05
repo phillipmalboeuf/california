@@ -64,20 +64,23 @@
   <div data-oke-star-rating data-oke-reviews-product-id="shopify-{{ product.id }}">{{ product.metafields.okendo.StarRatingSnippet }}</div>
   {% endif %} 
 
-  {%- if product.available -%}
-    <div class="product-card__quick-add">
-      <button
-        type="button"
-        class="button button--inverse"
-        data-quick-add-button
-        data-product-id="{{ product.id }}"
-        data-variant-id="{{ product.first_available_variant.id }}"
-      >
+  <div class="product-card__quick-add">
+    <button
+      type="button"
+      class="button button--inverse"
+      data-quick-add-button
+      {% unless product.available %}disabled{% endunless %}
+      data-product-id="{{ product.id }}"
+      data-variant-id="{{ product.first_available_variant.id }}"
+    >
+      {%- if product.available -%}
         {{ 'products.product.add_to_cart' | t }} –
         <span class="product-card__price">
           {% render 'price', product: product %}
         </span>
-      </button>
-    </div>
-  {%- endif -%}
+      {%- else -%}
+        {{ 'products.product.sold_out' | t }}
+      {%- endif -%}
+    </button>
+  </div>
 </div> 
