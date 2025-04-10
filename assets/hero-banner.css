@@ -126,12 +126,13 @@ main > section:first-child > .hero-banner {
 
 
 .hero-banner.hero-banner--contain {
-  margin-top: 0;
-  min-height: none;
-  padding: 10svh 10vw;
+  margin-top: var(--step-3) !important;
+  min-height: auto;
+  padding: var(--step-5);
 }
 
 .hero-banner.hero-banner--contain .hero-banner__image {
   object-fit: contain;
+  background-color: transparent;
 }
 

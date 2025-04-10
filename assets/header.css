@@ -17,7 +17,7 @@
   display: none;
 } */
 
-body:has(> main > section:first-child > .hero-banner) .header[data-sticky="true"]:not(.scrolled) {
+body:has(> main > section:first-child > .hero-banner:not(.hero-banner--contain)) .header[data-sticky="true"]:not(.scrolled) {
   background-color: transparent;
 }
 

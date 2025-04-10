@@ -27,14 +27,8 @@
         "video_url": "",
         "curves": false,
         "show_overlay": true,
+        "contain": true,
         "text_alignment": "center"
-      }
-    },
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "hide_title": true,
-        "bubble_text": ""
       }
     },
     "text_columns_nyhmnX": {
@@ -102,6 +96,13 @@
       "settings": {
         "title": "",
         "title_alignment": "center"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "bubble_text": ""
       }
     }
   },
