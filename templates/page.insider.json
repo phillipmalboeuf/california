@@ -104,11 +104,41 @@
         "hide_title": true,
         "bubble_text": ""
       }
+    },
+    "image_with_text_Pimi3h": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_XwDECc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become a CN Insider"
+          }
+        },
+        "button_63fy9D": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "big_button": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_XwDECc",
+        "button_63fy9D"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "curves": false,
+        "bleed": false,
+        "text_alignment": "left"
+      }
     }
   },
   "order": [
     "hero_banner_nwdbHC",
     "text_columns_nyhmnX",
-    "main"
+    "main",
+    "image_with_text_Pimi3h"
   ]
 }
