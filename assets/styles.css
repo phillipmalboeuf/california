@@ -374,3 +374,33 @@ div.oke-w {
   /* margin: 0;
   font-size: 1rem; */
 }
+        /* Ensure the entire section that contains the Klaviyo form has the correct green background */
+        #shopify-section-17411047563ade34f5,
+        #shopify-section-17411047563ade34f5 > div {
+            background-color: #00a74d !important; /* Correct green */
+            padding: 30px 0 !important; /* Add spacing */
+            width: 100% !important; /* Ensure full width */
+            display: flex !important;
+            justify-content: center !important; /* Center contents */
+            align-items: center !important;
+        }
+        
+        /* Force the Klaviyo form wrapper to also have the correct green */
+        .klaviyo-form-VHbHsk {
+            background-color: #00a74d !important; /* Set Klaviyo form wrapper to green */
+            padding: 20px !important;
+        }
+        
+        /* Keep the email input field white */
+        .klaviyo-form input[type="email"] {
+            background-color: white !important; /* Ensure input field stays white */
+            color: black !important; /* Keep text readable */
+            border: 1px solid #ccc !important; /* Keep original border */
+        }
+        
+        /* Keep the Subscribe button yellow */
+        .klaviyo-form button {
+            background-color: #ffc512 !important; /* Ensure button stays yellow */
+            color: black !important; /* Keep text readable */
+            border: none !important;
+        }

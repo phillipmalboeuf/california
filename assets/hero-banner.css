@@ -123,3 +123,15 @@ main > section:first-child > .hero-banner {
     /* padding: 3rem 0; */
   }
 } 
+
+
+.hero-banner.hero-banner--contain {
+  margin-top: 0;
+  min-height: none;
+  padding: 10svh 10vw;
+}
+
+.hero-banner.hero-banner--contain .hero-banner__image {
+  object-fit: contain;
+}
+

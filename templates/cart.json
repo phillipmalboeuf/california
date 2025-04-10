@@ -14,10 +14,8 @@
       "custom_css": [],
       "settings": {
         "color_scheme": "light-2",
-        "free_shipping_threshold": 4000,
-        "cart_message": "",
         "show_upsell_products": true,
-        "upsell_collection": "upsell-products",
+        "upsell_collection": "",
         "upsell_products_limit": 4,
         "show_shipping_calculator": false,
         "show_note": false

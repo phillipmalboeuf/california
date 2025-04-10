@@ -83,11 +83,11 @@
               class="cart-item-image"
               src="{{ product.featured_image | image_url: width: 240 }}" 
               alt="{{ product.title }}"
-              width="250"
+              width="100%"
               height="auto"
             >
             <h6 class="h--alt">{{ product.title }} - {{ product.price | money_without_trailing_zeros }}</h6>
-            <button class="add-to-cart-btn" type="button" data-quick-add-button
+            <button id="add-to-cart-btn" class="add-to-cart-btn" type="button" data-quick-add-button
       {% unless product.available %}disabled{% endunless %}
       data-product-id="{{ product.id }}"
       data-variant-id="{{ product.first_available_variant.id }}">{{ 'cart.general.add_to_cart' | t }}</button>

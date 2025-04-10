@@ -71,6 +71,42 @@
     {{ 'section-collection.css' | asset_url | stylesheet_tag }}
     {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
     {{ 'section-image-with-text.css' | asset_url | stylesheet_tag }}
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=DC-15223269"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'DC-15223269');
+    </script>
+    <!-- End of global snippet: Please do not remove -->
+
+    <!-- JavaScript Code -->
+    <script>
+      function add_to_cart() {
+        gtag('event', 'conversion', {
+          'allow_custom_scripts': true,
+          'send_to': 'DC-15223269/addto0/calif0+standard'
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var button = document.getElementById("add-to-cart-btn");
+        if (button) {
+          button.addEventListener("click", function() {
+            add_to_cart();
+          });
+        }
+      });
+    </script>
+
+    <!-- Google Tag Manager Noscript for users with JS disabled -->
+    <noscript>
+      <img src="https://ad.doubleclick.net/ddm/activity/src=15223269;type=addto0;cat=calif0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt=""/>
+    </noscript>
+
   </head>
   <body>
     {% section 'announcement-bar' %}
@@ -88,4 +124,4 @@
     <script src="{{ 'cart.js' | asset_url }}" async></script>
     <script src="{{ 'naturals-index.js' | asset_url }}" async></script>
   </body>
-</html> 
+</html>

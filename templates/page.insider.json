@@ -1,0 +1,113 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_banner_nwdbHC": {
+      "type": "hero-banner",
+      "blocks": {
+        "text_N9zbid": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Roll with us -<br/>become a CN Insider</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "text_N9zbid"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/InsiderCali.png",
+        "video_url": "",
+        "curves": false,
+        "show_overlay": true,
+        "text_alignment": "center"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_title": true,
+        "bubble_text": ""
+      }
+    },
+    "text_columns_nyhmnX": {
+      "type": "text-columns",
+      "blocks": {
+        "column_BxamWY": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/Screenshot_2025-02-07_at_9.42.52_PM.png",
+            "video_url": "",
+            "text": "",
+            "author": "",
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_hGXhbT": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/Screenshot2025-02-02at4.50.25PM.png",
+            "video_url": "",
+            "text": "",
+            "author": "",
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_QRa6zr": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/Screenshot_2025-02-02_at_4.06.55_PM.png",
+            "video_url": "",
+            "text": "",
+            "author": "",
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column_rTNwed": {
+          "type": "column",
+          "settings": {
+            "subtitle": "",
+            "thumbnail": "shopify://shop_images/Screenshot2025-02-02at5.26.11PM.png",
+            "video_url": "",
+            "text": "",
+            "author": "",
+            "showStars": false,
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_BxamWY",
+        "column_hGXhbT",
+        "column_QRa6zr",
+        "column_rTNwed"
+      ],
+      "settings": {
+        "title": "",
+        "title_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero_banner_nwdbHC",
+    "text_columns_nyhmnX",
+    "main"
+  ]
+}

@@ -5,7 +5,7 @@
     <h1 class="main-page-title page-title text-center h2">{{ page.title | escape }}</h1>
   {%- endunless -%}
   
-  <div class="flex flex--column flex--gapped rte{% if section.settings.bubble_text != blank %} col col--5of12 col--mobile--12of12 has-bubble padded color-inverse-1{% endif %}">
+  <div class="flex flex--column flex--gapped rte{% if section.settings.bubble_text != blank %} col col--5of12 col--mobile--12of12 has-bubble padded color-inverse-1{% endif %}{% if section.settings.image == blank %} col col--6of12 col--mobile--12of12{% endif %}">
     {{ page.content }}
   </div>
 
