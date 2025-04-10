@@ -23,7 +23,7 @@
               {{ text_with_icons }}
             </div>
           {% when 'button' %}
-            <a href="{{ block.settings.button_link }}" class="button"
+            <a href="{{ block.settings.button_link }}" class="button{% if block.settings.big_button %} button--big{% endif %}"
               {{ block.shopify_attributes }}>
               {{ block.settings.button_label | escape }}
             </a>
@@ -159,6 +159,12 @@
           "type": "url",
           "id": "button_link",
           "label": "Button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "big_button",
+          "label": "Big button",
+          "default": false
         }
       ]
     },

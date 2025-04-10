@@ -107,6 +107,16 @@ button,
   }
 }
 
+.button--big {
+  background-color: var(--colors-secondary);
+  padding: var(--step-2) var(--step-3);
+
+  &:hover,
+  &:focus {
+    background-color: var(--colors-accent);
+  }
+}
+
 .button--secondary {
   background-color: var(--colors-secondary);
 
